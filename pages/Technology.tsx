@@ -73,7 +73,7 @@ export const Technology: React.FC = () => {
             </div>
             <p className="text-gray-400 mb-4">{content.features.youtube.desc}</p>
             <ul className="space-y-2">
-              {['Работает автоматически', 'Не нужны расширения', 'Только на российском сервере'].map((item, i) => (
+              {['Работает автоматически', 'Не нужны расширения', 'Подключись к Нидерландам'].map((item, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm text-gray-300">
                   <Check className="w-4 h-4 text-green-500" />
                   {item}

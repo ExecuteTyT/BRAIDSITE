@@ -65,7 +65,7 @@ export const Locations: React.FC = () => {
 
           {/* Info Cards */}
           <div className="space-y-6">
-            {/* Russia Special */}
+            {/* Netherlands - YouTube */}
             <div className="glass-panel p-8 rounded-3xl border-green-500/30 bg-green-500/5">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
@@ -73,11 +73,11 @@ export const Locations: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">YouTube без рекламы</h3>
-                  <p className="text-green-400 text-sm">Только на российском сервере</p>
+                  <p className="text-green-400 text-sm">Подключись к Нидерландам</p>
                 </div>
               </div>
               <p className="text-gray-400">
-                Подключившись к нашему серверу в России, вы сможете смотреть YouTube
+                Подключившись к серверу в Нидерландах, вы сможете смотреть YouTube
                 без рекламы. Это работает автоматически — никаких расширений или
                 дополнительных настроек не требуется.
               </p>

@@ -7,6 +7,7 @@ import { Technology } from './pages/Technology';
 import { Pricing } from './pages/Pricing';
 import { Locations } from './pages/Locations';
 import { DownloadPage } from './pages/Download';
+import { Blog } from './pages/Blog';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ const App: React.FC = () => {
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/locations" element={<Locations />} />
               <Route path="/download" element={<DownloadPage />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/legal" element={<div className="pt-32 text-center">Legal Page Placeholder</div>} />
             </Routes>
           </main>

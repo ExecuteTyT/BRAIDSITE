@@ -135,12 +135,14 @@ export const Pricing: React.FC = () => {
             Получите 7 дней полного доступа без оплаты. Никаких данных карты не требуется.
             Просто запустите бота и получите ключ.
           </p>
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-lg px-8">
-              <Send className="w-5 h-5" />
-              Получить бесплатный ключ
-            </Button>
-          </a>
+          <div className="flex justify-center">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className="text-lg px-8">
+                <Send className="w-5 h-5" />
+                Получить бесплатный ключ
+              </Button>
+            </a>
+          </div>
         </div>
 
         {/* Comparison Table */}
@@ -181,12 +183,14 @@ export const Pricing: React.FC = () => {
           <p className="text-gray-400 mb-6">
             Напишите нам в Telegram — ответим в течение 5 минут
           </p>
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="secondary">
-              <Send className="w-4 h-4" />
-              Написать в поддержку
-            </Button>
-          </a>
+          <div className="flex justify-center">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="secondary">
+                <Send className="w-4 h-4" />
+                Написать в поддержку
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -243,12 +243,14 @@ export const Home: React.FC = () => {
             ))}
           </div>
 
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-12">
-            <Button variant="primary" className="text-lg px-8">
-              <Send className="w-5 h-5" />
-              Начать сейчас
-            </Button>
-          </a>
+          <div className="flex justify-center mt-12">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className="text-lg px-8">
+                <Send className="w-5 h-5" />
+                Начать сейчас
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
