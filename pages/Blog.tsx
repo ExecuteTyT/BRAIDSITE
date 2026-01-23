@@ -117,7 +117,7 @@ export const Blog: React.FC = () => {
               'Сравнение VPN',
               'Приватность в интернете',
               'Настройка VPN',
-              'Лучший VPN 2024',
+              'Лучший VPN 2026',
               'VPN для iPhone',
               'VPN для Android',
               'VPN для Windows'

@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-          <p>© 2024 BRAID VPN. {content.footer.rights}</p>
+          <p>© 2026 BRAID VPN. {content.footer.rights}</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <span>{content.footer.design}</span>
           </div>

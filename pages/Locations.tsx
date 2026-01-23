@@ -63,8 +63,12 @@ export const Locations: React.FC = () => {
                 className="glass-panel p-4 sm:p-5 rounded-xl sm:rounded-2xl flex items-center justify-between transition-all duration-300 hover:bg-white/[0.03]"
               >
                 <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 flex items-center justify-center text-2xl sm:text-3xl relative">
-                    {loc.flag}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 flex items-center justify-center relative overflow-hidden">
+                    <img
+                      src={`https://flagcdn.com/w80/${loc.flag}.png`}
+                      alt={loc.country}
+                      className="w-8 h-6 sm:w-10 sm:h-7 object-cover rounded"
+                    />
                     {/* Online indicator */}
                     <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-[#05050A]">
                       <span className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></span>
@@ -129,7 +133,7 @@ export const Locations: React.FC = () => {
               </p>
             </div>
 
-            {/* Armenia - YouTube */}
+            {/* YouTube без рекламы */}
             <div className="glass-panel p-5 sm:p-6 rounded-2xl sm:rounded-3xl border-red-500/20 bg-red-500/5">
               <div className="flex items-center gap-3 mb-3 sm:mb-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
@@ -137,11 +141,11 @@ export const Locations: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-white">YouTube без рекламы</h3>
-                  <p className="text-red-400 text-xs sm:text-sm">Подключись к Армении 🇦🇲</p>
+                  <p className="text-red-400 text-xs sm:text-sm">Нидерланды или Армения</p>
                 </div>
               </div>
               <p className="text-xs sm:text-sm text-gray-400">
-                Подключившись к серверу в Армении, вы сможете смотреть YouTube
+                Подключившись к серверу в Нидерландах или Армении, вы сможете смотреть YouTube
                 без рекламы. Это работает автоматически — никаких расширений или
                 дополнительных настроек не требуется.
               </p>
