@@ -36,13 +36,13 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isOpen ? 'glass-panel border-b border-white/5 bg-[#05050A]/80' : 'bg-transparent'
+        scrolled || isOpen ? 'glass-panel border-b border-white/5 bg-[#05050A]/90 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-2 z-50">
+          <NavLink to="/" className="flex items-center gap-2 relative z-[60]">
             <div className="w-8 h-8 rounded bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center">
               <Zap className="w-5 h-5 text-white fill-current" />
             </div>
@@ -78,20 +78,21 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex items-center gap-4 md:hidden z-50">
+          <div className="flex items-center gap-3 md:hidden relative z-[60]">
             <a
               href={TELEGRAM_BOT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-primary/20 text-brand-primary text-sm font-medium"
+              className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-primary/20 text-brand-primary"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-5 h-5" />
             </a>
             <button
-              className="text-white"
+              className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X /> : <Menu />}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -100,30 +101,40 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-40 md:hidden"
+          className="fixed inset-0 bg-black/70 z-[55] md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-[#05050A] z-50 transition-transform duration-300 ease-out md:hidden flex flex-col pt-24 px-8 overflow-y-auto ${
+        className={`fixed top-0 right-0 bottom-0 w-[80%] max-w-[300px] bg-[#0A0A0F] z-[60] transition-transform duration-300 ease-out md:hidden flex flex-col pt-20 px-6 overflow-y-auto border-l border-white/10 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Background Elements */}
-        <div className="absolute top-1/4 left-0 w-48 h-48 bg-brand-primary/20 rounded-full blur-[80px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-brand-accent/20 rounded-full blur-[80px] pointer-events-none" />
+        {/* Close button in menu */}
+        <button
+          className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
+          onClick={() => setIsOpen(false)}
+        >
+          <X className="w-6 h-6" />
+        </button>
 
-        <div className="flex flex-col gap-6 relative z-10">
+        {/* Background Elements */}
+        <div className="absolute top-1/4 left-0 w-40 h-40 bg-brand-primary/20 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-0 w-40 h-40 bg-brand-accent/20 rounded-full blur-[80px] pointer-events-none" />
+
+        <div className="flex flex-col gap-4 relative z-10 mt-4">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `text-xl font-display font-bold uppercase tracking-wider py-2 border-b border-white/10 ${
-                  isActive ? 'text-brand-primary' : 'text-white'
+                `text-lg font-display font-bold uppercase tracking-wider py-3 px-4 rounded-xl transition-all ${
+                  isActive
+                    ? 'text-brand-primary bg-brand-primary/10'
+                    : 'text-white hover:bg-white/5'
                 }`
               }
             >
@@ -136,7 +147,7 @@ export const Navbar: React.FC = () => {
           href={TELEGRAM_BOT_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto mb-8 relative z-10"
+          className="mt-auto mb-6 relative z-10"
           onClick={() => setIsOpen(false)}
         >
           <Button variant="primary" className="w-full text-base py-4">
