@@ -29,46 +29,46 @@ export const Home: React.FC = () => {
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-accent/15 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="order-2 lg:order-1 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 mb-4 sm:mb-6">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-sm text-brand-primary font-medium">{content.hero.badge}</span>
+              <span className="text-xs sm:text-sm text-brand-primary font-medium">{content.hero.badge}</span>
             </div>
 
-            <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4 sm:mb-6">
               <span className="text-white">{content.hero.title_prefix}</span><br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">
                 {content.hero.title_suffix}
               </span>
             </h1>
 
-            <p className="text-xl text-gray-400 mb-4 max-w-lg leading-relaxed">
+            <p className="text-base sm:text-xl text-gray-400 mb-3 sm:mb-4 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               {content.hero.subtitle_1}
               <span className="text-white font-medium"> {content.hero.subtitle_2}</span>
             </p>
-            <p className="text-lg text-gray-500 mb-8 max-w-lg">
+            <p className="text-sm sm:text-lg text-gray-500 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
               {content.hero.subtitle_3}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="primary" className="w-full sm:w-auto cta-pulse group">
-                  <Send className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 items-center lg:items-start">
+              <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button variant="primary" className="w-full sm:w-auto cta-pulse group text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4">
+                  <Send className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-0.5 transition-transform" />
                   {content.hero.cta_primary}
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <NavLink to="/download">
-                <Button variant="secondary" className="w-full sm:w-auto" icon={<Download size={18}/>}>
+              <NavLink to="/download" className="w-full sm:w-auto">
+                <Button variant="secondary" className="w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-3 sm:py-4" icon={<Download size={18}/>}>
                   {content.hero.cta_secondary}
                 </Button>
               </NavLink>
             </div>
 
             {/* Trust indicators */}
-            <div className="flex items-center gap-6 text-sm text-gray-500">
+            <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-1">
                   {[...Array(5)].map((_, i) => (
@@ -82,24 +82,24 @@ export const Home: React.FC = () => {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 flex justify-center relative">
+          <div className="order-1 lg:order-2 flex justify-center relative mb-8 lg:mb-0">
             {/* Abstract Sphere Representation */}
-            <div className="relative w-64 h-64 md:w-96 md:h-96">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 rounded-full border border-brand-primary/30 animate-spin-slow"></div>
               <div className="absolute inset-4 rounded-full border border-brand-accent/30 animate-[spin_15s_linear_infinite_reverse]"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-full blur-2xl"></div>
 
               {/* Floating Card */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center p-6 glass-panel rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl animate-float">
-                <div className="text-4xl font-bold font-display text-white mb-1">0ms</div>
-                <div className="text-xs text-brand-primary uppercase tracking-widest">{content.hero.latency}</div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center p-4 sm:p-6 glass-panel rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl animate-float">
+                <div className="text-2xl sm:text-4xl font-bold font-display text-white mb-1">0ms</div>
+                <div className="text-[10px] sm:text-xs text-brand-primary uppercase tracking-widest">{content.hero.latency}</div>
               </div>
 
-              {/* Floating badges */}
-              <div className="absolute top-4 right-4 px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-xs text-green-400 font-medium animate-float" style={{animationDelay: '1s'}}>
+              {/* Floating badges - hidden on very small screens */}
+              <div className="hidden sm:block absolute top-4 right-4 px-2 sm:px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-[10px] sm:text-xs text-green-400 font-medium animate-float" style={{animationDelay: '1s'}}>
                 YouTube без рекламы
               </div>
-              <div className="absolute bottom-12 left-0 px-3 py-1 bg-brand-primary/20 border border-brand-primary/40 rounded-full text-xs text-brand-primary font-medium animate-float" style={{animationDelay: '2s'}}>
+              <div className="hidden sm:block absolute bottom-12 left-0 px-2 sm:px-3 py-1 bg-brand-primary/20 border border-brand-primary/40 rounded-full text-[10px] sm:text-xs text-brand-primary font-medium animate-float" style={{animationDelay: '2s'}}>
                 Работает везде
               </div>
             </div>
@@ -121,93 +121,93 @@ export const Home: React.FC = () => {
       </div>
 
       {/* USP Cards - Key Features */}
-      <section className="py-20 container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+      <section className="py-12 sm:py-20 container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 sm:mb-4">
             Почему выбирают <span className="text-brand-primary">BRAID VPN</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-2">
             Уникальные преимущества, которых нет у других VPN-сервисов
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* YouTube без рекламы */}
-          <div className="glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-green-500/50 transition-all duration-500">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-[60px] group-hover:bg-green-500/20 transition-all duration-700"></div>
-            <div className="absolute top-4 right-4 px-2 py-1 bg-green-500/20 rounded text-xs text-green-400 font-bold">ЭКСКЛЮЗИВ</div>
-            <Youtube className="w-12 h-12 text-green-500 mb-6" />
-            <h3 className="text-xl font-display font-bold text-white mb-3">{content.features.youtube.title}</h3>
-            <p className="text-gray-400">{content.features.youtube.desc}</p>
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-green-500/50 transition-all duration-500">
+            <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-green-500/10 rounded-full blur-[60px] group-hover:bg-green-500/20 transition-all duration-700"></div>
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 bg-green-500/20 rounded text-[10px] sm:text-xs text-green-400 font-bold">ЭКСКЛЮЗИВ</div>
+            <Youtube className="w-10 h-10 sm:w-12 sm:h-12 text-green-500 mb-4 sm:mb-6" />
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.youtube.title}</h3>
+            <p className="text-sm sm:text-base text-gray-400">{content.features.youtube.desc}</p>
           </div>
 
           {/* Работает при блокировках */}
-          <div className="glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-[60px] group-hover:bg-orange-500/20 transition-all duration-700"></div>
-            <div className="absolute top-4 right-4 px-2 py-1 bg-orange-500/20 rounded text-xs text-orange-400 font-bold">УНИКАЛЬНО</div>
-            <Wifi className="w-12 h-12 text-orange-500 mb-6" />
-            <h3 className="text-xl font-display font-bold text-white mb-3">{content.features.russia.title}</h3>
-            <p className="text-gray-400">{content.features.russia.desc}</p>
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500">
+            <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-orange-500/10 rounded-full blur-[60px] group-hover:bg-orange-500/20 transition-all duration-700"></div>
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 bg-orange-500/20 rounded text-[10px] sm:text-xs text-orange-400 font-bold">УНИКАЛЬНО</div>
+            <Wifi className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 mb-4 sm:mb-6" />
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.russia.title}</h3>
+            <p className="text-sm sm:text-base text-gray-400">{content.features.russia.desc}</p>
           </div>
 
           {/* Обход блокировок */}
-          <div className="glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-brand-primary/50 transition-all duration-500">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-[60px] group-hover:bg-brand-primary/20 transition-all duration-700"></div>
-            <Shield className="w-12 h-12 text-brand-primary mb-6" />
-            <h3 className="text-xl font-display font-bold text-white mb-3">{content.features.protocol.title}</h3>
-            <p className="text-gray-400">{content.features.protocol.desc}</p>
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-brand-primary/50 transition-all duration-500">
+            <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-brand-primary/10 rounded-full blur-[60px] group-hover:bg-brand-primary/20 transition-all duration-700"></div>
+            <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-brand-primary mb-4 sm:mb-6" />
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.protocol.title}</h3>
+            <p className="text-sm sm:text-base text-gray-400">{content.features.protocol.desc}</p>
           </div>
         </div>
       </section>
 
       {/* Bento Grid Features */}
-      <section className="py-16 container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[500px]">
+      <section className="py-12 sm:py-16 container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
 
           {/* Box 1: Speed */}
-          <div className="md:col-span-2 md:row-span-1 glass-panel rounded-3xl p-8 flex flex-col justify-center relative group overflow-hidden">
+          <div className="sm:col-span-2 glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center relative group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h3 className="text-3xl font-display font-bold text-white mb-2">{content.features.speed.title}</h3>
-                <p className="text-gray-400">{content.features.speed.desc}</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white mb-2">{content.features.speed.title}</h3>
+                <p className="text-sm sm:text-base text-gray-400">{content.features.speed.desc}</p>
               </div>
-              <div className="w-20 h-20 rounded-full border-2 border-brand-accent flex items-center justify-center">
-                <Zap className="w-8 h-8 text-brand-accent" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-brand-accent flex items-center justify-center flex-shrink-0">
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-brand-accent" />
               </div>
             </div>
           </div>
 
           {/* Box 2: Price */}
-          <div className="md:col-span-1 md:row-span-1 glass-panel rounded-3xl p-8 flex flex-col justify-center hover:border-brand-primary/50 transition-colors cursor-pointer group">
-            <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">{content.features.price.label}</div>
-            <div className="text-5xl font-display font-bold text-white group-hover:text-glow transition-all">
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center hover:border-brand-primary/50 transition-colors cursor-pointer group">
+            <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider mb-2">{content.features.price.label}</div>
+            <div className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white group-hover:text-glow transition-all">
               {content.features.price.amount}
-              <span className="text-xl text-gray-500 font-sans">{content.features.price.period}</span>
+              <span className="text-base sm:text-xl text-gray-500 font-sans">{content.features.price.period}</span>
             </div>
-            <div className="mt-4 text-sm text-green-400">при оплате за год</div>
+            <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">при оплате за год</div>
           </div>
 
           {/* Box 3: Locations */}
-          <div className="md:col-span-1 md:row-span-1 glass-panel rounded-3xl p-8 relative overflow-hidden">
-            <Globe className="w-10 h-10 text-white mb-4" />
-            <h3 className="text-xl font-bold text-white">{content.features.locations.title}</h3>
-            <p className="text-sm text-gray-400 mt-2">{content.features.locations.desc}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+            <Globe className="w-8 h-8 sm:w-10 sm:h-10 text-white mb-3 sm:mb-4" />
+            <h3 className="text-lg sm:text-xl font-bold text-white">{content.features.locations.title}</h3>
+            <p className="text-xs sm:text-sm text-gray-400 mt-2">{content.features.locations.desc}</p>
+            <div className="mt-3 sm:mt-4 flex flex-wrap gap-2">
               {['🇷🇺', '🇺🇸', '🇳🇱', '🇦🇲', '🇫🇮'].map((flag, i) => (
-                <span key={i} className="text-2xl">{flag}</span>
+                <span key={i} className="text-xl sm:text-2xl">{flag}</span>
               ))}
             </div>
           </div>
 
           {/* Box 4: Trial */}
-          <div className="md:col-span-2 md:row-span-1 glass-panel rounded-3xl p-8 flex items-center justify-between relative overflow-hidden bg-gradient-to-r from-brand-primary/10 to-brand-accent/10">
+          <div className="sm:col-span-2 glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative overflow-hidden bg-gradient-to-r from-brand-primary/10 to-brand-accent/10">
             <div>
-              <h3 className="text-2xl font-display font-bold text-white mb-2">7 дней бесплатно</h3>
-              <p className="text-gray-400">Протестируй все функции без оплаты. Без карты.</p>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-2">7 дней бесплатно</h3>
+              <p className="text-sm sm:text-base text-gray-400">Протестируй все функции без оплаты. Без карты.</p>
             </div>
-            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="whitespace-nowrap">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button variant="primary" className="w-full sm:w-auto whitespace-nowrap">
                 <Send className="w-4 h-4" />
                 Попробовать
               </Button>
@@ -217,36 +217,36 @@ export const Home: React.FC = () => {
       </section>
 
       {/* How it Works */}
-      <section className="py-20 bg-black/20">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold text-white mb-4">{content.steps.title}</h2>
-          <p className="text-gray-400 mb-16 max-w-2xl mx-auto">
+      <section className="py-12 sm:py-20 bg-black/20">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3 sm:mb-4">{content.steps.title}</h2>
+          <p className="text-sm sm:text-base text-gray-400 mb-10 sm:mb-16 max-w-2xl mx-auto px-2">
             Подключение занимает меньше минуты. Никаких сложных настроек.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
             {[
-              { step: '01', title: content.steps.step1.title, desc: content.steps.step1.desc, icon: <Send size={32} /> },
-              { step: '02', title: content.steps.step2.title, desc: content.steps.step2.desc, icon: <Download size={32} /> },
-              { step: '03', title: content.steps.step3.title, desc: content.steps.step3.desc, icon: <Zap size={32} /> },
+              { step: '01', title: content.steps.step1.title, desc: content.steps.step1.desc, icon: <Send size={24} className="sm:w-8 sm:h-8" /> },
+              { step: '02', title: content.steps.step2.title, desc: content.steps.step2.desc, icon: <Download size={24} className="sm:w-8 sm:h-8" /> },
+              { step: '03', title: content.steps.step3.title, desc: content.steps.step3.desc, icon: <Zap size={24} className="sm:w-8 sm:h-8" /> },
             ].map((item, idx) => (
               <div key={idx} className="relative group">
-                <div className="w-20 h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10 mb-6 group-hover:border-brand-primary/50 group-hover:shadow-[0_0_20px_rgba(0,122,255,0.3)] transition-all">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10 mb-4 sm:mb-6 group-hover:border-brand-primary/50 group-hover:shadow-[0_0_20px_rgba(0,122,255,0.3)] transition-all">
                   <span className="text-gray-300">{item.icon}</span>
                 </div>
-                <div className="text-6xl font-display font-bold text-white/5 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none">
+                <div className="text-4xl sm:text-6xl font-display font-bold text-white/5 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-400">{item.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm sm:text-base text-gray-400 px-4 sm:px-0">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
-            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="text-lg px-8">
-                <Send className="w-5 h-5" />
+          <div className="flex justify-center mt-10 sm:mt-12 px-4">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                <Send className="w-4 sm:w-5 h-4 sm:h-5" />
                 Начать сейчас
               </Button>
             </a>
@@ -255,8 +255,8 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-20 container mx-auto px-6">
-        <div className="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
+      <section className="py-12 sm:py-20 container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-12">
           <h3 className="text-2xl font-display font-bold text-white mb-8 text-center">{content.pricing.table.title}</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
@@ -287,37 +287,37 @@ export const Home: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-32 container mx-auto px-6 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <section className="py-16 sm:py-32 container mx-auto px-4 sm:px-6 text-center relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-brand-primary/10 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none"></div>
 
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4 relative z-10">
+        <h2 className="text-2xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-3 sm:mb-4 relative z-10 px-2">
           {content.cta_bottom.title}
         </h2>
-        <p className="text-xl text-gray-400 mb-8 relative z-10">
+        <p className="text-base sm:text-xl text-gray-400 mb-6 sm:mb-8 relative z-10 px-2">
           {content.cta_bottom.subtitle}
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-lg px-12 py-4 cta-pulse">
-              <Send className="w-5 h-5" />
+        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10 px-4">
+          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-12 py-3 sm:py-4 cta-pulse">
+              <Send className="w-4 sm:w-5 h-4 sm:h-5" />
               {content.cta_bottom.button}
             </Button>
           </a>
         </div>
 
         {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm text-gray-500 relative z-10">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-xs sm:text-sm text-gray-500 relative z-10 px-2">
           <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-green-500" />
+            <Check className="w-3 sm:w-4 h-3 sm:h-4 text-green-500" />
             Без карты
           </div>
           <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-green-500" />
+            <Check className="w-3 sm:w-4 h-3 sm:h-4 text-green-500" />
             Возврат 7 дней
           </div>
           <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-green-500" />
+            <Check className="w-3 sm:w-4 h-3 sm:h-4 text-green-500" />
             Поддержка 24/7
           </div>
         </div>

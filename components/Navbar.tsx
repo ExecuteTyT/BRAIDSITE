@@ -97,38 +97,50 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-[#05050A] z-40 transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${
+        className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-[#05050A] z-50 transition-transform duration-300 ease-out md:hidden flex flex-col pt-24 px-8 overflow-y-auto ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-         {/* Background Elements */}
-         <div className="absolute top-1/4 left-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-[100px] pointer-events-none" />
-         <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-brand-accent/20 rounded-full blur-[100px] pointer-events-none" />
+        {/* Background Elements */}
+        <div className="absolute top-1/4 left-0 w-48 h-48 bg-brand-primary/20 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-brand-accent/20 rounded-full blur-[80px] pointer-events-none" />
 
-        {NAV_ITEMS.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `text-2xl font-display font-bold uppercase tracking-widest ${
-                isActive ? 'text-brand-primary' : 'text-white'
-              }`
-            }
-          >
-            {item.label}
-          </NavLink>
-        ))}
+        <div className="flex flex-col gap-6 relative z-10">
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `text-xl font-display font-bold uppercase tracking-wider py-2 border-b border-white/10 ${
+                  isActive ? 'text-brand-primary' : 'text-white'
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </div>
 
         <a
           href={TELEGRAM_BOT_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8"
+          className="mt-auto mb-8 relative z-10"
+          onClick={() => setIsOpen(false)}
         >
-          <Button variant="primary" className="text-lg">
-            <Send className="w-5 h-5 mr-2" />
+          <Button variant="primary" className="w-full text-base py-4">
+            <Send className="w-5 h-5" />
             {content.nav.start}
           </Button>
         </a>
