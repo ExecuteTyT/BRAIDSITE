@@ -400,7 +400,7 @@ const fullArticles: Record<string, {
             </tr>
             <tr>
               <td>Расход батареи</td>
-              <td>Высокий (>10%)</td>
+              <td>Высокий (&gt;10%)</td>
               <td>Низкий (&lt;2%)</td>
             </tr>
             <tr>
