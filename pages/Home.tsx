@@ -95,11 +95,11 @@ export const Home: React.FC = () => {
                 <div className="text-[10px] sm:text-xs text-brand-primary uppercase tracking-widest">{content.hero.latency}</div>
               </div>
 
-              {/* Floating badges - hidden on very small screens */}
-              <div className="hidden sm:block absolute top-4 right-4 px-2 sm:px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-[10px] sm:text-xs text-green-400 font-medium animate-float" style={{animationDelay: '1s'}}>
+              {/* Floating badges */}
+              <div className="absolute -top-2 -right-2 sm:top-4 sm:right-4 px-2 sm:px-3 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-[10px] sm:text-xs text-green-400 font-medium animate-float" style={{animationDelay: '1s'}}>
                 YouTube без рекламы
               </div>
-              <div className="hidden sm:block absolute bottom-12 left-0 px-2 sm:px-3 py-1 bg-brand-primary/20 border border-brand-primary/40 rounded-full text-[10px] sm:text-xs text-brand-primary font-medium animate-float" style={{animationDelay: '2s'}}>
+              <div className="absolute -bottom-2 -left-2 sm:bottom-12 sm:left-0 px-2 sm:px-3 py-1 bg-brand-primary/20 border border-brand-primary/40 rounded-full text-[10px] sm:text-xs text-brand-primary font-medium animate-float" style={{animationDelay: '2s'}}>
                 Работает везде
               </div>
             </div>
