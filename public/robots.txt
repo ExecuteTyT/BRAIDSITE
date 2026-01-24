@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://braidvpn.ru/sitemap.xml
+
+# Блокируем служебные директории
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /.git/
+
+# Разрешаем все страницы сайта
+Allow: /
+Allow: /#/
+Allow: /#/technology
+Allow: /#/pricing
+Allow: /#/locations
+Allow: /#/download
+Allow: /#/blog
+Allow: /#/blog/
+
+# Crawl-delay для вежливого сканирования
+Crawl-delay: 1
