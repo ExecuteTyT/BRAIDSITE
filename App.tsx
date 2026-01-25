@@ -10,6 +10,7 @@ import { DownloadPage } from './pages/Download';
 import { Blog } from './pages/Blog';
 import { ArticlePage } from './pages/ArticlePage';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { initTelegramTracking } from './utils/telegramTracking';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,16 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  // Инициализация отслеживания Telegram ссылок
+  React.useEffect(() => {
+    // Небольшая задержка для загрузки DOM
+    const timer = setTimeout(() => {
+      initTelegramTracking();
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <LanguageProvider>
       <Router>
