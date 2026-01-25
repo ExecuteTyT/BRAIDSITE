@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://braidvpn.ru/sitemap.xml
+# Sitemap (будет автоматически определяться по текущему домену)
+Sitemap: /sitemap.xml
 
 # Блокируем служебные директории
 Disallow: /api/
