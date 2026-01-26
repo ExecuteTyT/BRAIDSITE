@@ -2,10 +2,46 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeroCanvas } from '../components/HeroCanvas';
 import { Button } from '../components/Button';
-import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star } from 'lucide-react';
+import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star, Instagram, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+
+// FAQ Accordion Item Component
+const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <div className="glass-panel rounded-xl sm:rounded-2xl overflow-hidden border border-white/5">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors group"
+      >
+        <span className="text-sm sm:text-base font-medium text-white pr-4 group-hover:text-brand-primary transition-colors">
+          {question}
+        </span>
+        <div className="flex-shrink-0">
+          {isOpen ? (
+            <ChevronUp className="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-colors" />
+          ) : (
+            <ChevronDown className="w-5 h-5 text-gray-400 group-hover:text-brand-primary transition-colors" />
+          )}
+        </div>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-0">
+          <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+            {answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const Home: React.FC = () => {
   const { content } = useLanguage();
@@ -131,7 +167,7 @@ export const Home: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* YouTube без рекламы */}
           <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-green-500/50 transition-all duration-500">
             <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-green-500/10 rounded-full blur-[60px] group-hover:bg-green-500/20 transition-all duration-700"></div>
@@ -148,6 +184,14 @@ export const Home: React.FC = () => {
             <Wifi className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 mb-4 sm:mb-6" />
             <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.russia.title}</h3>
             <p className="text-sm sm:text-base text-gray-400">{content.features.russia.desc}</p>
+          </div>
+
+          {/* Instagram */}
+          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-pink-500/50 transition-all duration-500">
+            <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-pink-500/10 rounded-full blur-[60px] group-hover:bg-pink-500/20 transition-all duration-700"></div>
+            <Instagram className="w-10 h-10 sm:w-12 sm:h-12 text-pink-500 mb-4 sm:mb-6" />
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.instagram.title}</h3>
+            <p className="text-sm sm:text-base text-gray-400">{content.features.instagram.desc}</p>
           </div>
 
           {/* Обход блокировок */}
@@ -282,6 +326,26 @@ export const Home: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 sm:py-20 container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 sm:mb-4">
+              {content.faq.title}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-2">
+              Ответы на самые популярные вопросы о VPN
+            </p>
+          </div>
+
+          <div className="space-y-3 sm:space-y-4">
+            {content.faq.items.map((item, index) => (
+              <FAQItem key={index} question={item.q} answer={item.a} />
+            ))}
           </div>
         </div>
       </section>

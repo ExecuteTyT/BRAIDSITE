@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/5 bg-[#05050A] pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
@@ -63,29 +63,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="font-display text-sm font-bold uppercase tracking-wider text-white mb-6">
-              {content.footer.legal}
-            </h3>
-            <ul className="space-y-4 text-gray-400">
-              <li>
-                <NavLink to="/legal" className="hover:text-brand-primary transition-colors">
-                  {content.footer.privacy}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/legal" className="hover:text-brand-primary transition-colors">
-                  {content.footer.terms}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/legal" className="hover:text-brand-primary transition-colors">
-                  {content.footer.refund}
-                </NavLink>
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom bar */}

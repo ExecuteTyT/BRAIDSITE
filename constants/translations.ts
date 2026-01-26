@@ -53,6 +53,10 @@ export const content = {
     devices: {
       title: 'До 5 устройств',
       desc: 'Подключай до 5 устройств одновременно на любом тарифе.'
+    },
+    instagram: {
+      title: 'Instagram открывается мгновенно',
+      desc: 'Быстрая загрузка фото и видео, стабильное соединение. Instagram работает без задержек через наши серверы.'
     }
   },
   steps: {
@@ -413,6 +417,12 @@ export const content = {
   telegram: {
     bot_url: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==',
     cta: 'Открыть Telegram-бот'
+  },
+  notFound: {
+    title: 'Страница не найдена',
+    description: 'Похоже, вы попали на несуществующую страницу. Возможно, ссылка устарела или была удалена.',
+    button_home: 'На главную',
+    button_back: 'Назад'
   }
 };
 

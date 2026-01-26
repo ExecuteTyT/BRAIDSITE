@@ -9,6 +9,7 @@ import { Locations } from './pages/Locations';
 import { DownloadPage } from './pages/Download';
 import { Blog } from './pages/Blog';
 import { ArticlePage } from './pages/ArticlePage';
+import { NotFound } from './pages/NotFound';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:articleId" element={<ArticlePage />} />
               <Route path="/legal" element={<div className="pt-32 text-center">Legal Page Placeholder</div>} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
