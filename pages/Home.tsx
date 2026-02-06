@@ -160,7 +160,7 @@ export const Home: React.FC = () => {
       <section className="py-12 sm:py-20 container mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 sm:mb-4">
-            Почему выбирают <span className="text-brand-primary">BRAID VPN</span>
+            Почему <span className="text-brand-primary">BRAID VPN</span> — лучший VPN для России в 2026 году
           </h2>
           <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-2">
             Уникальные преимущества, которых нет у других VPN-сервисов
@@ -169,22 +169,24 @@ export const Home: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* YouTube без рекламы */}
-          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-green-500/50 transition-all duration-500">
+          <NavLink to="/youtube-bez-reklamy" className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-green-500/50 transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-green-500/10 rounded-full blur-[60px] group-hover:bg-green-500/20 transition-all duration-700"></div>
             <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 bg-green-500/20 rounded text-[10px] sm:text-xs text-green-400 font-bold">ЭКСКЛЮЗИВ</div>
             <Youtube className="w-10 h-10 sm:w-12 sm:h-12 text-green-500 mb-4 sm:mb-6" />
-            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.youtube.title}</h3>
-            <p className="text-sm sm:text-base text-gray-400">{content.features.youtube.desc}</p>
-          </div>
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">YouTube без рекламы — автоматически</h3>
+            <p className="text-sm sm:text-base text-gray-400">Подключитесь к серверу в Армении или Нидерландах и смотрите YouTube без рекламы. Работает автоматически — никаких расширений или дополнительных настроек.</p>
+            <span className="text-brand-primary text-sm mt-3 inline-block group-hover:underline">Узнать подробнее →</span>
+          </NavLink>
 
           {/* Работает при блокировках */}
-          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500">
+          <NavLink to="/pri-blokirovkah" className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-orange-500/10 rounded-full blur-[60px] group-hover:bg-orange-500/20 transition-all duration-700"></div>
             <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 bg-orange-500/20 rounded text-[10px] sm:text-xs text-orange-400 font-bold">УНИКАЛЬНО</div>
             <Wifi className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 mb-4 sm:mb-6" />
-            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.russia.title}</h3>
-            <p className="text-sm sm:text-base text-gray-400">{content.features.russia.desc}</p>
-          </div>
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">Работает при блокировках связи оператором</h3>
+            <p className="text-sm sm:text-base text-gray-400">Работает даже когда оператор (МТС, МегаФон, Билайн, Tele2) блокирует интернет. Протокол VLESS + Reality обходит ограничения сотовой связи.</p>
+            <span className="text-brand-primary text-sm mt-3 inline-block group-hover:underline">Как это работает →</span>
+          </NavLink>
 
           {/* Instagram */}
           <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-pink-500/50 transition-all duration-500">

@@ -1,17 +1,25 @@
 User-agent: *
 Allow: /
 
-# Sitemap только для production домена braidvpn.ru
 Sitemap: https://braidvpn.ru/sitemap.xml
 
-# Блокируем служебные директории
-Disallow: /api/
+# Закрываем технические страницы
 Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
 Disallow: /.env
 Disallow: /.git/
 
 # Разрешаем все страницы сайта
 Allow: /
+Allow: /youtube-bez-reklamy
+Allow: /pri-blokirovkah
+Allow: /chatgpt
+Allow: /android
+Allow: /ios
+Allow: /windows
+Allow: /mac
 Allow: /technology
 Allow: /pricing
 Allow: /locations
