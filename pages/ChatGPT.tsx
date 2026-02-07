@@ -26,7 +26,7 @@ export const ChatGPTPage: React.FC = () => {
   React.useEffect(() => {
     document.title = 'VPN для ChatGPT в России — Как получить доступ к ChatGPT из РФ в 2026';
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Доступ к ChatGPT из России с BRAID VPN. Подключитесь к серверу в США — ChatGPT заработает мгновенно. Пошаговая инструкция. 7 дней бесплатно, от 163₽/мес.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Доступ к ChatGPT из России с BRAID VPN. Подключитесь к любому зарубежному серверу — ChatGPT заработает мгновенно. Пошаговая инструкция. 7 дней бесплатно, от 163₽/мес.');
     const link = document.querySelector('link[rel="canonical"]');
     if (link) link.setAttribute('href', 'https://braidvpn.ru/chatgpt');
   }, []);
@@ -52,11 +52,11 @@ export const ChatGPTPage: React.FC = () => {
             VPN для ChatGPT в России — <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Получите доступ к ChatGPT за 2 минуты</span>
           </h1>
           <p className="text-base sm:text-xl text-gray-400 mb-6 max-w-3xl mx-auto leading-relaxed">
-            ChatGPT заблокирован в России с 2023 года. BRAID VPN даёт доступ к ChatGPT через сервер в США. Никаких сложных настроек — просто подключитесь и пользуйтесь ChatGPT как обычно.
+            ChatGPT заблокирован в России с 2023 года. BRAID VPN даёт доступ к ChatGPT через любой зарубежный сервер — США, Нидерланды, Армению или Финляндию. Никаких сложных настроек — просто подключитесь и пользуйтесь ChatGPT как обычно.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8 text-sm text-gray-300">
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> Доступ к ChatGPT из России</span>
-            <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> Сервер в США</span>
+            <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> 4 зарубежных сервера</span>
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> Работает с ChatGPT Plus</span>
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> 7 дней бесплатно</span>
           </div>
@@ -90,9 +90,9 @@ export const ChatGPTPage: React.FC = () => {
         <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-8 text-center">Как BRAID VPN даёт доступ к ChatGPT</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="glass-panel rounded-2xl p-6 sm:p-8">
-            <h3 className="text-lg font-bold text-white mb-4">Частные серверы в США</h3>
+            <h3 className="text-lg font-bold text-white mb-4">4 зарубежных сервера для ChatGPT</h3>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              BRAID VPN использует частные серверы в США, которые не находятся в чёрных списках OpenAI. Когда вы подключаетесь к нашему серверу, ChatGPT думает, что вы из США — и доступ открывается автоматически.
+              ChatGPT работает через любой зарубежный сервер BRAID VPN — США, Нидерланды, Армению или Финляндию. Выбирайте ближайший для минимального пинга. Наши частные серверы не находятся в чёрных списках OpenAI — доступ открывается автоматически.
             </p>
           </div>
           <div className="glass-panel rounded-2xl p-6 sm:p-8">
@@ -112,7 +112,7 @@ export const ChatGPTPage: React.FC = () => {
             {[
               { step: '1', title: 'Получите VPN-ключ', desc: 'В Telegram-боте за 30 секунд. 7 дней бесплатно.' },
               { step: '2', title: 'Скачайте приложение', desc: 'Happ для компьютера или телефона.' },
-              { step: '3', title: 'Подключитесь к США', desc: 'Выберите сервер США (Нью-Йорк).' },
+              { step: '3', title: 'Подключитесь к серверу', desc: 'Выберите любой зарубежный сервер (кроме России).' },
               { step: '4', title: 'Откройте ChatGPT', desc: 'Перейдите на chat.openai.com — работает!' },
             ].map((item, idx) => (
               <div key={idx} className="glass-panel rounded-2xl p-5 text-center">
@@ -122,7 +122,7 @@ export const ChatGPTPage: React.FC = () => {
               </div>
             ))}
           </div>
-          <p className="text-yellow-400/80 text-sm text-center mt-6">⚠️ Для ChatGPT используйте только сервер <strong>США</strong>. Серверы в России, Армении, Нидерландах, Финляндии не дадут доступ к ChatGPT.</p>
+          <p className="text-yellow-400/80 text-sm text-center mt-6">⚠️ Для ChatGPT подойдёт любой сервер <strong>кроме России</strong> — США, Нидерланды, Армения или Финляндия.</p>
         </div>
       </section>
 
