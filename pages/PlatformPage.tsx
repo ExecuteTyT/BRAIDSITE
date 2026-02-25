@@ -189,7 +189,7 @@ export const PlatformPage: React.FC<{ platform: string }> = ({ platform }) => {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', config.metaDesc);
     const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', `https://braidvpn.ru/${config.slug}`);
+    if (link) link.setAttribute('href', `https://braidx.tech/${config.slug}`);
   }, [config]);
 
   if (!config) return <div className="pt-32 text-center text-white">Страница не найдена</div>;

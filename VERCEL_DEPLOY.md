@@ -4,21 +4,21 @@
 
 Ваш сайт развернут на Vercel по адресу:
 - **Preview домен**: `https://braidsite-iss-projects-5d0a08b3.vercel.app/`
-- **Production домен**: `https://braidvpn.ru` (после подключения кастомного домена)
+- **Production домен**: `https://braidx.tech` (после подключения кастомного домена)
 
 ## Проблема с индексацией
 
 ### ❌ Текущие проблемы:
 
 1. **robots.txt** - обновлен, теперь использует относительный путь к sitemap ✅
-2. **sitemap.xml** - содержит абсолютные URL с доменом `braidvpn.ru`
+2. **sitemap.xml** - содержит абсолютные URL с доменом `braidx.tech`
 3. **Preview домены Vercel** - не должны индексироваться поисковыми системами
 
 ### ✅ Решение:
 
 1. **robots.txt** уже обновлен - использует относительный путь `/sitemap.xml`
 2. **Для preview доменов** - поисковики не будут индексировать (это нормально)
-3. **Для production** - нужно подключить кастомный домен `braidvpn.ru`
+3. **Для production** - нужно подключить кастомный домен `braidx.tech`
 
 ---
 
@@ -28,8 +28,8 @@
 
 1. Зайдите в настройки проекта на [vercel.com](https://vercel.com)
 2. Перейдите в раздел **Settings** → **Domains**
-3. Добавьте домен `braidvpn.ru`
-4. Добавьте поддомен `www.braidvpn.ru` (опционально)
+3. Добавьте домен `braidx.tech`
+4. Добавьте поддомен `www.braidx.tech` (опционально)
 
 ### Шаг 2: Настройка DNS
 
@@ -73,7 +73,7 @@ Sitemap: /sitemap.xml
 ### 2. sitemap.xml
 
 **Вариант A: Статический sitemap (текущий)**
-- Работает только для production домена `braidvpn.ru`
+- Работает только для production домена `braidx.tech`
 - Для preview доменов будет показывать неправильные URL
 
 **Вариант B: Динамический sitemap (рекомендуется)**
@@ -85,7 +85,7 @@ Sitemap: /sitemap.xml
 
 Убедитесь, что canonical URL указывает на production домен:
 ```html
-<link rel="canonical" href="https://braidvpn.ru/" />
+<link rel="canonical" href="https://braidx.tech/" />
 ```
 
 ---
@@ -94,10 +94,10 @@ Sitemap: /sitemap.xml
 
 ### ✅ Что делать:
 
-1. **Подключить кастомный домен** `braidvpn.ru` в Vercel
+1. **Подключить кастомный домен** `braidx.tech` в Vercel
 2. **Использовать динамический sitemap** (уже создан в `api/sitemap.xml.js`)
-3. **Добавить сайт в Google Search Console** с доменом `braidvpn.ru`
-4. **Отправить sitemap** в Search Console: `https://braidvpn.ru/sitemap.xml`
+3. **Добавить сайт в Google Search Console** с доменом `braidx.tech`
+4. **Отправить sitemap** в Search Console: `https://braidx.tech/sitemap.xml`
 
 ### ❌ Что НЕ делать:
 
@@ -113,13 +113,13 @@ Sitemap: /sitemap.xml
 
 ```bash
 # Проверка основного домена
-curl -I https://braidvpn.ru
+curl -I https://braidx.tech
 
 # Проверка sitemap
-curl https://braidvpn.ru/sitemap.xml
+curl https://braidx.tech/sitemap.xml
 
 # Проверка robots.txt
-curl https://braidvpn.ru/robots.txt
+curl https://braidx.tech/robots.txt
 ```
 
 ### 2. Проверка SSL
@@ -130,8 +130,8 @@ curl https://braidvpn.ru/robots.txt
 ### 3. Проверка индексации
 
 1. **Google Search Console**
-   - Добавить сайт: `https://braidvpn.ru`
-   - Отправить sitemap: `https://braidvpn.ru/sitemap.xml`
+   - Добавить сайт: `https://braidx.tech`
+   - Отправить sitemap: `https://braidx.tech/sitemap.xml`
    - Проверить покрытие индексации
 
 2. **Проверка robots.txt**
@@ -168,10 +168,10 @@ curl https://braidvpn.ru/robots.txt
 
 После подключения домена проверьте:
 
-1. ✅ Сайт доступен по `https://braidvpn.ru`
+1. ✅ Сайт доступен по `https://braidx.tech`
 2. ✅ SSL сертификат активен (зеленый замочек)
-3. ✅ `robots.txt` доступен: `https://braidvpn.ru/robots.txt`
-4. ✅ `sitemap.xml` доступен: `https://braidvpn.ru/sitemap.xml`
+3. ✅ `robots.txt` доступен: `https://braidx.tech/robots.txt`
+4. ✅ `sitemap.xml` доступен: `https://braidx.tech/sitemap.xml`
 5. ✅ Все страницы открываются корректно
 6. ✅ Canonical URL указывает на правильный домен
 

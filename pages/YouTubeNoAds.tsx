@@ -28,7 +28,7 @@ export const YouTubeNoAds: React.FC = () => {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', 'Смотрите YouTube без рекламы с BRAID VPN. Подключитесь к серверу в Армении или Нидерландах — реклама исчезнет автоматически. 7 дней бесплатно, от 163₽/мес.');
     const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidvpn.ru/youtube-bez-reklamy');
+    if (link) link.setAttribute('href', 'https://braidx.tech/youtube-bez-reklamy');
   }, []);
 
   const faqItems = [

@@ -6,55 +6,55 @@
 
 ```bash
 # Создать резервную копию текущей конфигурации
-sudo cp /etc/nginx/sites-available/braidvpn.ru /etc/nginx/sites-available/braidvpn.ru.backup
+sudo cp /etc/nginx/sites-available/braidx.tech /etc/nginx/sites-available/braidx.tech.backup
 
 # Создать новую конфигурацию
-sudo tee /etc/nginx/sites-available/braidvpn.ru > /dev/null << 'EOF'
+sudo tee /etc/nginx/sites-available/braidx.tech > /dev/null << 'EOF'
 # Редирект HTTP → HTTPS (без www)
 server {
     listen 80;
     listen [::]:80;
-    server_name braidvpn.ru www.braidvpn.ru;
-    return 301 https://braidvpn.ru$request_uri;
+    server_name braidx.tech www.braidx.tech;
+    return 301 https://braidx.tech$request_uri;
 }
 
 # Редирект HTTPS www → HTTPS без www
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name www.braidvpn.ru;
+    server_name www.braidx.tech;
 
     # SSL сертификаты
-    ssl_certificate /etc/letsencrypt/live/braidvpn.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/braidvpn.ru/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
     
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
     # Редирект 301 с www на без www
-    return 301 https://braidvpn.ru$request_uri;
+    return 301 https://braidx.tech$request_uri;
 }
 
 # Основной сервер (без www)
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name braidvpn.ru;
+    server_name braidx.tech;
 
     # SSL сертификаты
-    ssl_certificate /etc/letsencrypt/live/braidvpn.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/braidvpn.ru/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
     
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    root /var/www/braidvpn.ru/dist;
+    root /var/www/braidx.tech/dist;
     index index.html;
 
-    access_log /var/log/nginx/braidvpn.ru.access.log;
-    error_log /var/log/nginx/braidvpn.ru.error.log;
+    access_log /var/log/nginx/braidx.tech.access.log;
+    error_log /var/log/nginx/braidx.tech.error.log;
 
     gzip on;
     gzip_vary on;
@@ -98,27 +98,27 @@ sudo systemctl reload nginx
 # Проверить редиректы
 echo "Проверка редиректов:"
 echo "1. HTTP → HTTPS (без www):"
-curl -I http://braidvpn.ru 2>&1 | grep -i "location\|http" | head -2
+curl -I http://braidx.tech 2>&1 | grep -i "location\|http" | head -2
 echo ""
 echo "2. HTTP www → HTTPS (без www):"
-curl -I http://www.braidvpn.ru 2>&1 | grep -i "location\|http" | head -2
+curl -I http://www.braidx.tech 2>&1 | grep -i "location\|http" | head -2
 echo ""
 echo "3. HTTPS www → HTTPS (без www):"
-curl -I https://www.braidvpn.ru 2>&1 | grep -i "location\|http" | head -2
+curl -I https://www.braidx.tech 2>&1 | grep -i "location\|http" | head -2
 ```
 
 ## Вариант 2: Залить файлы с Git
 
 ```bash
 # Перейти в директорию проекта (если есть)
-cd /var/www/braidvpn.ru
+cd /var/www/braidx.tech
 
 # Или клонировать репозиторий
 git clone https://github.com/ExecuteTyT/BRAIDSITE.git /tmp/braidsite
 cd /tmp/braidsite
 
 # Скопировать конфигурацию
-sudo cp nginx-braidvpn.conf /etc/nginx/sites-available/braidvpn.ru
+sudo cp nginx-braidvpn.conf /etc/nginx/sites-available/braidx.tech
 
 # Проверить и перезагрузить
 sudo nginx -t
@@ -128,7 +128,7 @@ sudo systemctl reload nginx
 ## Вариант 3: Редактировать вручную через nano
 
 ```bash
-sudo nano /etc/nginx/sites-available/braidvpn.ru
+sudo nano /etc/nginx/sites-available/braidx.tech
 ```
 
 Добавьте отдельный server блок для www перед основным server блоком:
@@ -138,27 +138,27 @@ sudo nano /etc/nginx/sites-available/braidvpn.ru
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name www.braidvpn.ru;
+    server_name www.braidx.tech;
 
-    ssl_certificate /etc/letsencrypt/live/braidvpn.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/braidvpn.ru/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
     
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    return 301 https://braidvpn.ru$request_uri;
+    return 301 https://braidx.tech$request_uri;
 }
 ```
 
-И убедитесь, что в HTTP блоке редирект идет на `braidvpn.ru` (без www):
+И убедитесь, что в HTTP блоке редирект идет на `braidx.tech` (без www):
 
 ```nginx
 server {
     listen 80;
     listen [::]:80;
-    server_name braidvpn.ru www.braidvpn.ru;
-    return 301 https://braidvpn.ru$request_uri;  # ← должно быть braidvpn.ru, а не $server_name
+    server_name braidx.tech www.braidx.tech;
+    return 301 https://braidx.tech$request_uri;  # ← должно быть braidx.tech, а не $server_name
 }
 ```
 
@@ -167,9 +167,9 @@ server {
 Проверьте редиректы:
 
 ```bash
-curl -I http://braidvpn.ru        # Должен: Location: https://braidvpn.ru/
-curl -I http://www.braidvpn.ru   # Должен: Location: https://braidvpn.ru/
-curl -I https://www.braidvpn.ru  # Должен: Location: https://braidvpn.ru/
+curl -I http://braidx.tech        # Должен: Location: https://braidx.tech/
+curl -I http://www.braidx.tech   # Должен: Location: https://braidx.tech/
+curl -I https://www.braidx.tech  # Должен: Location: https://braidx.tech/
 ```
 
-Все три должны редиректить на `https://braidvpn.ru/` (без www).
+Все три должны редиректить на `https://braidx.tech/` (без www).

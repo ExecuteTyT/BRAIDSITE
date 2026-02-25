@@ -624,7 +624,7 @@ export const ArticlePage: React.FC = () => {
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       if (metaKeywords) metaKeywords.setAttribute('content', article.keywords.join(', '));
       const link = document.querySelector('link[rel="canonical"]');
-      if (link) link.setAttribute('href', `https://braidvpn.ru/blog/${articleId}`);
+      if (link) link.setAttribute('href', `https://braidx.tech/blog/${articleId}`);
 
       // JSON-LD Article structured data
       const existingJsonLd = document.querySelector('script[data-article-jsonld]');
@@ -639,8 +639,8 @@ export const ArticlePage: React.FC = () => {
         description: article.metaDescription,
         keywords: article.keywords.join(', '),
         author: { '@type': 'Organization', name: 'BRAID VPN' },
-        publisher: { '@type': 'Organization', name: 'BRAID VPN', url: 'https://braidvpn.ru' },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://braidvpn.ru/blog/${articleId}` }
+        publisher: { '@type': 'Organization', name: 'BRAID VPN', url: 'https://braidx.tech' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://braidx.tech/blog/${articleId}` }
       });
       document.head.appendChild(jsonLd);
     }

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://braidvpn.ru/sitemap.xml
+Sitemap: https://braidx.tech/sitemap.xml
 
 # Закрываем технические страницы
 Disallow: /admin/

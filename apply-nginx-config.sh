@@ -1,3 +1,20 @@
+#!/bin/bash
+# Скрипт для применения правильной конфигурации Nginx
+
+CONFIG_FILE="/etc/nginx/sites-available/braidx.tech"
+BACKUP_FILE="${CONFIG_FILE}.backup.$(date +%Y%m%d_%H%M%S)"
+
+echo "🔧 Применение конфигурации Nginx для правильных редиректов..."
+echo ""
+
+# Создать резервную копию
+if [ -f "$CONFIG_FILE" ]; then
+    sudo cp "$CONFIG_FILE" "$BACKUP_FILE"
+    echo "✅ Создана резервная копия: $BACKUP_FILE"
+fi
+
+# Применить конфигурацию
+cat > /tmp/nginx-braidvpn.conf << 'NGINX_EOF'
 # Редирект HTTP → HTTPS (без www)
 server {
     listen 80;
@@ -12,7 +29,6 @@ server {
     listen [::]:443 ssl http2;
     server_name www.braidx.tech;
 
-    # SSL сертификаты (нужен для www тоже)
     ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
     
@@ -20,7 +36,6 @@ server {
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    # Редирект 301 с www на без www
     return 301 https://braidx.tech$request_uri;
 }
 
@@ -30,7 +45,6 @@ server {
     listen [::]:443 ssl http2;
     server_name braidx.tech;
 
-    # SSL сертификаты (будет настроено через certbot)
     ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
     
@@ -75,3 +89,42 @@ server {
         log_not_found off;
     }
 }
+NGINX_EOF
+
+sudo cp /tmp/nginx-braidvpn.conf "$CONFIG_FILE"
+echo "✅ Конфигурация применена"
+
+# Проверить конфигурацию
+echo ""
+echo "🔍 Проверка конфигурации Nginx..."
+sudo nginx -t
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "✅ Конфигурация корректна. Перезагрузка Nginx..."
+    sudo systemctl reload nginx
+    echo "✅ Nginx перезагружен"
+    
+    # Проверить редиректы
+    echo ""
+    echo "🔍 Проверка редиректов:"
+    echo ""
+    echo "1. HTTP → HTTPS (без www):"
+    curl -I http://braidx.tech 2>&1 | grep -i "location\|http" | head -2
+    echo ""
+    echo "2. HTTP www → HTTPS (без www):"
+    curl -I http://www.braidx.tech 2>&1 | grep -i "location\|http" | head -2
+    echo ""
+    echo "3. HTTPS www → HTTPS (без www):"
+    curl -I https://www.braidx.tech 2>&1 | grep -i "location\|http" | head -2
+    echo ""
+    echo "✅ Готово! Все редиректы должны вести на https://braidx.tech"
+else
+    echo ""
+    echo "❌ Ошибка в конфигурации! Восстановление из резервной копии..."
+    if [ -f "$BACKUP_FILE" ]; then
+        sudo cp "$BACKUP_FILE" "$CONFIG_FILE"
+        echo "✅ Восстановлено из резервной копии"
+    fi
+    exit 1
+fi

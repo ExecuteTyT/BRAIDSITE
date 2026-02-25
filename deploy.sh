@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 # Конфигурация (измените под ваш сервер)
 SERVER_USER="${DEPLOY_USER:-your-username}"
 SERVER_IP="${DEPLOY_IP:-your-server-ip}"
-SERVER_PATH="${DEPLOY_PATH:-/var/www/braidvpn.ru}"
+SERVER_PATH="${DEPLOY_PATH:-/var/www/braidx.tech}"
 
 echo -e "${BLUE}╔════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║   BRAID VPN - Автоматический деплой    ║${NC}"
@@ -26,7 +26,7 @@ if [ "$SERVER_USER" = "your-username" ] || [ "$SERVER_IP" = "your-server-ip" ]; 
     echo -e "${YELLOW}   Установите переменные окружения:${NC}"
     echo -e "${YELLOW}   export DEPLOY_USER=your-username${NC}"
     echo -e "${YELLOW}   export DEPLOY_IP=your-server-ip${NC}"
-    echo -e "${YELLOW}   export DEPLOY_PATH=/var/www/braidvpn.ru${NC}"
+    echo -e "${YELLOW}   export DEPLOY_PATH=/var/www/braidx.tech${NC}"
     echo ""
     read -p "Продолжить с текущими настройками? (y/n) " -n 1 -r
     echo
@@ -120,7 +120,7 @@ echo ""
 echo -e "${GREEN}🔍 Шаг 5: Проверяем доступность сайта...${NC}"
 sleep 2
 
-HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://braidvpn.ru)
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://braidx.tech)
 
 if [ "$HTTP_CODE" = "200" ]; then
     echo -e "${GREEN}✅ Сайт доступен (HTTP ${HTTP_CODE})${NC}"
@@ -134,7 +134,7 @@ echo -e "${BLUE}╔════════════════════�
 echo -e "${BLUE}║         Деплой завершен! ✅           ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════╝${NC}"
 echo ""
-echo -e "${GREEN}🌐 Сайт доступен: https://braidvpn.ru${NC}"
-echo -e "${GREEN}📋 Sitemap: https://braidvpn.ru/sitemap.xml${NC}"
-echo -e "${GREEN}🤖 Robots: https://braidvpn.ru/robots.txt${NC}"
+echo -e "${GREEN}🌐 Сайт доступен: https://braidx.tech${NC}"
+echo -e "${GREEN}📋 Sitemap: https://braidx.tech/sitemap.xml${NC}"
+echo -e "${GREEN}🤖 Robots: https://braidx.tech/robots.txt${NC}"
 echo ""

@@ -28,7 +28,7 @@ export const ChatGPTPage: React.FC = () => {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', 'Доступ к ChatGPT из России с BRAID VPN. Подключитесь к любому зарубежному серверу — ChatGPT заработает мгновенно. Пошаговая инструкция. 7 дней бесплатно, от 163₽/мес.');
     const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidvpn.ru/chatgpt');
+    if (link) link.setAttribute('href', 'https://braidx.tech/chatgpt');
   }, []);
 
   const faqItems = [
