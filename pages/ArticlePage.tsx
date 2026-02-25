@@ -103,7 +103,7 @@ const fullArticles: Record<string, {
         <ol>
           <li>Запустите Telegram-бота <a href={TELEGRAM_BOT_URL}>@braidvpn_bot</a></li>
           <li>Получите бесплатный ключ на 7 дней (без карты)</li>
-          <li>Скачайте приложение Happ для вашей платформы</li>
+          <li><NavLink to="/download" className="text-brand-primary hover:underline">Скачайте приложение Happ</NavLink> для вашей платформы</li>
           <li>Вставьте ключ в приложение и подключитесь</li>
         </ol>
 
@@ -117,6 +117,10 @@ const fullArticles: Record<string, {
           <li><strong>Использовать мобильный интернет</strong> — разные операторы блокируют по-разному</li>
           <li><strong>Написать в поддержку</strong> — мы оперативно добавляем новые серверы при блокировках</li>
         </ul>
+
+        <p>
+          Узнайте больше о <NavLink to="/technology" className="text-brand-primary hover:underline">технологии VLESS Reality</NavLink> и как она защищает ваше соединение.
+        </p>
       </>
     )
   },
@@ -228,6 +232,10 @@ const fullArticles: Record<string, {
           <li>Стабильное соединение без ограничений</li>
           <li>Доступ к Netflix EU (через Нидерланды)</li>
         </ul>
+
+        <p>
+          Подробная инструкция со всеми FAQ — на странице <NavLink to="/youtube-bez-reklamy" className="text-brand-primary hover:underline">YouTube без рекламы через VPN</NavLink>.
+        </p>
       </>
     )
   },
@@ -328,6 +336,10 @@ const fullArticles: Record<string, {
         <h3>World of Warcraft / MMORPG</h3>
         <p>
           Для MMO критичнее стабильность, чем минимальный пинг. Выбирайте сервер ближе к дата-центру игры.
+        </p>
+
+        <p>
+          Смотрите полный список доступных серверов на странице <NavLink to="/locations" className="text-brand-primary hover:underline">локации</NavLink>.
         </p>
       </>
     )
@@ -456,6 +468,10 @@ const fullArticles: Record<string, {
           <li>Требовательных к скорости задач (стриминг, игры)</li>
           <li>Защиты от обнаружения VPN провайдером или работодателем</li>
         </ul>
+
+        <p>
+          Подробнее о реализации VLESS Reality в BRAID VPN — на странице <NavLink to="/technology" className="text-brand-primary hover:underline">технологии</NavLink>.
+        </p>
       </>
     )
   },
@@ -581,6 +597,10 @@ const fullArticles: Record<string, {
           обхода DPI (VLESS Reality, Shadowsocks). Международные сервисы работают нестабильно, 
           а бесплатные VPN несут риски для приватности.
         </p>
+
+        <p>
+          Ознакомьтесь с <NavLink to="/pricing" className="text-brand-primary hover:underline">тарифами BRAID VPN</NavLink> или <NavLink to="/download" className="text-brand-primary hover:underline">скачайте приложение</NavLink> и попробуйте 7 дней бесплатно.
+        </p>
       </>
     )
   }
@@ -596,6 +616,38 @@ export const ArticlePage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const article = articleId ? fullArticles[articleId] : null;
+    if (article && articleId) {
+      document.title = `${article.title} | BRAID VPN`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', article.metaDescription);
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) metaKeywords.setAttribute('content', article.keywords.join(', '));
+      const link = document.querySelector('link[rel="canonical"]');
+      if (link) link.setAttribute('href', `https://braidvpn.ru/blog/${articleId}`);
+
+      // JSON-LD Article structured data
+      const existingJsonLd = document.querySelector('script[data-article-jsonld]');
+      if (existingJsonLd) existingJsonLd.remove();
+      const jsonLd = document.createElement('script');
+      jsonLd.type = 'application/ld+json';
+      jsonLd.setAttribute('data-article-jsonld', 'true');
+      jsonLd.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title,
+        description: article.metaDescription,
+        keywords: article.keywords.join(', '),
+        author: { '@type': 'Organization', name: 'BRAID VPN' },
+        publisher: { '@type': 'Organization', name: 'BRAID VPN', url: 'https://braidvpn.ru' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://braidvpn.ru/blog/${articleId}` }
+      });
+      document.head.appendChild(jsonLd);
+    }
+    return () => {
+      const el = document.querySelector('script[data-article-jsonld]');
+      if (el) el.remove();
+    };
   }, [articleId]);
 
   if (!post || !fullArticle) {
