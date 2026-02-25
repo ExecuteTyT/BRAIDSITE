@@ -45,7 +45,7 @@ export const Pricing: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
+    <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none" />

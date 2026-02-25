@@ -1,9 +1,26 @@
 import React from 'react';
-import { Smartphone, Monitor, Apple, Download, Send, Check, ArrowRight, ExternalLink } from 'lucide-react';
+import { Smartphone, Monitor, Apple, Download, Send, Check, ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+
+const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div className="glass-panel rounded-xl sm:rounded-2xl overflow-hidden border border-white/5">
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors group">
+        <h3 className="text-sm sm:text-base font-medium text-white pr-4 group-hover:text-brand-primary transition-colors">{question}</h3>
+        <div className="flex-shrink-0">{isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}</div>
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-0">
+          <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const DownloadPage: React.FC = () => {
   const { content } = useLanguage();
@@ -48,7 +65,7 @@ export const DownloadPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
+    <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-accent/10 rounded-full blur-[100px] pointer-events-none" />
@@ -167,12 +184,9 @@ export const DownloadPage: React.FC = () => {
             Частые вопросы
           </h3>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {content.faq.items.slice(0, 3).map((item, i) => (
-              <div key={i} className="glass-panel rounded-2xl p-6">
-                <h4 className="text-white font-bold mb-2">{item.q}</h4>
-                <p className="text-gray-400 text-sm">{item.a}</p>
-              </div>
+              <FAQItem key={i} question={item.q} answer={item.a} />
             ))}
           </div>
         </div>

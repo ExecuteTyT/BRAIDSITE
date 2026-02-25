@@ -124,7 +124,7 @@ export const Blog: React.FC = () => {
             ].map((topic, i) => (
               <span
                 key={i}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 hover:bg-brand-primary/20 border border-white/10 hover:border-brand-primary/30 rounded-full text-xs sm:text-sm text-gray-400 hover:text-brand-primary transition-all cursor-pointer"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-full text-xs sm:text-sm text-gray-400"
               >
                 {topic}
               </span>

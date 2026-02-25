@@ -72,7 +72,7 @@ export const YouTubeNoAds: React.FC = () => {
           </a>
           <div className="flex items-center justify-center gap-2 mt-6 text-sm text-gray-500">
             <div className="flex -space-x-1">{[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />)}</div>
-            <span>4.8/5 — более 5000 пользователей смотрят YouTube без рекламы</span>
+            <span>4.9/5 — более 1000 пользователей смотрят YouTube без рекламы</span>
           </div>
         </div>
       </section>

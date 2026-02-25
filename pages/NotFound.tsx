@@ -59,8 +59,8 @@ export const NotFound: React.FC = () => {
             variant="secondary"
             onClick={() => navigate(-1)}
             className="w-full sm:w-auto"
-            icon={<ArrowLeft className="w-4 h-4" />}
           >
+            <ArrowLeft className="w-4 h-4" />
             {content.notFound.button_back}
           </Button>
         </div>

@@ -189,20 +189,22 @@ export const Home: React.FC = () => {
           </NavLink>
 
           {/* Instagram */}
-          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-pink-500/50 transition-all duration-500">
+          <NavLink to="/pri-blokirovkah" className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-pink-500/50 transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-pink-500/10 rounded-full blur-[60px] group-hover:bg-pink-500/20 transition-all duration-700"></div>
             <Instagram className="w-10 h-10 sm:w-12 sm:h-12 text-pink-500 mb-4 sm:mb-6" />
             <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.instagram.title}</h3>
             <p className="text-sm sm:text-base text-gray-400">{content.features.instagram.desc}</p>
-          </div>
+            <span className="text-brand-primary text-sm mt-3 inline-block group-hover:underline">Подробнее →</span>
+          </NavLink>
 
           {/* Обход блокировок */}
-          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-brand-primary/50 transition-all duration-500">
+          <NavLink to="/technology" className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden group hover:border-brand-primary/50 transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-brand-primary/10 rounded-full blur-[60px] group-hover:bg-brand-primary/20 transition-all duration-700"></div>
             <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-brand-primary mb-4 sm:mb-6" />
             <h3 className="text-lg sm:text-xl font-display font-bold text-white mb-2 sm:mb-3">{content.features.protocol.title}</h3>
             <p className="text-sm sm:text-base text-gray-400">{content.features.protocol.desc}</p>
-          </div>
+            <span className="text-brand-primary text-sm mt-3 inline-block group-hover:underline">Узнать подробнее →</span>
+          </NavLink>
         </div>
       </section>
 
@@ -225,14 +227,14 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Box 2: Price */}
-          <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center hover:border-brand-primary/50 transition-colors cursor-pointer group">
+          <NavLink to="/pricing" className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center hover:border-brand-primary/50 transition-colors cursor-pointer group block">
             <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider mb-2">{content.features.price.label}</div>
             <div className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white group-hover:text-glow transition-all">
               {content.features.price.amount}
               <span className="text-base sm:text-xl text-gray-500 font-sans">{content.features.price.period}</span>
             </div>
             <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400">при оплате за год</div>
-          </div>
+          </NavLink>
 
           {/* Box 3: Locations */}
           <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 relative overflow-hidden">
@@ -309,7 +311,7 @@ export const Home: React.FC = () => {
               <thead>
                 <tr className="border-b border-white/10">
                   <th className="py-4 pl-4 text-gray-500 font-normal">{content.pricing.table.col_feature}</th>
-                  <th className="py-4 text-white font-bold text-center">BRAID</th>
+                  <th className="py-4 text-white font-bold text-center">BRAID VPN</th>
                   <th className="py-4 text-gray-500 font-normal text-center">{content.pricing.table.col_regular}</th>
                 </tr>
               </thead>
