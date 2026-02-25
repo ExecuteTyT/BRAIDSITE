@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Send, Zap } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
@@ -15,9 +15,7 @@ export const Footer: React.FC = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white fill-current" />
-              </div>
+              <img src="/logo.svg" alt="BRAID VPN" className="w-8 h-8" />
               <span className="font-display font-bold text-xl tracking-widest text-white">BRAID VPN</span>
             </div>
             <p className="text-gray-400 max-w-sm mb-6 text-sm">

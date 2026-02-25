@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Zap, Send, ChevronDown, Youtube, Wifi, Globe, Smartphone, Monitor, Laptop, Shield, ArrowRight, Download, Sparkles } from 'lucide-react';
+import { Menu, X, Send, ChevronDown, Youtube, Wifi, Globe, Smartphone, Monitor, Laptop, Shield, ArrowRight, Download, Sparkles } from 'lucide-react';
 import { Button } from './Button';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -178,10 +178,8 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <NavLink to="/" className="flex items-center gap-2.5 relative z-50 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center shadow-[0_0_20px_rgba(0,122,255,0.3)] group-hover:shadow-[0_0_30px_rgba(0,122,255,0.5)] transition-shadow">
-                <Zap className="w-5 h-5 text-white fill-current" />
-              </div>
-              <span className="font-display font-bold text-xl tracking-widest text-white">BRAID</span>
+              <img src="/logo.svg" alt="BRAID VPN" className="w-9 h-9 drop-shadow-[0_0_10px_rgba(0,122,255,0.4)] group-hover:drop-shadow-[0_0_16px_rgba(0,122,255,0.6)] transition-all" />
+              <span className="font-display font-bold text-xl tracking-widest text-white">BRAID VPN</span>
             </NavLink>
 
             {/* ──── Desktop Nav ──── */}
@@ -341,10 +339,8 @@ export const Navbar: React.FC = () => {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/[0.06]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center">
-              <Zap className="w-4 h-4 text-white fill-current" />
-            </div>
-            <span className="font-display font-bold text-lg tracking-widest text-white">BRAID</span>
+            <img src="/logo.svg" alt="BRAID VPN" className="w-8 h-8" />
+            <span className="font-display font-bold text-lg tracking-widest text-white">BRAID VPN</span>
           </div>
           <button
             type="button"
