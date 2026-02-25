@@ -126,7 +126,7 @@ export const Technology: React.FC = () => {
               </ul>
             </div>
 
-            <div className="bg-[#0A0A0F] border border-white/10 rounded-xl p-6 shadow-2xl">
+            <div className="bg-[#0A0A0F] border border-white/10 rounded-xl p-4 sm:p-6 shadow-2xl">
               <div className="flex justify-between items-end border-b border-white/10 pb-4 mb-4">
                 <span className="text-gray-400 text-sm">{content.technology.gaming.ping_test}</span>
                 <span className="text-green-400 font-mono">{content.technology.gaming.live}</span>

@@ -69,7 +69,7 @@ export const Pricing: React.FC = () => {
               key={plan.id}
               className={`relative glass-panel rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col ${
                 plan.highlight
-                  ? 'border-brand-primary/50 shadow-[0_0_30px_rgba(0,122,255,0.15)] scale-105 md:scale-110 z-10'
+                  ? 'border-brand-primary/50 shadow-[0_0_30px_rgba(0,122,255,0.15)] md:scale-110 z-10'
                   : 'border-white/10'
               }`}
             >

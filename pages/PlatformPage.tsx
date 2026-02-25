@@ -201,9 +201,9 @@ export const PlatformPage: React.FC<{ platform: string }> = ({ platform }) => {
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-brand-primary/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center max-w-4xl">
           <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-white">{config.h1}</h1>
-          <div className="flex justify-center gap-4 mb-8">
-            <a href={config.downloadUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="text-base sm:text-lg px-8 py-4">
+          <div className="flex justify-center gap-4 mb-8 px-4 sm:px-0">
+            <a href={config.downloadUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button variant="primary" className="w-full sm:w-auto text-sm sm:text-lg px-6 sm:px-8 py-4">
                 <Download className="w-5 h-5" />
                 {config.downloadLabel}
               </Button>
@@ -274,9 +274,9 @@ export const PlatformPage: React.FC<{ platform: string }> = ({ platform }) => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
         <h2 className="text-2xl sm:text-4xl font-display font-bold text-white mb-4 relative z-10">Скачайте VPN для {config.title} прямо сейчас</h2>
         <p className="text-base text-gray-400 mb-8 relative z-10">7 дней бесплатно. Без привязки карты.</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-          <a href={config.downloadUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base px-8 py-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10 px-4 sm:px-0">
+          <a href={config.downloadUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Button variant="primary" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-4">
               <Download className="w-5 h-5" />
               {config.downloadLabel}
             </Button>
