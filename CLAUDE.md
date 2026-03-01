@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-BRAID VPN marketing website (braidx.tech) — a Russian-language SPA for a VPN service. Built with React 19, TypeScript, Vite, and Tailwind CSS (loaded via CDN in `index.html`). Icons via `lucide-react`.
+BRAID VPN marketing website (braidx.tech) — a Russian-language SPA for a VPN service. Built with React 19, TypeScript, Vite, and Tailwind CSS v3 (PostCSS build). Icons via `lucide-react`.
 
 ## Commands
 
@@ -23,7 +23,7 @@ No linter or test runner is configured.
 
 All routes use SPA fallback — both Vercel (`vercel.json` rewrites) and Nginx (`nginx-braidvpn.conf`) are configured for this.
 
-**Styling:** Tailwind CSS via CDN `<script>` tag in `index.html` (not PostCSS/build-time). Custom theme config (brand colors, fonts, animations) is defined inline in `index.html` under `tailwind.config`. Custom CSS classes (`.glass-panel`, `.text-glow`, `.gradient-border`, etc.) are also in `index.html <style>`. When adding new Tailwind theme values or custom CSS classes, edit `index.html` — there is no `tailwind.config.js` file.
+**Styling:** Tailwind CSS v3 via PostCSS/Vite build (NOT CDN). Config in `tailwind.config.js`, PostCSS config in `postcss.config.js`. Global styles and custom CSS classes (`.glass-panel`, `.text-glow`, `.gradient-border`, etc.) are in `styles.css`, imported in `index.tsx`. When adding new Tailwind theme values, edit `tailwind.config.js`. When adding custom CSS classes, edit `styles.css`. Fonts (Inter, Unbounded) are self-hosted via `@fontsource` npm packages — no Google Fonts CDN.
 
 **Content/i18n:** All site text for main pages lives in `constants/translations.ts` as a single Russian-language object exported as `content`. Accessed via `useLanguage()` hook from `contexts/LanguageContext.tsx`. The `Language` type in `types.ts` supports `'en' | 'ru'` but only Russian is implemented. SEO landing pages and platform pages contain their own hardcoded Russian text rather than using the translations system.
 
