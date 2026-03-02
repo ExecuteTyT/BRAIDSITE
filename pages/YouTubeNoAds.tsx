@@ -63,13 +63,15 @@ export const YouTubeNoAds: React.FC = () => {
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> Не нужен YouTube Premium</span>
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> 7 дней бесплатно, от 163₽/мес</span>
           </div>
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base sm:text-lg px-8 py-4 cta-pulse">
-              <Send className="w-5 h-5" />
-              Попробовать бесплатно
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Button>
-          </a>
+          <div className="flex justify-center">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className="text-base sm:text-lg px-8 py-4 cta-pulse">
+                <Send className="w-5 h-5" />
+                Попробовать бесплатно
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </a>
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-6 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-1">{[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />)}</div>
@@ -242,12 +244,14 @@ export const YouTubeNoAds: React.FC = () => {
         <p className="text-base sm:text-lg text-gray-400 mb-8 relative z-10 max-w-2xl mx-auto">
           Получите 7 дней бесплатного доступа к BRAID VPN. Без привязки карты, без рисков. Просто попробуйте — если не понравится, ничего не платите.
         </p>
-        <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="relative z-10">
-          <Button variant="primary" className="text-base sm:text-lg px-10 py-4 cta-pulse">
-            <Send className="w-5 h-5" />
-            Получить 7 дней бесплатно
-          </Button>
-        </a>
+        <div className="flex justify-center relative z-10">
+          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="primary" className="text-base sm:text-lg px-10 py-4 cta-pulse">
+              <Send className="w-5 h-5" />
+              Получить 7 дней бесплатно
+            </Button>
+          </a>
+        </div>
         <div className="flex flex-wrap justify-center gap-4 mt-8 text-xs sm:text-sm text-gray-500 relative z-10">
           <span className="flex items-center gap-1"><Check className="w-4 h-4 text-green-500" /> Гарантия возврата 7 дней</span>
           <span className="flex items-center gap-1"><Shield className="w-4 h-4 text-green-500" /> Безопасно — никаких логов</span>

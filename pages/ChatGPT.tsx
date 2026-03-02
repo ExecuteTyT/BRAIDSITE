@@ -60,13 +60,15 @@ export const ChatGPTPage: React.FC = () => {
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> Работает с ChatGPT Plus</span>
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-brand-primary" /> 7 дней бесплатно</span>
           </div>
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base sm:text-lg px-8 py-4 cta-pulse">
-              <Send className="w-5 h-5" />
-              Получить доступ к ChatGPT
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Button>
-          </a>
+          <div className="flex justify-center">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className="text-base sm:text-lg px-8 py-4 cta-pulse">
+                <Send className="w-5 h-5" />
+                Получить доступ к ChatGPT
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -139,12 +141,14 @@ export const ChatGPTPage: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
         <h2 className="text-2xl sm:text-4xl font-display font-bold text-white mb-4 relative z-10">Начните пользоваться ChatGPT из России</h2>
         <p className="text-base sm:text-lg text-gray-400 mb-8 relative z-10">7 дней бесплатно. Доступ к ChatGPT за 2 минуты.</p>
-        <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="relative z-10">
-          <Button variant="primary" className="text-base sm:text-lg px-10 py-4 cta-pulse">
-            <Send className="w-5 h-5" />
-            Попробовать бесплатно
-          </Button>
-        </a>
+        <div className="flex justify-center relative z-10">
+          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="primary" className="text-base sm:text-lg px-10 py-4 cta-pulse">
+              <Send className="w-5 h-5" />
+              Попробовать бесплатно
+            </Button>
+          </a>
+        </div>
       </section>
     </div>
   );

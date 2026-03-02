@@ -67,13 +67,15 @@ export const PriBlockirovkah: React.FC = () => {
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-orange-500" /> Протокол VLESS + Reality</span>
             <span className="flex items-center gap-1"><Check className="w-4 h-4 text-orange-500" /> 7 дней бесплатно</span>
           </div>
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="text-base sm:text-lg px-8 py-4 cta-pulse">
-              <Send className="w-5 h-5" />
-              Попробовать бесплатно
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Button>
-          </a>
+          <div className="flex justify-center">
+            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className="text-base sm:text-lg px-8 py-4 cta-pulse">
+                <Send className="w-5 h-5" />
+                Попробовать бесплатно
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
