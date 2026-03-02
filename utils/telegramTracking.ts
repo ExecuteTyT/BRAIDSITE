@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-const YANDEX_METRIKA_ID = 106436554;
+const YANDEX_METRIKA_ID = 107083162;
 
 /**
  * Отслеживает клик по ссылке Telegram с указанием места клика

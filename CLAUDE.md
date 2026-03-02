@@ -38,7 +38,7 @@ All routes use SPA fallback — both Vercel (`vercel.json` rewrites) and Nginx (
 
 **Telegram bot link:** The CTA across the site points to `https://t.me/braidvpn_bot?start=...`. This URL is defined as a `TELEGRAM_BOT_URL` constant locally in each component that uses it (Navbar, PlatformPage, landing pages, etc.) — not centralized.
 
-**Analytics:** Yandex.Metrika (ID: 106436554) is embedded in `index.html`. Telegram bot link clicks are auto-tracked via `utils/telegramTracking.ts`, initialized in `App.tsx` on mount.
+**Analytics:** Yandex.Metrika (ID: 107083162) is embedded in `index.html`. Telegram bot link clicks are auto-tracked via `utils/telegramTracking.ts`, initialized in `App.tsx` on mount.
 
 **SEO:** `index.html` contains structured data (JSON-LD for SoftwareApplication, Organization, FAQPage, WebSite), Open Graph tags, and noscript fallback content. Sitemap at `public/sitemap.xml`.
 
