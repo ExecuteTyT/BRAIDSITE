@@ -154,7 +154,7 @@ export const Technology: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="flex flex-col items-center text-center">
           <h3 className="text-2xl font-display font-bold text-white mb-4">
             Готовы попробовать?
           </h3>
