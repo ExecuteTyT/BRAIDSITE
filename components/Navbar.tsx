@@ -273,6 +273,17 @@ export const Navbar: React.FC = () => {
               </NavLink>
 
               <NavLink
+                to="/technology"
+                className={({ isActive }) =>
+                  `px-4 py-2 text-sm uppercase tracking-wider font-medium transition-colors ${
+                    isActive ? 'text-brand-primary drop-shadow-[0_0_8px_rgba(0,122,255,0.8)]' : 'text-gray-400 hover:text-white'
+                  }`
+                }
+              >
+                {content.nav.technology}
+              </NavLink>
+
+              <NavLink
                 to="/blog"
                 className={({ isActive }) =>
                   `px-4 py-2 text-sm uppercase tracking-wider font-medium transition-colors ${
