@@ -2,6 +2,7 @@ import React from 'react';
 import { Smartphone, Monitor, Apple, Download, Send, Check, ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -24,6 +25,15 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
 export const DownloadPage: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    updateMeta({
+      title: 'Скачать BRAID VPN — Приложения для Android, iOS, Windows | BRAID VPN',
+      description: 'Скачайте BRAID VPN бесплатно для Android, iPhone, Windows. Приложение Happ для обхода блокировок, YouTube без рекламы. 7 дней бесплатно, от 163₽/мес.',
+      path: '/download',
+      keywords: 'скачать vpn, vpn для android, vpn для iphone, vpn для windows, скачать впн бесплатно',
+    });
+  }, []);
 
   const platforms = [
     {

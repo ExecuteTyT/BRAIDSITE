@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Send, Youtube, Wifi, Globe, Signal, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -9,6 +10,15 @@ export const Locations: React.FC = () => {
   const { content } = useLanguage();
   const [userIP, setUserIP] = useState<string | null>(null);
   const [currentPing, setCurrentPing] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    updateMeta({
+      title: 'Серверы VPN — 5 локаций по всему миру | BRAID VPN',
+      description: 'Серверы BRAID VPN в 5 странах: Россия, Нидерланды, Армения, США, Финляндия. YouTube без рекламы через Армению/Нидерланды. Пинг от 15ms. 99.9% uptime.',
+      path: '/locations',
+      keywords: 'vpn серверы, vpn локации, vpn россия, vpn нидерланды, vpn сша, vpn армения',
+    });
+  }, []);
 
   // Simulate ping updates
   useEffect(() => {

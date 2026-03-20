@@ -2,11 +2,21 @@ import React from 'react';
 import { Button } from '../components/Button';
 import { Check, Send, Sparkles, Shield, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
 export const Pricing: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    updateMeta({
+      title: 'Тарифы BRAID VPN — от 163₽/мес | 7 дней бесплатно',
+      description: 'Тарифы BRAID VPN: 1 месяц — 199₽, 6 месяцев — 179₽/мес, 12 месяцев — 163₽/мес. До 5 устройств. 7 дней бесплатно без карты. YouTube без рекламы.',
+      path: '/pricing',
+      keywords: 'vpn цена, vpn тарифы, дешевый vpn, vpn стоимость, braid vpn цена',
+    });
+  }, []);
 
   const plans = [
     {

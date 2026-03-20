@@ -3,6 +3,7 @@ import { useParams, NavLink, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, Tag, Send, Check, ArrowRight, Shield, Zap, Globe, Youtube } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -618,13 +619,12 @@ export const ArticlePage: React.FC = () => {
     window.scrollTo(0, 0);
     const article = articleId ? fullArticles[articleId] : null;
     if (article && articleId) {
-      document.title = `${article.title} | BRAID VPN`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', article.metaDescription);
-      const metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) metaKeywords.setAttribute('content', article.keywords.join(', '));
-      const link = document.querySelector('link[rel="canonical"]');
-      if (link) link.setAttribute('href', `https://braidx.tech/blog/${articleId}`);
+      updateMeta({
+        title: `${article.title} | BRAID VPN`,
+        description: article.metaDescription,
+        path: `/blog/${articleId}`,
+        keywords: article.keywords.join(', '),
+      });
 
       // JSON-LD Article structured data
       const existingJsonLd = document.querySelector('script[data-article-jsonld]');

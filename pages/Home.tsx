@@ -4,6 +4,7 @@ import { HeroCanvas } from '../components/HeroCanvas';
 import { Button } from '../components/Button';
 import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star, Instagram, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -45,6 +46,15 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
 export const Home: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    updateMeta({
+      title: 'BRAID VPN — Лучший VPN для России 2026 | YouTube без рекламы | Скачать бесплатно',
+      description: 'Быстрый VPN для России. YouTube без рекламы, работает при блокировках связи. Протокол VLESS + Reality. 7 дней бесплатно, от 163₽/мес. До 5 устройств на всех тарифах.',
+      path: '/',
+      keywords: 'vpn, впн, vpn для россии, youtube без рекламы, vpn при блокировках, vless, скачать vpn',
+    });
+  }, []);
 
   const brands = [
     { name: 'YouTube 4K', opacity: 0.8 },
