@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Star, Youtube, Monitor, Smartphone, Shield, ChevronDown, ChevronUp } from 'lucide-react';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -24,11 +25,12 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
 export const YouTubeNoAds: React.FC = () => {
   React.useEffect(() => {
-    document.title = 'YouTube без рекламы через VPN — Как смотреть Ютуб без рекламы в России 2026';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Смотрите YouTube без рекламы с BRAID VPN. Подключитесь к серверу в Армении или Нидерландах — реклама исчезнет автоматически. 7 дней бесплатно, от 163₽/мес.');
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidx.tech/youtube-bez-reklamy');
+    updateMeta({
+      title: 'YouTube без рекламы через VPN — Как смотреть Ютуб без рекламы в России 2026',
+      description: 'Смотрите YouTube без рекламы с BRAID VPN. Подключитесь к серверу в Армении или Нидерландах — реклама исчезнет автоматически. 7 дней бесплатно, от 163₽/мес.',
+      path: '/youtube-bez-reklamy',
+      keywords: 'youtube без рекламы, ютуб без рекламы, vpn youtube, смотреть youtube без рекламы',
+    });
   }, []);
 
   const faqItems = [

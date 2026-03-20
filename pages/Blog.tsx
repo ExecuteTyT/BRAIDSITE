@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { BookOpen, Clock, ArrowRight, Send, Shield, Search, Gamepad2, Zap, Scale } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -10,6 +11,15 @@ const blogIcons = [Shield, Search, Gamepad2, Zap, Scale];
 
 export const Blog: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    updateMeta({
+      title: 'Блог о VPN — Статьи об обходе блокировок и приватности | BRAID VPN',
+      description: 'Блог BRAID VPN: статьи о обходе блокировок РКН, сравнение VPN-протоколов, YouTube без рекламы, настройка VPN на всех платформах. Актуальные материалы 2026.',
+      path: '/blog',
+      keywords: 'vpn блог, обход блокировок, vpn статьи, vless vs openvpn, vpn для россии 2026',
+    });
+  }, []);
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20 px-4 sm:px-6">

@@ -2,11 +2,21 @@ import React from 'react';
 import { ShieldCheck, EyeOff, Zap, Youtube, Wifi, Send, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
 export const Technology: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    updateMeta({
+      title: 'Технология VLESS + Reality — Как работает BRAID VPN | BRAID VPN',
+      description: 'Узнайте, как работает протокол VLESS + Reality в BRAID VPN. Обход DPI-блокировок, маскировка под HTTPS, скорость до 10 Гбит/с. Невидим для Роскомнадзора.',
+      path: '/technology',
+      keywords: 'vless reality, протокол vless, vpn технология, обход dpi, vpn невидимый для роскомнадзора',
+    });
+  }, []);
 
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6">

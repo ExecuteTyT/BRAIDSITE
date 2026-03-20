@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Wifi, Shield, Smartphone, ChevronDown, ChevronUp } from 'lucide-react';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -24,11 +25,12 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
 export const PriBlockirovkah: React.FC = () => {
   React.useEffect(() => {
-    document.title = 'VPN при блокировках связи — Работает когда оператор отключает интернет';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'BRAID VPN работает даже при блокировках интернета оператором (МТС, МегаФон, Билайн, Tele2). Протокол VLESS + Reality обходит ограничения сотовой связи. 7 дней бесплатно.');
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidx.tech/pri-blokirovkah');
+    updateMeta({
+      title: 'VPN при блокировках связи — Работает когда оператор отключает интернет',
+      description: 'BRAID VPN работает даже при блокировках интернета оператором (МТС, МегаФон, Билайн, Tele2). Протокол VLESS + Reality обходит ограничения сотовой связи. 7 дней бесплатно.',
+      path: '/pri-blokirovkah',
+      keywords: 'vpn при блокировках, vpn работает при блокировках связи, vpn мтс блокировка, vpn vless reality',
+    });
   }, []);
 
   const faqItems = [
