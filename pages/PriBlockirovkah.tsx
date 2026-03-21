@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Wifi, Shield, Smartphone, ChevronDown, ChevronUp } from 'lucide-react';
 import { updateMeta } from '../utils/meta';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -78,6 +79,7 @@ export const PriBlockirovkah: React.FC = () => {
               </Button>
             </a>
           </div>
+          <TelegramProxyHint className="mt-4" />
         </div>
       </section>
 

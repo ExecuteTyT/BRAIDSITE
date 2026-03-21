@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Download, ChevronDown, ChevronUp } from 'lucide-react';
 import { updateMeta } from '../utils/meta';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -212,6 +213,7 @@ export const PlatformPage: React.FC<{ platform: string }> = ({ platform }) => {
             </a>
           </div>
           <p className="text-sm text-gray-400">Или получите ключ в <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">Telegram-боте</a> и установите вручную</p>
+          <TelegramProxyHint className="mt-2" />
         </div>
       </section>
 

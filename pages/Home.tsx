@@ -4,6 +4,7 @@ import { HeroCanvas } from '../components/HeroCanvas';
 import { Button } from '../components/Button';
 import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star, Instagram, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
@@ -112,6 +113,8 @@ export const Home: React.FC = () => {
                 </Button>
               </NavLink>
             </div>
+
+            <TelegramProxyHint className="mb-4 text-center lg:text-left" />
 
             {/* Trust indicators */}
             <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
@@ -383,6 +386,8 @@ export const Home: React.FC = () => {
             </Button>
           </a>
         </div>
+
+        <TelegramProxyHint className="mt-4 relative z-10" />
 
         {/* Trust badges */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-xs sm:text-sm text-gray-500 relative z-10 px-2">

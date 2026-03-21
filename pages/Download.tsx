@@ -1,6 +1,7 @@
 import React from 'react';
 import { Smartphone, Monitor, Apple, Download, Send, Check, ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 import { Button } from '../components/Button';
 import { updateMeta } from '../utils/meta';
 
@@ -171,6 +172,8 @@ export const DownloadPage: React.FC = () => {
               </Button>
             </a>
           </div>
+
+          <TelegramProxyHint className="mt-4" />
 
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-500">
             <div className="flex items-center gap-2">

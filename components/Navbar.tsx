@@ -168,7 +168,8 @@ export const Navbar: React.FC = () => {
     <>
       {/* ──────── Desktop + Mobile Bar ──────── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        style={{ top: 'var(--banner-height, 0px)' }}
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           scrolled || isOpen
             ? 'bg-[#05050A]/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
             : 'bg-transparent'
