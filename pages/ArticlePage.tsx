@@ -303,7 +303,7 @@ const fullArticles: Record<string, {
             <tr>
               <td>Russia</td>
               <td>Россия / Армения</td>
-              <td>10-30ms</td>
+              <td>20-35ms</td>
             </tr>
             <tr>
               <td>US East</td>

@@ -197,7 +197,7 @@ export const content = {
         city: 'Москва',
         flag: 'ru',
         use: 'Работает при блокировках связи, низкий пинг',
-        ping: '~15ms',
+        ping: '~22ms',
         badge: 'РАБОТАЕТ ВСЕГДА'
       },
       {
