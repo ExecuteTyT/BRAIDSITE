@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Wifi, Shield, Smartphone, ChevronDown, ChevronUp } from 'lucide-react';
 import { updateMeta } from '../utils/meta';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -78,6 +79,7 @@ export const PriBlockirovkah: React.FC = () => {
               </Button>
             </a>
           </div>
+          <TelegramProxyHint className="mt-4" />
         </div>
       </section>
 
@@ -112,7 +114,7 @@ export const PriBlockirovkah: React.FC = () => {
           <div className="glass-panel rounded-2xl p-6 sm:p-8">
             <h3 className="text-lg font-bold text-white mb-4">Сервер в России — минимальная задержка</h3>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              Наш сервер находится в Москве (пинг ~15ms), что обеспечивает быстрое соединение даже при блокировках. Трафик идёт через российский сервер, а не через зарубежные — это сложнее заблокировать.
+              Наш сервер находится в Москве (пинг ~22ms), что обеспечивает быстрое соединение даже при блокировках. Трафик идёт через российский сервер, а не через зарубежные — это сложнее заблокировать.
             </p>
           </div>
         </div>

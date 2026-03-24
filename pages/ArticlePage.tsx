@@ -8,12 +8,167 @@ import { updateMeta } from '../utils/meta';
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
 // Полные статьи с SEO-оптимизированным контентом
+const TELEGRAM_PROXY_URL = 'https://t.me/proxy?server=proxy.braidx.tech&port=443&secret=65423350e35d0b60aaff270d542f00dd';
+
 const fullArticles: Record<string, {
   title: string;
   metaDescription: string;
   keywords: string[];
   content: React.ReactNode;
 }> = {
+  'telegram-proxy-russia-2026': {
+    title: 'Telegram заблокирован в России — как подключиться в 2026 году',
+    metaDescription: 'Telegram снова заблокирован в РФ. Пошаговая инструкция: бесплатный прокси для Telegram, настройка VPN, почему прокси недостаточно и как получить стабильный доступ.',
+    keywords: ['telegram заблокирован', 'прокси telegram', 'vpn для telegram', 'telegram россия 2026', 'telegram не работает', 'обход блокировки telegram'],
+    content: (
+      <>
+        <p className="lead">
+          В марте 2026 года Telegram снова оказался заблокирован на территории России. Мессенджер не открывается без VPN или прокси — ни на телефоне, ни на компьютере. Разбираемся, что произошло и как вернуть доступ за 2 минуты.
+        </p>
+
+        <h2>Что произошло с Telegram в России</h2>
+        <p>
+          Роскомнадзор усилил блокировки, и Telegram перестал работать у большинства российских пользователей. Приложение не подключается, сообщения не отправляются, а веб-версия web.telegram.org недоступна.
+        </p>
+        <p>
+          Блокировка затрагивает все устройства: Android, iPhone, Windows, macOS. При попытке подключения приложение бесконечно показывает «Connecting...» или «Обновление...».
+        </p>
+
+        <h2>Способ 1: Бесплатный прокси для Telegram</h2>
+        <p>
+          Самый быстрый способ — подключить <strong>MTProto-прокси</strong> прямо в Telegram. Это бесплатно и занимает 30 секунд.
+        </p>
+
+        <div className="info-box success">
+          <h4>🔗 Бесплатный прокси от BRAID VPN</h4>
+          <p>
+            Мы предоставляем бесплатный MTProto-прокси для всех пользователей. Нажмите на ссылку ниже — Telegram автоматически предложит подключить прокси:
+          </p>
+          <p className="mt-3">
+            <a href={TELEGRAM_PROXY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-brand-primary/40 rounded-lg text-brand-primary font-semibold hover:bg-white/20 transition-colors">
+              Подключить прокси для Telegram →
+            </a>
+          </p>
+        </div>
+
+        <h3>Как подключить прокси пошагово</h3>
+        <ol>
+          <li>Откройте ссылку на прокси — <a href={TELEGRAM_PROXY_URL} target="_blank" rel="noopener noreferrer">нажмите сюда</a></li>
+          <li>Telegram откроется и покажет окно «Подключить прокси»</li>
+          <li>Нажмите <strong>«Подключить»</strong> (Connect Proxy)</li>
+          <li>Готово — Telegram работает. В настройках появится активный прокси</li>
+        </ol>
+
+        <div className="info-box warning">
+          <h4>⚠️ Если Telegram не открывается вообще</h4>
+          <p>
+            Если приложение Telegram не установлено или не открывает ссылку, сначала подключите VPN (способ 2), а потом настройте прокси как резервный вариант.
+          </p>
+        </div>
+
+        <h2>Способ 2: VPN — полная защита</h2>
+        <p>
+          Прокси решает проблему только для Telegram. Если вам нужен доступ к YouTube, Instagram, ChatGPT и другим заблокированным сервисам — нужен VPN.
+        </p>
+
+        <h3>Почему VPN лучше прокси</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>MTProto-прокси</th>
+              <th>VPN (BRAID)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Telegram</td>
+              <td>✅ Работает</td>
+              <td>✅ Работает</td>
+            </tr>
+            <tr>
+              <td>YouTube, Instagram</td>
+              <td>❌ Нет</td>
+              <td>✅ Да</td>
+            </tr>
+            <tr>
+              <td>ChatGPT, Netflix</td>
+              <td>❌ Нет</td>
+              <td>✅ Да</td>
+            </tr>
+            <tr>
+              <td>Шифрование трафика</td>
+              <td>Только Telegram</td>
+              <td>Весь трафик</td>
+            </tr>
+            <tr>
+              <td>Скорость</td>
+              <td>Зависит от сервера</td>
+              <td>До 10 Гбит/с</td>
+            </tr>
+            <tr>
+              <td>Стабильность</td>
+              <td>Прокси могут блокировать</td>
+              <td>VLESS Reality — не блокируется</td>
+            </tr>
+            <tr>
+              <td>Цена</td>
+              <td>Бесплатно</td>
+              <td>7 дней бесплатно, от 163₽/мес</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Как подключить BRAID VPN</h3>
+        <ol>
+          <li>Подключите <a href={TELEGRAM_PROXY_URL} target="_blank" rel="noopener noreferrer">бесплатный прокси</a>, чтобы открыть Telegram</li>
+          <li>Запустите бота <a href={TELEGRAM_BOT_URL}>@braidvpn_bot</a> и получите бесплатный ключ на 7 дней</li>
+          <li><NavLink to="/download" className="text-brand-primary hover:underline">Скачайте приложение Happ</NavLink> для вашего устройства</li>
+          <li>Вставьте ключ в приложение и подключитесь</li>
+        </ol>
+
+        <h2>Рекомендуемая связка: прокси + VPN</h2>
+        <p>
+          Оптимальная стратегия — использовать оба инструмента:
+        </p>
+        <ul>
+          <li><strong>MTProto-прокси</strong> — как резервный канал для Telegram, если VPN временно отключён</li>
+          <li><strong>VPN</strong> — как основной инструмент для полной защиты и доступа ко всем сервисам</li>
+        </ul>
+        <p>
+          Даже когда VPN включён, прокси в Telegram не мешает — он просто не используется, пока VPN активен. Но если VPN-соединение оборвётся, Telegram автоматически переключится на прокси и продолжит работать.
+        </p>
+
+        <div className="info-box">
+          <h4>💡 Совет</h4>
+          <p>
+            Настройте прокси в Telegram один раз и забудьте о нём. Он будет работать как «страховка» — если VPN отключится, Telegram продолжит работать через прокси.
+          </p>
+        </div>
+
+        <h2>Частые вопросы</h2>
+
+        <h3>Прокси безопасен?</h3>
+        <p>
+          MTProto-прокси шифрует трафик между вами и Telegram. Наш прокси-сервер не хранит логов и не имеет доступа к вашим сообщениям — они зашифрованы end-to-end.
+        </p>
+
+        <h3>Прокси замедляет Telegram?</h3>
+        <p>
+          Наш прокси-сервер расположен на быстром канале и работает практически без задержек. Отправка сообщений, звонки и видеозвонки работают как обычно.
+        </p>
+
+        <h3>Надолго ли заблокировали Telegram?</h3>
+        <p>
+          Предсказать действия РКН невозможно. Блокировка может усиливаться или ослабевать. Поэтому рекомендуем настроить и прокси, и VPN — чтобы быть готовым к любому сценарию.
+        </p>
+
+        <p>
+          <a href={TELEGRAM_PROXY_URL} target="_blank" rel="noopener noreferrer" className="text-brand-primary font-semibold hover:underline">Подключите бесплатный прокси →</a> и попробуйте <NavLink to="/pricing" className="text-brand-primary hover:underline">BRAID VPN бесплатно на 7 дней</NavLink>.
+        </p>
+      </>
+    )
+  },
   'bypass-blocks-2026': {
     title: 'Как обойти блокировки РКН в 2026 году — полное руководство',
     metaDescription: 'Подробная инструкция по обходу блокировок Роскомнадзора в 2026 году. Узнайте, как настроить VPN с протоколом VLESS Reality для стабильного доступа к заблокированным сайтам.',
@@ -303,7 +458,7 @@ const fullArticles: Record<string, {
             <tr>
               <td>Russia</td>
               <td>Россия / Армения</td>
-              <td>10-30ms</td>
+              <td>20-35ms</td>
             </tr>
             <tr>
               <td>US East</td>

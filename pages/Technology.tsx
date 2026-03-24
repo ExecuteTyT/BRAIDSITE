@@ -144,19 +144,19 @@ export const Technology: React.FC = () => {
               <div className="space-y-3 font-mono text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-500">Москва → YouTube CDN</span>
-                  <span className="text-white">8ms</span>
+                  <span className="text-white">28ms</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Москва → Discord</span>
-                  <span className="text-white">15ms</span>
+                  <span className="text-white">54ms</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Амстердам → Netflix CDN</span>
-                  <span className="text-white">12ms</span>
+                  <span className="text-white">19ms</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Нью-Йорк → ChatGPT API</span>
-                  <span className="text-white">24ms</span>
+                  <span className="text-white">36ms</span>
                 </div>
               </div>
             </div>

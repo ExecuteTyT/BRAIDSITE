@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Star, Youtube, Monitor, Smartphone, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 import { updateMeta } from '../utils/meta';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -74,6 +75,7 @@ export const YouTubeNoAds: React.FC = () => {
               </Button>
             </a>
           </div>
+          <TelegramProxyHint className="mt-4" />
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-6 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-1">{[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />)}</div>

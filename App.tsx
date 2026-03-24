@@ -16,6 +16,7 @@ import { PlatformPage } from './pages/PlatformPage';
 import { NotFound } from './pages/NotFound';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
+import { TelegramProxyBanner } from './components/TelegramProxyBanner';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,7 +41,8 @@ const App: React.FC = () => {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col font-sans text-gray-200 antialiased selection:bg-brand-primary selection:text-white">
+        <div className="min-h-screen flex flex-col font-sans text-gray-200 antialiased selection:bg-brand-primary selection:text-white" style={{ paddingTop: 'var(--banner-height, 0px)' }}>
+          <TelegramProxyBanner />
           <Navbar />
           <main className="flex-grow">
             <Routes>

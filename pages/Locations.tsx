@@ -14,7 +14,7 @@ export const Locations: React.FC = () => {
   useEffect(() => {
     updateMeta({
       title: 'Серверы VPN — 5 локаций по всему миру | BRAID VPN',
-      description: 'Серверы BRAID VPN в 5 странах: Россия, Нидерланды, Армения, США, Финляндия. YouTube без рекламы через Армению/Нидерланды. Пинг от 15ms. 99.9% uptime.',
+      description: 'Серверы BRAID VPN в 5 странах: Россия, Нидерланды, Армения, США, Финляндия. YouTube без рекламы через Армению/Нидерланды. Пинг от 22ms. 99.9% uptime.',
       path: '/locations',
       keywords: 'vpn серверы, vpn локации, vpn россия, vpn нидерланды, vpn сша, vpn армения',
     });

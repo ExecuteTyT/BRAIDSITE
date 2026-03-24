@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../components/Button';
 import { Check, Send, Sparkles, Shield, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { TelegramProxyHint } from '../components/TelegramProxyHint';
 import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
@@ -153,6 +154,7 @@ export const Pricing: React.FC = () => {
               </Button>
             </a>
           </div>
+          <TelegramProxyHint className="mt-4" />
         </div>
 
         {/* Comparison Table */}
