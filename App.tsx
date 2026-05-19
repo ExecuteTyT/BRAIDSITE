@@ -13,9 +13,11 @@ import { YouTubeNoAds } from './pages/YouTubeNoAds';
 import { PriBlockirovkah } from './pages/PriBlockirovkah';
 import { ChatGPTPage } from './pages/ChatGPT';
 import { PlatformPage } from './pages/PlatformPage';
+import { ServiceLanding } from './pages/ServiceLanding';
 import { NotFound } from './pages/NotFound';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
+import { landings } from './data/landings';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -60,6 +62,10 @@ const App: React.FC = () => {
               <Route path="/ios" element={<PlatformPage platform="ios" />} />
               <Route path="/windows" element={<PlatformPage platform="windows" />} />
               <Route path="/mac" element={<PlatformPage platform="mac" />} />
+              {/* Data-driven Landing Pages (services, games, commercial) */}
+              {landings.map((cfg) => (
+                <Route key={cfg.path} path={cfg.path} element={<ServiceLanding config={cfg} />} />
+              ))}
               <Route path="/legal" element={<div className="pt-32 text-center">Legal Page Placeholder</div>} />
               <Route path="*" element={<NotFound />} />
             </Routes>

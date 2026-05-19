@@ -153,6 +153,60 @@ export const Technology: React.FC = () => {
           </div>
         </div>
 
+        {/* SEO content block: VLESS / Reality / DPI / шифрование */}
+        <div className="max-w-4xl mx-auto glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-10 mb-12 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white mb-5 sm:mb-7">
+            VLESS + Reality: VPN-протокол, который работает в России 2026
+          </h2>
+          <div className="space-y-4 text-sm sm:text-base text-gray-400 leading-relaxed">
+            <p>
+              <strong className="text-white">VLESS</strong> (V2Ray Less) — это VPN-протокол нового поколения,
+              разработанный для обхода интернет-цензуры в странах с активной фильтрацией трафика (Россия, Китай, Иран, Туркменистан).
+              В отличие от классических OpenVPN и WireGuard, VLESS не имеет характерных «отпечатков» в пакетах данных,
+              которые могла бы распознать система DPI (Deep Packet Inspection).
+            </p>
+            <p>
+              <strong className="text-white">Reality</strong> — это дополнительная технология поверх VLESS, которая делает
+              VPN-трафик неотличимым от обычного HTTPS-соединения. При подключении клиент инициирует TLS-handshake с указанием
+              SNI популярного сайта (например, microsoft.com, samsung.com или amazon.com). Если на сервер приходит запрос
+              «своего» клиента — он принимается как VPN. Если приходит «чужой» (например, проверка DPI или РКН) — сервер
+              прозрачно проксирует запрос к настоящему сайту. DPI видит абсолютно легитимный трафик и не может его заблокировать
+              без блокировки всего интернета.
+            </p>
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Сравнение протоколов</h3>
+            <p>
+              <strong className="text-white">OpenVPN</strong> (2001) — открытый протокол, гибкий и проверенный, но
+              легко детектируется DPI и потребляет много CPU. Снижение скорости 20–30%.{' '}
+              <strong className="text-white">WireGuard</strong> (2018) — современный, быстрый, но использует фиксированные
+              порты UDP, которые легко блокируются. Потеря скорости 5–10%. <strong className="text-white">VLESS + Reality</strong> (2020)
+              — потеря скорости 1–3%, маскировка под HTTPS, минимальный расход батареи. В 2026 году только VLESS Reality
+              стабильно работает при блокировках Роскомнадзора.
+            </p>
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Шифрование TLS 1.3</h3>
+            <p>
+              BRAID VPN использует TLS 1.3 — современный криптографический стандарт, рекомендованный IETF.
+              Это тот же протокол, который защищает банковские транзакции и переписку с госуслугами. Алгоритмы:
+              ChaCha20-Poly1305 (на мобильных устройствах) и AES-256-GCM (на десктопах с аппаратным ускорением).
+              Расшифровать перехваченный трафик без приватного ключа невозможно — даже квантовому компьютеру понадобятся миллиарды лет.
+            </p>
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Где работает VLESS Reality</h3>
+            <p>
+              Протокол одинаково эффективен против всех видов блокировок: <strong className="text-white">блокировки
+              Роскомнадзора</strong> (через DPI операторов связи), <strong className="text-white">блокировки оператора</strong>{' '}
+              (МТС, МегаФон, Билайн, Tele2 — особенно в режиме сниженного приоритета некоторых сервисов),
+              <strong className="text-white"> корпоративные ограничения</strong> (когда работодатель блокирует соцсети),
+              <strong className="text-white"> ограничения публичных Wi-Fi</strong> в аэропортах и гостиницах. Подробнее в статье{' '}
+              <a href="/blog/vless-vs-openvpn" className="text-brand-primary hover:underline">VLESS vs OpenVPN — какой протокол выбрать в 2026</a>.
+            </p>
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Открытый исходный код</h3>
+            <p>
+              VLESS — open-source протокол, его реализация публично доступна и проверена аудитами безопасности.
+              BRAID VPN использует серверы на базе референсной реализации Xray-core. Клиентское приложение Happ — тоже
+              open-source, его код можно проверить на GitHub. Никаких закладок, никакого скрытого функционала.
+            </p>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="flex flex-col items-center text-center">
           <h3 className="text-2xl font-display font-bold text-white mb-4">

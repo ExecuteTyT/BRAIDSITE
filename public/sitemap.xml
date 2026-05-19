@@ -6,141 +6,97 @@
 
   <!-- Главная страница -->
   <url>
-    <loc>https://braidx.tech/</loc>
-    <lastmod>2026-02-06</lastmod>
+    <loc>https://braidpro.tech/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Ключевые посадочные страницы -->
-  <url>
-    <loc>https://braidx.tech/youtube-bez-reklamy</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Ключевые посадочные страницы (existing) -->
+  <url><loc>https://braidpro.tech/youtube-bez-reklamy</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://braidpro.tech/pri-blokirovkah</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://braidpro.tech/chatgpt</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/pri-blokirovkah</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Новые сервисные лендинги -->
+  <url><loc>https://braidpro.tech/discord</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/tiktok</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/instagram</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/whatsapp</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/telegram</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/netflix</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/chatgpt</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Игровые лендинги -->
+  <url><loc>https://braidpro.tech/dlya-igr</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/dlya-igr/dota</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://braidpro.tech/dlya-igr/cs2</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://braidpro.tech/dlya-igr/valorant</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://braidpro.tech/dlya-igr/pubg</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Коммерческие лендинги -->
+  <url><loc>https://braidpro.tech/besplatno</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://braidpro.tech/kupit-vpn</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://braidpro.tech/obhod-blokirovok</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
 
   <!-- Платформенные страницы -->
-  <url>
-    <loc>https://braidx.tech/android</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://braidx.tech/ios</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://braidx.tech/windows</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://braidx.tech/mac</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://braidpro.tech/android</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://braidpro.tech/ios</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://braidpro.tech/windows</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://braidpro.tech/mac</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
   <!-- Основные страницы -->
-  <url>
-    <loc>https://braidx.tech/technology</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://braidx.tech/pricing</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://braidx.tech/locations</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://braidx.tech/download</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://braidpro.tech/technology</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://braidpro.tech/pricing</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://braidpro.tech/locations</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://braidpro.tech/download</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
   <!-- Блог -->
-  <url>
-    <loc>https://braidx.tech/blog</loc>
-    <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://braidpro.tech/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/blog/bypass-blocks-2026</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Статьи блога (Wave A) -->
+  <url><loc>https://braidpro.tech/blog/bypass-blocks-2026</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/youtube-no-ads</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-gaming</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vless-vs-openvpn</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-comparison-2026</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/blog/youtube-no-ads</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Новые статьи (волна A — генерируется субагентами) -->
+  <url><loc>https://braidpro.tech/blog/vpn-dlya-tiktok</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-dlya-instagram-instrukciya</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/whatsapp-vpn-zvonki</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/telegram-uskorenie-vpn</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/discord-rossiya-2026</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/blog/vpn-gaming</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://braidpro.tech/blog/netflix-iz-rossii</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/spotify-vpn-rossiya</loc><lastmod>2026-05-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/twitch-vpn-strim</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/steam-vpn-region</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/chatgpt-rossiya-2026</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/blog/vless-vs-openvpn</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://braidpro.tech/blog/vpn-na-samsung</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-na-xiaomi</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-na-iphone-instrukciya</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-na-windows-11</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-na-macbook</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-na-ipad</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://braidx.tech/blog/vpn-comparison-2026</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://braidpro.tech/blog/chto-takoe-vpn</loc><lastmod>2026-05-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/kak-rabotaet-vpn</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/chto-takoe-vless</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/chto-takoe-reality</loc><lastmod>2026-04-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/chto-takoe-dpi</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://braidpro.tech/blog/luchshiy-vpn-2026</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vless-vs-wireguard</loc><lastmod>2026-04-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/top-5-vpn-rossiya</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/braid-vs-nordvpn</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/platniy-vs-besplatniy-vpn</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://braidpro.tech/blog/vpn-dlya-kryma</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-dlya-dnr-lnr</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-dlya-mts</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://braidpro.tech/blog/vpn-dlya-megafon</loc><lastmod>2026-04-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Правовая информация -->
-  <url>
-    <loc>https://braidx.tech/legal</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+  <url><loc>https://braidpro.tech/legal</loc><lastmod>2026-05-20</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
 </urlset>

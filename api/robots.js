@@ -1,5 +1,5 @@
-// Динамический robots.txt для Vercel
-// Блокирует индексацию на preview доменах, разрешает только на braidx.tech
+﻿// Динамический robots.txt для Vercel
+// Блокирует индексацию на preview доменах, разрешает только на braidpro.tech
 
 export default function handler(req, res) {
   const host = req.headers['x-forwarded-host'] || req.headers.host || '';
@@ -8,7 +8,7 @@ export default function handler(req, res) {
   const isVercelPreview = host.includes('.vercel.app') || host.includes('.vercel.sh');
   
   // Проверяем, является ли это production доменом
-  const isProduction = host === 'braidx.tech' || host === 'www.braidx.tech';
+  const isProduction = host === 'braidpro.tech' || host === 'www.braidpro.tech';
   
   let robotsContent;
   
@@ -18,14 +18,14 @@ export default function handler(req, res) {
 Disallow: /
 
 # Этот домен не предназначен для индексации
-# Индексация разрешена только на https://braidx.tech`;
+# Индексация разрешена только на https://braidpro.tech`;
   } else {
     // Разрешаем индексацию только на production домене
     robotsContent = `User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://braidx.tech/sitemap.xml
+Sitemap: https://braidpro.tech/sitemap.xml
 
 # Блокируем служебные директории
 Disallow: /api/

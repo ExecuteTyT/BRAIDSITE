@@ -1,4 +1,4 @@
-# Инструкция по деплою BRAID VPN на сервер
+﻿# Инструкция по деплою BRAID VPN на сервер
 
 ## Подготовка проекта
 
@@ -30,7 +30,7 @@ npm run preview
 **Требования:**
 - Ubuntu/Debian сервер
 - Nginx установлен
-- Домен `braidx.tech` настроен и указывает на IP сервера
+- Домен `braidpro.tech` настроен и указывает на IP сервера
 
 ### Шаг 2: Загрузка файлов на сервер
 
@@ -38,7 +38,7 @@ npm run preview
 
 ```bash
 # С вашего локального компьютера
-scp -r dist/* user@your-server-ip:/var/www/braidx.tech/html/
+scp -r dist/* user@your-server-ip:/var/www/braidpro.tech/html/
 ```
 
 **Вариант B: Через Git (рекомендуется)**
@@ -46,21 +46,21 @@ scp -r dist/* user@your-server-ip:/var/www/braidx.tech/html/
 ```bash
 # На сервере
 cd /var/www/
-git clone https://github.com/ExecuteTyT/BRAIDSITE.git braidx.tech
-cd braidx.tech
+git clone https://github.com/ExecuteTyT/BRAIDSITE.git braidpro.tech
+cd braidpro.tech
 npm install
 npm run build
 ```
 
 ### Шаг 3: Настройка Nginx
 
-Создайте файл конфигурации `/etc/nginx/sites-available/braidx.tech`:
+Создайте файл конфигурации `/etc/nginx/sites-available/braidpro.tech`:
 
 ```nginx
 server {
     listen 80;
     listen [::]:80;
-    server_name braidx.tech www.braidx.tech;
+    server_name braidpro.tech www.braidpro.tech;
 
     # Редирект на HTTPS (после настройки SSL)
     return 301 https://$server_name$request_uri;
@@ -69,11 +69,11 @@ server {
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name braidx.tech www.braidx.tech;
+    server_name braidpro.tech www.braidpro.tech;
 
     # SSL сертификаты (Let's Encrypt)
-    ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/braidpro.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/braidpro.tech/privkey.pem;
     
     # SSL настройки
     ssl_protocols TLSv1.2 TLSv1.3;
@@ -81,12 +81,12 @@ server {
     ssl_prefer_server_ciphers on;
 
     # Корневая директория
-    root /var/www/braidx.tech/dist;
+    root /var/www/braidpro.tech/dist;
     index index.html;
 
     # Логи
-    access_log /var/log/nginx/braidx.tech.access.log;
-    error_log /var/log/nginx/braidx.tech.error.log;
+    access_log /var/log/nginx/braidpro.tech.access.log;
+    error_log /var/log/nginx/braidpro.tech.error.log;
 
     # Gzip сжатие
     gzip on;
@@ -132,7 +132,7 @@ server {
 
 ```bash
 # Создать символическую ссылку
-sudo ln -s /etc/nginx/sites-available/braidx.tech /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/braidpro.tech /etc/nginx/sites-enabled/
 
 # Проверить конфигурацию
 sudo nginx -t
@@ -149,7 +149,7 @@ sudo apt update
 sudo apt install certbot python3-certbot-nginx
 
 # Получение сертификата
-sudo certbot --nginx -d braidx.tech -d www.braidx.tech
+sudo certbot --nginx -d braidpro.tech -d www.braidpro.tech
 
 # Автоматическое обновление (добавится в cron)
 sudo certbot renew --dry-run
@@ -161,28 +161,28 @@ sudo certbot renew --dry-run
 
 ### Шаг 1: Настройка Apache
 
-Создайте файл `/etc/apache2/sites-available/braidx.tech.conf`:
+Создайте файл `/etc/apache2/sites-available/braidpro.tech.conf`:
 
 ```apache
 <VirtualHost *:80>
-    ServerName braidx.tech
-    ServerAlias www.braidx.tech
-    Redirect permanent / https://braidx.tech/
+    ServerName braidpro.tech
+    ServerAlias www.braidpro.tech
+    Redirect permanent / https://braidpro.tech/
 </VirtualHost>
 
 <VirtualHost *:443>
-    ServerName braidx.tech
-    ServerAlias www.braidx.tech
-    DocumentRoot /var/www/braidx.tech/dist
+    ServerName braidpro.tech
+    ServerAlias www.braidpro.tech
+    DocumentRoot /var/www/braidpro.tech/dist
 
     # SSL настройки
     SSLEngine on
-    SSLCertificateFile /etc/letsencrypt/live/braidx.tech/fullchain.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/braidx.tech/privkey.pem
+    SSLCertificateFile /etc/letsencrypt/live/braidpro.tech/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/braidpro.tech/privkey.pem
 
     # Логи
-    ErrorLog ${APACHE_LOG_DIR}/braidx.tech_error.log
-    CustomLog ${APACHE_LOG_DIR}/braidx.tech_access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/braidpro.tech_error.log
+    CustomLog ${APACHE_LOG_DIR}/braidpro.tech_access.log combined
 
     # Gzip
     <IfModule mod_deflate.c>
@@ -201,7 +201,7 @@ sudo certbot renew --dry-run
     </IfModule>
 
     # SPA routing
-    <Directory /var/www/braidx.tech/dist>
+    <Directory /var/www/braidpro.tech/dist>
         Options -Indexes +FollowSymLinks
         AllowOverride All
         Require all granted
@@ -234,7 +234,7 @@ sudo a2enmod expires
 sudo a2enmod deflate
 
 # Активировать сайт
-sudo a2ensite braidx.tech.conf
+sudo a2ensite braidpro.tech.conf
 
 # Проверить конфигурацию
 sudo apache2ctl configtest
@@ -264,7 +264,7 @@ echo -e "${GREEN}🚀 Начинаем деплой BRAID VPN...${NC}"
 # Переменные
 SERVER_USER="your-username"
 SERVER_IP="your-server-ip"
-SERVER_PATH="/var/www/braidx.tech"
+SERVER_PATH="/var/www/braidpro.tech"
 
 # Сборка проекта
 echo -e "${GREEN}📦 Собираем проект...${NC}"
@@ -294,7 +294,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo -e "${GREEN}✅ Деплой успешно завершен!${NC}"
-echo -e "${GREEN}🌐 Сайт доступен: https://braidx.tech${NC}"
+echo -e "${GREEN}🌐 Сайт доступен: https://braidpro.tech${NC}"
 ```
 
 Сделайте скрипт исполняемым:
@@ -313,7 +313,7 @@ chmod +x deploy.sh
 
 ## Настройка DNS
 
-### Записи DNS для домена braidx.tech
+### Записи DNS для домена braidpro.tech
 
 ```
 Тип    Имя    Значение              TTL
@@ -329,16 +329,16 @@ A      www    YOUR_SERVER_IP        3600
 
 ```bash
 # Проверка HTTP
-curl -I http://braidx.tech
+curl -I http://braidpro.tech
 
 # Проверка HTTPS
-curl -I https://braidx.tech
+curl -I https://braidpro.tech
 
 # Проверка sitemap
-curl https://braidx.tech/sitemap.xml
+curl https://braidpro.tech/sitemap.xml
 
 # Проверка robots.txt
-curl https://braidx.tech/robots.txt
+curl https://braidpro.tech/robots.txt
 ```
 
 ### 2. Проверка SSL
@@ -360,19 +360,19 @@ curl https://braidx.tech/robots.txt
 
 ```bash
 # Nginx логи
-tail -f /var/log/nginx/braidx.tech.access.log
-tail -f /var/log/nginx/braidx.tech.error.log
+tail -f /var/log/nginx/braidpro.tech.access.log
+tail -f /var/log/nginx/braidpro.tech.error.log
 
 # Apache логи
-tail -f /var/log/apache2/braidx.tech_access.log
-tail -f /var/log/apache2/braidx.tech_error.log
+tail -f /var/log/apache2/braidpro.tech_access.log
+tail -f /var/log/apache2/braidpro.tech_error.log
 ```
 
 ### Обновление сайта
 
 ```bash
 # На сервере
-cd /var/www/braidx.tech
+cd /var/www/braidpro.tech
 git pull origin main
 npm install
 npm run build
@@ -399,8 +399,8 @@ sudo certbot renew --dry-run
 
 **Решение:** Проверьте права доступа:
 ```bash
-sudo chown -R www-data:www-data /var/www/braidx.tech/dist
-sudo chmod -R 755 /var/www/braidx.tech/dist
+sudo chown -R www-data:www-data /var/www/braidpro.tech/dist
+sudo chmod -R 755 /var/www/braidpro.tech/dist
 ```
 
 ### Проблема: SSL сертификат не работает

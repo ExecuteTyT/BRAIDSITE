@@ -1,21 +1,59 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { BookOpen, Clock, ArrowRight, Send, Shield, Search, Gamepad2, Zap, Scale } from 'lucide-react';
+import { BookOpen, Clock, ArrowRight, Send, Shield, Search, Gamepad2, Zap, Scale, Smartphone, Globe, Youtube, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { articles } from '../data/blog';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
-const blogIcons = [Shield, Search, Gamepad2, Zap, Scale];
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  'Гайд': Shield,
+  'Лайфхак': Zap,
+  'Игры': Gamepad2,
+  'Технологии': Search,
+  'Обзор': Scale,
+  'Инструкция': Smartphone,
+  'Сервисы': Youtube,
+  'Сравнение': Scale,
+  'География': Globe,
+  'Безопасность': Shield,
+  'Мессенджеры': MessageSquare,
+};
+
+const POPULAR_TOPICS = [
+  'VPN для России',
+  'Обход блокировок РКН',
+  'YouTube без рекламы',
+  'VLESS Reality',
+  'VPN для игр',
+  'VPN для Discord',
+  'VPN для ChatGPT',
+  'VPN для Android',
+  'VPN для iPhone',
+  'VPN для Windows',
+  'Бесплатный VPN',
+  'Купить VPN',
+];
 
 export const Blog: React.FC = () => {
   const { content } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const categories = useMemo(() => {
+    const set = new Set<string>();
+    articles.forEach(a => set.add(a.category));
+    return Array.from(set).sort();
+  }, []);
+
+  const visible = useMemo(() => {
+    if (!activeCategory) return articles;
+    return articles.filter(a => a.category === activeCategory);
+  }, [activeCategory]);
 
   return (
     <div className="min-h-screen pt-20 sm:pt-24 pb-12 sm:pb-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
         <div className="text-center mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 mb-4 sm:mb-6">
             <BookOpen className="w-4 h-4 text-brand-primary" />
@@ -29,27 +67,50 @@ export const Blog: React.FC = () => {
           </p>
         </div>
 
-        {/* Blog Grid */}
+        {categories.length > 1 && (
+          <div className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-12">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
+                !activeCategory ? 'bg-brand-primary text-white' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              Все статьи ({articles.length})
+            </button>
+            {categories.map(cat => {
+              const count = articles.filter(a => a.category === cat).length;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
+                    activeCategory === cat ? 'bg-brand-primary text-white' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  {cat} ({count})
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
-          {content.blog.posts.map((post, index) => {
-            const IconComponent = blogIcons[index % blogIcons.length];
+          {visible.map((post) => {
+            const Icon = categoryIcons[post.category] ?? Shield;
             return (
-              <NavLink
-                key={index}
-                to={`/blog/${post.id}`}
-                className="block"
-              >
+              <NavLink key={post.slug} to={`/blog/${post.slug}`} className="block">
                 <article className="glass-panel rounded-xl sm:rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-all duration-300 h-full">
-                  {/* Article Header */}
                   <div className="h-36 sm:h-48 bg-gradient-to-br from-brand-primary/20 to-brand-accent/20 flex items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10" style={{
                       backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
-                      backgroundSize: '20px 20px'
-                    }}></div>
-                    <IconComponent className="w-12 h-12 sm:w-16 sm:h-16 text-brand-primary/60 group-hover:text-brand-primary transition-colors" />
+                      backgroundSize: '20px 20px',
+                    }} />
+                    <Icon className="w-12 h-12 sm:w-16 sm:h-16 text-brand-primary/60 group-hover:text-brand-primary transition-colors" />
+                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-[10px] font-semibold text-white border border-white/10">
+                      {post.category}
+                    </span>
                   </div>
 
-                  {/* Article Content */}
                   <div className="p-4 sm:p-6">
                     <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-gray-500 mb-2 sm:mb-3">
                       <Clock className="w-3 h-3" />
@@ -77,7 +138,6 @@ export const Blog: React.FC = () => {
           })}
         </div>
 
-        {/* SEO Content Section */}
         <div className="glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 mb-12 sm:mb-16">
           <h2 className="text-xl sm:text-2xl font-display font-bold text-white mb-4 sm:mb-6">
             О чём мы пишем
@@ -85,54 +145,37 @@ export const Blog: React.FC = () => {
           <div className="prose prose-invert max-w-none">
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3 sm:mb-4">
               В блоге BRAID VPN мы рассказываем о технологиях защиты приватности в интернете,
-              способах обхода блокировок в России, сравнении VPN-протоколов и практических
+              способах обхода блокировок Роскомнадзора, сравнении VPN-протоколов и практических
               советах по настройке VPN на разных устройствах.
             </p>
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-3 sm:mb-4">
               Наши эксперты регулярно публикуют актуальные материалы о работе VPN при
               ограничениях операторов связи, настройке безопасного соединения для онлайн-игр
               с минимальным пингом, а также об уникальных возможностях — например, как
-              смотреть YouTube без рекламы через сервер в Нидерландах.
+              смотреть YouTube без рекламы через сервер в Армении или Нидерландах.
             </p>
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
               Все статьи написаны простым языком и содержат пошаговые инструкции,
               которые помогут даже начинающим пользователям настроить VPN и защитить
-              свои данные в интернете.
+              свои данные в интернете. Сейчас в блоге <strong className="text-white">{articles.length}</strong>{' '}
+              статей, и список постоянно пополняется.
             </p>
           </div>
         </div>
 
-        {/* Popular Topics */}
         <div className="mb-12 sm:mb-16">
           <h2 className="text-lg sm:text-xl font-display font-bold text-white mb-4 sm:mb-6 text-center">
             Популярные темы
           </h2>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            {[
-              'VPN для России',
-              'Обход блокировок РКН',
-              'YouTube без рекламы',
-              'VLESS протокол',
-              'VPN для игр',
-              'Сравнение VPN',
-              'Приватность в интернете',
-              'Настройка VPN',
-              'Лучший VPN 2026',
-              'VPN для iPhone',
-              'VPN для Android',
-              'VPN для Windows'
-            ].map((topic, i) => (
-              <span
-                key={i}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-full text-xs sm:text-sm text-gray-400"
-              >
+            {POPULAR_TOPICS.map((topic, i) => (
+              <span key={i} className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-full text-xs sm:text-sm text-gray-400">
                 {topic}
               </span>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
         <div className="text-center px-2">
           <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-3 sm:mb-4">
             Хотите попробовать лучший VPN для России?

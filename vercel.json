@@ -1,4 +1,4 @@
-{
+﻿{
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "devCommand": "npm run dev",
@@ -7,20 +7,20 @@
   "redirects": [
     {
       "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "www.braidx.tech" }],
-      "destination": "https://braidx.tech/:path",
+      "has": [{ "type": "host", "value": "www.braidpro.tech" }],
+      "destination": "https://braidpro.tech/:path",
       "permanent": true
     },
     {
       "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "braidvpn.ru" }],
-      "destination": "https://braidx.tech/:path",
+      "destination": "https://braidpro.tech/:path",
       "permanent": true
     },
     {
       "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "www.braidvpn.ru" }],
-      "destination": "https://braidx.tech/:path",
+      "destination": "https://braidpro.tech/:path",
       "permanent": true
     }
   ],

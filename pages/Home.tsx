@@ -2,8 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeroCanvas } from '../components/HeroCanvas';
 import { Button } from '../components/Button';
-import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star, Instagram, ChevronDown, ChevronUp } from 'lucide-react';
+import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star, Instagram, ChevronDown, ChevronUp, MessageSquare, Film, Gamepad2, ShoppingCart, Sparkles, BookOpen } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { articles } from '../data/blog';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -350,6 +351,179 @@ export const Home: React.FC = () => {
             {content.faq.items.map((item, index) => (
               <FAQItem key={index} question={item.q} answer={item.a} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Grid — internal linking hub for SEO */}
+      <section className="py-12 sm:py-20 container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 sm:mb-4">
+            Решения BRAID VPN для любых задач
+          </h2>
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-2">
+            Подберите VPN под ваш сервис, игру или платформу. Все решения работают на одном ключе — 7 дней бесплатно.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          {[
+            { to: '/youtube-bez-reklamy', icon: Youtube, label: 'YouTube без рекламы', color: 'text-green-400', bg: 'bg-green-500/10' },
+            { to: '/chatgpt', icon: Sparkles, label: 'VPN для ChatGPT', color: 'text-brand-primary', bg: 'bg-brand-primary/10' },
+            { to: '/discord', icon: MessageSquare, label: 'VPN для Discord', color: 'text-indigo-400', bg: 'bg-indigo-500/10' },
+            { to: '/instagram', icon: Instagram, label: 'VPN для Instagram', color: 'text-pink-400', bg: 'bg-pink-500/10' },
+            { to: '/tiktok', icon: Film, label: 'VPN для TikTok', color: 'text-rose-400', bg: 'bg-rose-500/10' },
+            { to: '/telegram', icon: Send, label: 'VPN для Telegram', color: 'text-sky-400', bg: 'bg-sky-500/10' },
+            { to: '/whatsapp', icon: MessageSquare, label: 'VPN для WhatsApp', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+            { to: '/netflix', icon: Film, label: 'VPN для Netflix', color: 'text-red-400', bg: 'bg-red-500/10' },
+            { to: '/dlya-igr', icon: Gamepad2, label: 'VPN для игр', color: 'text-purple-400', bg: 'bg-purple-500/10' },
+            { to: '/pri-blokirovkah', icon: Wifi, label: 'При блокировках связи', color: 'text-orange-400', bg: 'bg-orange-500/10' },
+            { to: '/obhod-blokirovok', icon: Shield, label: 'Обход блокировок РКН', color: 'text-yellow-400', bg: 'bg-yellow-500/10' },
+            { to: '/besplatno', icon: Star, label: 'Бесплатный VPN', color: 'text-amber-400', bg: 'bg-amber-500/10' },
+          ].map((item, i) => (
+            <NavLink
+              key={i}
+              to={item.to}
+              className="glass-panel rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-brand-primary/40 transition-all group flex flex-col items-center text-center"
+            >
+              <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${item.bg} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-white group-hover:text-brand-primary transition-colors line-clamp-2">
+                {item.label}
+              </span>
+            </NavLink>
+          ))}
+        </div>
+      </section>
+
+      {/* Latest Articles for SEO + UX */}
+      {articles.length > 0 && (
+        <section className="py-12 sm:py-20 bg-black/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10 sm:mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 mb-4">
+                <BookOpen className="w-4 h-4 text-brand-primary" />
+                <span className="text-xs sm:text-sm text-brand-primary font-medium">Полезные статьи</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 sm:mb-4">
+                Всё, что нужно знать о VPN в России 2026
+              </h2>
+              <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-2">
+                Инструкции, обзоры, сравнения протоколов и решения для конкретных сервисов
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+              {articles.slice(0, 6).map((post) => (
+                <NavLink
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="glass-panel rounded-xl sm:rounded-2xl p-5 sm:p-6 hover:border-brand-primary/40 transition-all group"
+                >
+                  <div className="text-[10px] sm:text-xs text-brand-primary font-semibold uppercase tracking-wider mb-2">
+                    {post.category} • {post.readTime}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-brand-primary transition-colors mb-2 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 line-clamp-2 mb-3">{post.excerpt}</p>
+                  <span className="text-xs sm:text-sm text-brand-primary font-medium group-hover:gap-2 transition-all inline-flex items-center gap-1">
+                    Читать <ArrowRight className="w-3 h-3" />
+                  </span>
+                </NavLink>
+              ))}
+            </div>
+
+            <div className="text-center mt-8 sm:mt-12">
+              <NavLink to="/blog">
+                <Button variant="secondary" className="text-sm sm:text-base px-6 py-3">
+                  Все статьи блога ({articles.length})
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </NavLink>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Extended SEO content block */}
+      <section className="py-12 sm:py-20 container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-10">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white mb-6 sm:mb-8">
+            VPN для России 2026: ваш надёжный доступ ко всему интернету
+          </h2>
+
+          <div className="space-y-4 sm:space-y-5 text-sm sm:text-base text-gray-400 leading-relaxed">
+            <p>
+              В 2026 году выбор VPN для России — это уже не вопрос «нужен ли», а вопрос «какой выберу». Заблокирован Instagram,
+              недоступен ChatGPT, замедлен YouTube и Discord, отключён Netflix. Без VPN современный интернет работает на четверть.
+              А обычные международные сервисы — NordVPN, ExpressVPN, Surfshark — не справляются: их протоколы OpenVPN и WireGuard
+              детектируются DPI Роскомнадзора и блокируются. Нужен другой подход.
+            </p>
+
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Что даёт BRAID VPN</h3>
+            <p>
+              Мы используем протокол <strong className="text-white">VLESS + Reality</strong> — самый продвинутый VPN-протокол на 2026 год.
+              Он маскирует трафик под обычное HTTPS-соединение к microsoft.com или samsung.com — DPI не отличит наш VPN от обычного веб-сёрфинга.
+              Это значит: <NavLink to="/youtube-bez-reklamy" className="text-brand-primary hover:underline">YouTube без рекламы</NavLink>,
+              работающий <NavLink to="/discord" className="text-brand-primary hover:underline">Discord</NavLink>,
+              открытый <NavLink to="/instagram" className="text-brand-primary hover:underline">Instagram</NavLink>,
+              быстрый <NavLink to="/chatgpt" className="text-brand-primary hover:underline">ChatGPT</NavLink>,
+              стабильный <NavLink to="/telegram" className="text-brand-primary hover:underline">Telegram</NavLink> —
+              всё это включается за 30 секунд после подключения.
+            </p>
+
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">5 локаций: одна подписка — весь мир</h3>
+            <p>
+              <strong className="text-white">Россия (Москва)</strong> — низкий пинг 15ms, работает при ограничениях оператора связи
+              (МТС, МегаФон, Билайн, Tele2). Идеально для <NavLink to="/whatsapp" className="text-brand-primary hover:underline">WhatsApp</NavLink>{' '}
+              и Telegram. <strong className="text-white">Армения (Ереван)</strong> — YouTube без рекламы, низкий пинг, отлично для
+              стриминга и социальных сетей. <strong className="text-white">Нидерланды (Амстердам)</strong> — европейский контент,
+              <NavLink to="/netflix" className="text-brand-primary hover:underline"> Netflix EU</NavLink>, оптимально для Discord (~45ms).
+              <strong className="text-white"> США (Нью-Йорк)</strong> — ChatGPT, Netflix US, доступ к американским сервисам.
+              <strong className="text-white"> Финляндия (Хельсинки)</strong> — идеальный игровой сервер с пингом 30ms до EU West,
+              лучше всего для <NavLink to="/dlya-igr" className="text-brand-primary hover:underline">онлайн-игр</NavLink>{' '}
+              (<NavLink to="/dlya-igr/cs2" className="text-brand-primary hover:underline">CS2</NavLink>,{' '}
+              <NavLink to="/dlya-igr/dota" className="text-brand-primary hover:underline">Dota 2</NavLink>,{' '}
+              <NavLink to="/dlya-igr/valorant" className="text-brand-primary hover:underline">Valorant</NavLink>).
+            </p>
+
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Совместимо со всеми устройствами</h3>
+            <p>
+              Один ключ — до 5 устройств одновременно. <NavLink to="/android" className="text-brand-primary hover:underline">VPN для Android</NavLink>{' '}
+              (Samsung, Xiaomi, Huawei, Honor), <NavLink to="/ios" className="text-brand-primary hover:underline">VPN для iPhone и iPad</NavLink>{' '}
+              (iOS 15+), <NavLink to="/windows" className="text-brand-primary hover:underline">VPN для Windows</NavLink>{' '}
+              (Windows 10/11), <NavLink to="/mac" className="text-brand-primary hover:underline">VPN для macOS</NavLink>{' '}
+              (Intel и Apple Silicon). Установка через приложение Happ — никаких сложных настроек,
+              никаких системных прав.
+            </p>
+
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Цена и оплата</h3>
+            <p>
+              Самый выгодный тариф — годовой за <strong className="text-white">1 958₽</strong> (163₽/мес).
+              Это в 5 раз дешевле NordVPN и в 3 раза дешевле российских конкурентов. Оплата картой РФ (Сбер, Тинькофф, Альфа, ВТБ),
+              СБП или криптовалютой. Без автосписаний — платите, когда хотите.
+              <NavLink to="/besplatno" className="text-brand-primary hover:underline"> Первые 7 дней — бесплатно</NavLink> без привязки карты.
+            </p>
+
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Безопасность и приватность</h3>
+            <p>
+              TLS 1.3 шифрование, политика отсутствия логов, защита от DNS-утечек, kill-switch в приложении.
+              Мы не храним истории посещений, не передаём данные третьим лицам, не показываем рекламу.
+              <NavLink to="/technology" className="text-brand-primary hover:underline"> Подробнее о технологии VLESS Reality</NavLink>.
+            </p>
+
+            <h3 className="text-base sm:text-lg font-bold text-white mt-6">Кому подходит BRAID VPN</h3>
+            <ul className="list-disc list-inside space-y-2 ml-2">
+              <li>Тем, кто хочет смотреть <strong className="text-white">YouTube без рекламы</strong> и без подписки Premium</li>
+              <li>Геймерам, которым нужен <strong className="text-white">низкий пинг</strong> до EU/NA серверов</li>
+              <li>Пользователям при <strong className="text-white">блокировках сотовой связи</strong> в определённых районах</li>
+              <li>Разработчикам и креаторам, использующим <strong className="text-white">ChatGPT, Claude, Gemini</strong></li>
+              <li>Любителям зарубежного контента — <strong className="text-white">Netflix, HBO, Disney+</strong></li>
+              <li>Стримерам, которым важна <strong className="text-white">защита от DDoS-атак</strong></li>
+              <li>Тем, кто хочет <strong className="text-white">безопасно подключаться к публичному Wi-Fi</strong> в кафе и аэропортах</li>
+            </ul>
           </div>
         </div>
       </section>

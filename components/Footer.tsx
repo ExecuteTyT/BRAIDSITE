@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/5 bg-[#05050A] pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
@@ -37,24 +37,47 @@ export const Footer: React.FC = () => {
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-white mb-4 sm:mb-6">
               Продукт
             </h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
+            <ul className="space-y-2.5 text-gray-400 text-sm">
               <li><NavLink to="/technology" className="hover:text-brand-primary transition-colors">{content.nav.technology}</NavLink></li>
               <li><NavLink to="/pricing" className="hover:text-brand-primary transition-colors">{content.nav.pricing}</NavLink></li>
               <li><NavLink to="/locations" className="hover:text-brand-primary transition-colors">{content.nav.locations}</NavLink></li>
               <li><NavLink to="/download" className="hover:text-brand-primary transition-colors">{content.nav.download}</NavLink></li>
               <li><NavLink to="/blog" className="hover:text-brand-primary transition-colors">{content.nav.blog}</NavLink></li>
+              <li><NavLink to="/besplatno" className="hover:text-brand-primary transition-colors">Бесплатно 7 дней</NavLink></li>
+              <li><NavLink to="/kupit-vpn" className="hover:text-brand-primary transition-colors">Купить VPN</NavLink></li>
             </ul>
           </div>
 
-          {/* Решения */}
+          {/* Сервисы */}
           <div>
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-white mb-4 sm:mb-6">
-              Решения
+              Сервисы
             </h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
+            <ul className="space-y-2.5 text-gray-400 text-sm">
               <li><NavLink to="/youtube-bez-reklamy" className="hover:text-brand-primary transition-colors">YouTube без рекламы</NavLink></li>
-              <li><NavLink to="/pri-blokirovkah" className="hover:text-brand-primary transition-colors">При блокировках связи</NavLink></li>
               <li><NavLink to="/chatgpt" className="hover:text-brand-primary transition-colors">VPN для ChatGPT</NavLink></li>
+              <li><NavLink to="/discord" className="hover:text-brand-primary transition-colors">VPN для Discord</NavLink></li>
+              <li><NavLink to="/instagram" className="hover:text-brand-primary transition-colors">VPN для Instagram</NavLink></li>
+              <li><NavLink to="/tiktok" className="hover:text-brand-primary transition-colors">VPN для TikTok</NavLink></li>
+              <li><NavLink to="/whatsapp" className="hover:text-brand-primary transition-colors">VPN для WhatsApp</NavLink></li>
+              <li><NavLink to="/telegram" className="hover:text-brand-primary transition-colors">VPN для Telegram</NavLink></li>
+              <li><NavLink to="/netflix" className="hover:text-brand-primary transition-colors">VPN для Netflix</NavLink></li>
+            </ul>
+          </div>
+
+          {/* Игры и обход */}
+          <div>
+            <h3 className="font-display text-xs font-bold uppercase tracking-wider text-white mb-4 sm:mb-6">
+              Игры и обход
+            </h3>
+            <ul className="space-y-2.5 text-gray-400 text-sm">
+              <li><NavLink to="/dlya-igr" className="hover:text-brand-primary transition-colors">VPN для игр</NavLink></li>
+              <li><NavLink to="/dlya-igr/cs2" className="hover:text-brand-primary transition-colors">VPN для CS2</NavLink></li>
+              <li><NavLink to="/dlya-igr/dota" className="hover:text-brand-primary transition-colors">VPN для Dota 2</NavLink></li>
+              <li><NavLink to="/dlya-igr/valorant" className="hover:text-brand-primary transition-colors">VPN для Valorant</NavLink></li>
+              <li><NavLink to="/dlya-igr/pubg" className="hover:text-brand-primary transition-colors">VPN для PUBG</NavLink></li>
+              <li><NavLink to="/pri-blokirovkah" className="hover:text-brand-primary transition-colors">При блокировках связи</NavLink></li>
+              <li><NavLink to="/obhod-blokirovok" className="hover:text-brand-primary transition-colors">Обход блокировок РКН</NavLink></li>
             </ul>
           </div>
 
@@ -63,7 +86,7 @@ export const Footer: React.FC = () => {
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-white mb-4 sm:mb-6">
               Платформы
             </h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
+            <ul className="space-y-2.5 text-gray-400 text-sm">
               <li><NavLink to="/android" className="hover:text-brand-primary transition-colors">VPN для Android</NavLink></li>
               <li><NavLink to="/ios" className="hover:text-brand-primary transition-colors">VPN для iPhone</NavLink></li>
               <li><NavLink to="/windows" className="hover:text-brand-primary transition-colors">VPN для Windows</NavLink></li>

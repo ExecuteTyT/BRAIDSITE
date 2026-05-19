@@ -12,17 +12,17 @@ export const content = {
     start: 'Попробовать бесплатно'
   },
   hero: {
-    title_prefix: 'VPN ДЛЯ РОССИИ',
+    title_prefix: 'ЛУЧШИЙ ВПН ДЛЯ РОССИИ 2026',
     title_suffix: 'YOUTUBE БЕЗ РЕКЛАМЫ',
-    subtitle_1: 'Быстрый и надёжный VPN-сервис для России.',
-    subtitle_2: 'YouTube без рекламы, работает при блокировках связи.',
-    subtitle_3: 'Технология VLESS + Reality — невидим для DPI-систем. 7 дней бесплатно!',
+    subtitle_1: 'Быстрый VPN для России: обход блокировок РКН, ChatGPT, Discord, Instagram, Netflix.',
+    subtitle_2: 'YouTube без рекламы через Армению, низкий пинг для игр.',
+    subtitle_3: 'Протокол VLESS + Reality — невидим для DPI. От 163₽/мес, до 5 устройств. 7 дней бесплатно без карты.',
     cta_primary: 'Получить ключ бесплатно',
-    cta_secondary: 'Скачать приложение',
-    system: 'Все серверы онлайн',
+    cta_secondary: 'Скачать VPN',
+    system: 'Все 5 серверов онлайн',
     version: 'v3.0.1',
     latency: 'Задержка',
-    badge: 'Пробный период 7 дней'
+    badge: '7 дней бесплатно • Без карты'
   },
   features: {
     protocol: {

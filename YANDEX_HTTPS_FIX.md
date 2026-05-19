@@ -1,4 +1,4 @@
-# Исправление проблемы с HTTPS в Yandex Webmaster
+﻿# Исправление проблемы с HTTPS в Yandex Webmaster
 
 ## Проблема
 Сайт доступен по HTTPS, но Yandex Webmaster показывает предупреждение "Главный адрес сайта не использует HTTPS-протокол".
@@ -11,18 +11,18 @@
 
 ```bash
 # Проверить, что HTTP редиректит на HTTPS
-curl -I http://braidx.tech
+curl -I http://braidpro.tech
 
 # Должен вернуть:
 # HTTP/1.1 301 Moved Permanently
-# Location: https://braidx.tech/
+# Location: https://braidpro.tech/
 ```
 
 Если редирект не работает, проверьте конфигурацию Nginx:
 
 ```bash
 # Посмотреть конфигурацию
-cat /etc/nginx/sites-available/braidx.tech | grep -A 5 "listen 80"
+cat /etc/nginx/sites-available/braidpro.tech | grep -A 5 "listen 80"
 ```
 
 Должен быть блок:
@@ -30,7 +30,7 @@ cat /etc/nginx/sites-available/braidx.tech | grep -A 5 "listen 80"
 server {
     listen 80;
     listen [::]:80;
-    server_name braidx.tech www.braidx.tech;
+    server_name braidpro.tech www.braidpro.tech;
     return 301 https://$server_name$request_uri;
 }
 ```
@@ -42,7 +42,7 @@ server {
 sudo nginx -t
 
 # Если есть ошибки, исправить
-sudo nano /etc/nginx/sites-available/braidx.tech
+sudo nano /etc/nginx/sites-available/braidpro.tech
 
 # Перезагрузить Nginx
 sudo systemctl reload nginx
@@ -51,15 +51,15 @@ sudo systemctl reload nginx
 ### Шаг 3: Указать HTTPS как главный адрес в Yandex Webmaster
 
 1. Зайдите в [Yandex Webmaster](https://webmaster.yandex.ru/)
-2. Выберите сайт `braidx.tech`
+2. Выберите сайт `braidpro.tech`
 3. Перейдите в **Настройки индексирования** → **Главное зеркало**
-4. Убедитесь, что выбран **https://braidx.tech** (не http://)
+4. Убедитесь, что выбран **https://braidpro.tech** (не http://)
 5. Если выбран HTTP, измените на HTTPS и сохраните
 
 ### Шаг 4: Переиндексировать сайт
 
 1. В Yandex Webmaster перейдите в **Индексирование** → **Переобход страниц**
-2. Добавьте главную страницу: `https://braidx.tech/`
+2. Добавьте главную страницу: `https://braidpro.tech/`
 3. Нажмите **Добавить в очередь**
 
 ### Шаг 5: Проверить robots.txt на сервере
@@ -68,17 +68,17 @@ sudo systemctl reload nginx
 
 ```bash
 # Проверить robots.txt
-cat /var/www/braidx.tech/dist/robots.txt | grep -i sitemap
+cat /var/www/braidpro.tech/dist/robots.txt | grep -i sitemap
 
 # Должно быть:
-# Sitemap: https://braidx.tech/sitemap.xml
+# Sitemap: https://braidpro.tech/sitemap.xml
 ```
 
 ### Шаг 6: Проверить sitemap.xml на сервере
 
 ```bash
 # Проверить первые URL в sitemap
-head -20 /var/www/braidx.tech/dist/sitemap.xml
+head -20 /var/www/braidpro.tech/dist/sitemap.xml
 
 # Все URL должны начинаться с https://
 ```
@@ -95,10 +95,10 @@ head -20 /var/www/braidx.tech/dist/sitemap.xml
 
 ```bash
 # Проверить HTTP (должен редиректить)
-curl -I http://braidx.tech
+curl -I http://braidpro.tech
 
 # Проверить HTTPS (должен работать)
-curl -I https://braidx.tech
+curl -I https://braidpro.tech
 ```
 
 ### Проверить SSL сертификат
@@ -115,10 +115,10 @@ sudo certbot renew
 
 ```bash
 # Посмотреть последние запросы
-sudo tail -f /var/log/nginx/braidx.tech.access.log
+sudo tail -f /var/log/nginx/braidpro.tech.access.log
 
 # Проверить ошибки
-sudo tail -f /var/log/nginx/braidx.tech.error.log
+sudo tail -f /var/log/nginx/braidpro.tech.error.log
 ```
 
 ## Если проблема не решается
@@ -140,20 +140,20 @@ sudo tail -f /var/log/nginx/braidx.tech.error.log
 ```bash
 # Скрипт для проверки всех настроек
 echo "=== Проверка редиректа HTTP ==="
-curl -I http://braidx.tech 2>&1 | grep -i "location\|301\|302"
+curl -I http://braidpro.tech 2>&1 | grep -i "location\|301\|302"
 
 echo "=== Проверка HTTPS ==="
-curl -I https://braidx.tech 2>&1 | grep -i "200\|301\|302"
+curl -I https://braidpro.tech 2>&1 | grep -i "200\|301\|302"
 
 echo "=== Проверка SSL сертификата ==="
-sudo certbot certificates 2>&1 | grep -A 5 "braidx.tech"
+sudo certbot certificates 2>&1 | grep -A 5 "braidpro.tech"
 
 echo "=== Проверка Nginx конфигурации ==="
 sudo nginx -t
 
 echo "=== Проверка robots.txt ==="
-curl -s https://braidx.tech/robots.txt | grep -i sitemap
+curl -s https://braidpro.tech/robots.txt | grep -i sitemap
 
 echo "=== Проверка sitemap.xml ==="
-curl -s https://braidx.tech/sitemap.xml | head -15
+curl -s https://braidpro.tech/sitemap.xml | head -15
 ```

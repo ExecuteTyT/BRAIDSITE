@@ -1,10 +1,10 @@
-# CLAUDE.md
+﻿# CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
-BRAID VPN marketing website (braidx.tech) — a Russian-language SPA for a VPN service. Built with React 19, TypeScript, Vite, and Tailwind CSS v3 (PostCSS build). Icons via `lucide-react`.
+BRAID VPN marketing website (braidpro.tech) — a Russian-language SPA for a VPN service. Built with React 19, TypeScript, Vite, and Tailwind CSS v3 (PostCSS build). Icons via `lucide-react`.
 
 ## Commands
 
@@ -50,4 +50,4 @@ Dual deployment setup:
 - **Vercel** — configured via `vercel.json` (includes security headers and asset caching)
 - **Nginx/server** — config in `nginx-braidvpn.conf`, deploy script in `deploy.sh`
 
-Domain: `braidx.tech` (with www redirect)
+Domain: `braidpro.tech` (with www redirect)

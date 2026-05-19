@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Send, ChevronDown, Youtube, Wifi, Globe, Smartphone, Monitor, Laptop, Shield, ArrowRight, Download, Sparkles } from 'lucide-react';
+import { Menu, X, Send, ChevronDown, Youtube, Wifi, Globe, Smartphone, Monitor, Laptop, Shield, ArrowRight, Download, Sparkles, MessageSquare, Film, Gamepad2, Instagram, Heart, Star, ShoppingCart } from 'lucide-react';
 import { Button } from './Button';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -18,18 +18,7 @@ const SOLUTIONS = [
     badge: 'ХИТ',
     badgeColor: 'bg-green-500/20 text-green-400',
     title: 'YouTube без рекламы',
-    desc: 'Смотрите видео без рекламы через серверы в Армении и Нидерландах',
-  },
-  {
-    to: '/pri-blokirovkah',
-    icon: Wifi,
-    color: 'text-orange-400',
-    bg: 'bg-orange-500/10',
-    hoverBorder: 'group-hover/card:border-orange-500/40',
-    badge: 'УТП',
-    badgeColor: 'bg-orange-500/20 text-orange-400',
-    title: 'При блокировках связи',
-    desc: 'Работает когда оператор отключает интернет в вашем районе',
+    desc: 'Через серверы в Армении и Нидерландах',
   },
   {
     to: '/chatgpt',
@@ -40,7 +29,84 @@ const SOLUTIONS = [
     badge: '2026',
     badgeColor: 'bg-brand-primary/20 text-brand-primary',
     title: 'VPN для ChatGPT',
-    desc: 'Доступ к ChatGPT из России через сервер в США за 2 минуты',
+    desc: 'Доступ к ChatGPT, Claude, Gemini из РФ',
+  },
+  {
+    to: '/discord',
+    icon: MessageSquare,
+    color: 'text-indigo-400',
+    bg: 'bg-indigo-500/10',
+    hoverBorder: 'group-hover/card:border-indigo-500/40',
+    badge: 'NEW',
+    badgeColor: 'bg-indigo-500/20 text-indigo-400',
+    title: 'VPN для Discord',
+    desc: 'Голосовые чаты и Go Live без обрывов',
+  },
+  {
+    to: '/instagram',
+    icon: Instagram,
+    color: 'text-pink-400',
+    bg: 'bg-pink-500/10',
+    hoverBorder: 'group-hover/card:border-pink-500/40',
+    badge: 'NEW',
+    badgeColor: 'bg-pink-500/20 text-pink-400',
+    title: 'VPN для Instagram',
+    desc: 'Лента, Reels, Direct — открыто из РФ',
+  },
+  {
+    to: '/tiktok',
+    icon: Film,
+    color: 'text-rose-400',
+    bg: 'bg-rose-500/10',
+    hoverBorder: 'group-hover/card:border-rose-500/40',
+    badge: 'NEW',
+    badgeColor: 'bg-rose-500/20 text-rose-400',
+    title: 'VPN для TikTok',
+    desc: 'Загрузка видео и эфиры в России',
+  },
+  {
+    to: '/netflix',
+    icon: Film,
+    color: 'text-red-400',
+    bg: 'bg-red-500/10',
+    hoverBorder: 'group-hover/card:border-red-500/40',
+    badge: 'NEW',
+    badgeColor: 'bg-red-500/20 text-red-400',
+    title: 'VPN для Netflix',
+    desc: 'Netflix US и EU в 4K из России',
+  },
+  {
+    to: '/dlya-igr',
+    icon: Gamepad2,
+    color: 'text-purple-400',
+    bg: 'bg-purple-500/10',
+    hoverBorder: 'group-hover/card:border-purple-500/40',
+    badge: 'GAMING',
+    badgeColor: 'bg-purple-500/20 text-purple-400',
+    title: 'VPN для игр',
+    desc: 'CS2, Dota 2, Valorant — 30ms до EU',
+  },
+  {
+    to: '/pri-blokirovkah',
+    icon: Wifi,
+    color: 'text-orange-400',
+    bg: 'bg-orange-500/10',
+    hoverBorder: 'group-hover/card:border-orange-500/40',
+    badge: 'УТП',
+    badgeColor: 'bg-orange-500/20 text-orange-400',
+    title: 'При блокировках связи',
+    desc: 'Когда оператор отключает интернет',
+  },
+  {
+    to: '/obhod-blokirovok',
+    icon: Shield,
+    color: 'text-yellow-400',
+    bg: 'bg-yellow-500/10',
+    hoverBorder: 'group-hover/card:border-yellow-500/40',
+    badge: 'РКН',
+    badgeColor: 'bg-yellow-500/20 text-yellow-400',
+    title: 'Обход блокировок РКН',
+    desc: 'Все заблокированные сайты в одном клике',
   },
 ];
 
@@ -161,7 +227,7 @@ export const Navbar: React.FC = () => {
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
-  const isSolutionActive = ['/youtube-bez-reklamy', '/pri-blokirovkah', '/chatgpt'].includes(location.pathname);
+  const isSolutionActive = ['/youtube-bez-reklamy', '/pri-blokirovkah', '/chatgpt', '/discord', '/tiktok', '/instagram', '/whatsapp', '/telegram', '/netflix', '/dlya-igr', '/dlya-igr/dota', '/dlya-igr/cs2', '/dlya-igr/valorant', '/dlya-igr/pubg', '/obhod-blokirovok'].includes(location.pathname);
   const isPlatformActive = ['/android', '/ios', '/windows', '/mac', '/download'].includes(location.pathname);
 
   return (
@@ -186,24 +252,23 @@ export const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center">
               {/* Решения dropdown */}
               <DesktopDropdown label="Решения" isActive={isSolutionActive} wide>
-                <div className="grid grid-cols-1 gap-0.5">
+                <div className="grid grid-cols-2 gap-0.5">
                   {SOLUTIONS.map((item) => (
                     <NavLink
                       key={item.to}
                       to={item.to}
-                      className="group/card flex items-start gap-4 p-3 rounded-xl border border-transparent hover:bg-white/[0.03] transition-all duration-200"
+                      className="group/card flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:bg-white/[0.03] transition-all duration-200"
                     >
-                      <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center flex-shrink-0 ${item.hoverBorder} border border-transparent transition-colors`}>
-                        <item.icon className={`w-5 h-5 ${item.color}`} />
+                      <div className={`w-9 h-9 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0 ${item.hoverBorder} border border-transparent transition-colors`}>
+                        <item.icon className={`w-4 h-4 ${item.color}`} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className="font-semibold text-[13px] text-white group-hover/card:text-brand-primary transition-colors">{item.title}</span>
-                          <span className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${item.badgeColor}`}>{item.badge}</span>
+                        <div className="flex items-center gap-1.5 mb-0.5">
+                          <span className="font-semibold text-[12px] text-white group-hover/card:text-brand-primary transition-colors truncate">{item.title}</span>
+                          <span className={`text-[9px] font-bold uppercase tracking-wider px-1 py-0.5 rounded ${item.badgeColor} flex-shrink-0`}>{item.badge}</span>
                         </div>
-                        <p className="text-[12px] text-gray-500 leading-relaxed">{item.desc}</p>
+                        <p className="text-[11px] text-gray-500 leading-snug line-clamp-2">{item.desc}</p>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-gray-600 group-hover/card:text-brand-primary group-hover/card:translate-x-0.5 transition-all flex-shrink-0 mt-1" />
                     </NavLink>
                   ))}
                 </div>

@@ -1,8 +1,8 @@
-# ИНСТРУКЦИЯ ПО ДОРАБОТКЕ САЙТА BRAIDX.TECH
+﻿# ИНСТРУКЦИЯ ПО ДОРАБОТКЕ САЙТА braidpro.tech
 ## Полное техническое задание на основе семантического ядра
 
 **Дата:** 05.02.2026  
-**Проект:** BraidX.tech  
+**Проект:** braidpro.tech  
 **Цель:** SEO-оптимизация сайта под семантическое ядро из 350+ запросов
 
 ---
@@ -117,7 +117,7 @@
 ### 2.1 НОВАЯ АРХИТЕКТУРА САЙТА
 
 ```
-braidx.tech/
+braidpro.tech/
 │
 ├── index.html                          [Главная - vpn, впн, vpn для россии]
 │
@@ -271,11 +271,11 @@ braidx.tech/
 <!-- Open Graph для соцсетей -->
 <meta property="og:title" content="BRAID VPN — Лучший VPN для России 2026">
 <meta property="og:description" content="YouTube без рекламы, работает при блокировках связи, 7 дней бесплатно">
-<meta property="og:image" content="https://braidx.tech/images/og-image.jpg">
-<meta property="og:url" content="https://braidx.tech/">
+<meta property="og:image" content="https://braidpro.tech/images/og-image.jpg">
+<meta property="og:url" content="https://braidpro.tech/">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://braidx.tech/">
+<link rel="canonical" href="https://braidpro.tech/">
 ```
 
 #### **Заголовки (H1-H6):**
@@ -674,7 +674,7 @@ braidx.tech/
 
 ### 4.1 ЛЕНДИНГ "YOUTUBE БЕЗ РЕКЛАМЫ" 🔥🔥🔥
 
-**URL:** `https://braidx.tech/youtube-bez-reklamy`
+**URL:** `https://braidpro.tech/youtube-bez-reklamy`
 
 **Приоритет:** КРИТИЧЕСКИЙ (создать в первую очередь)
 
@@ -698,7 +698,7 @@ braidx.tech/
 
 <meta name="keywords" content="youtube без рекламы, vpn для ютуба, как смотреть youtube без рекламы, ютуб без рекламы, обход блокировки youtube">
 
-<link rel="canonical" href="https://braidx.tech/youtube-bez-reklamy">
+<link rel="canonical" href="https://braidpro.tech/youtube-bez-reklamy">
 ```
 
 ---
@@ -985,7 +985,7 @@ braidx.tech/
 
 ### 4.2 ЛЕНДИНГ "РАБОТАЕТ ПРИ БЛОКИРОВКАХ СВЯЗИ" 🔥🔥🔥
 
-**URL:** `https://braidx.tech/pri-blokirovkah`
+**URL:** `https://braidpro.tech/pri-blokirovkah`
 
 **Приоритет:** КРИТИЧЕСКИЙ
 
@@ -1007,7 +1007,7 @@ braidx.tech/
 
 <meta name="keywords" content="vpn при отключении интернета, vpn работает при блокировках, vpn при блокировке связи, обход блокировки оператора">
 
-<link rel="canonical" href="https://braidx.tech/pri-blokirovkah">
+<link rel="canonical" href="https://braidpro.tech/pri-blokirovkah">
 ```
 
 ---
@@ -1162,7 +1162,7 @@ braidx.tech/
 
 ### 4.3 ЛЕНДИНГ "VPN ДЛЯ CHATGPT" 🔥
 
-**URL:** `https://braidx.tech/chatgpt`
+**URL:** `https://braidpro.tech/chatgpt`
 
 **Приоритет:** КРИТИЧЕСКИЙ
 
@@ -1183,7 +1183,7 @@ braidx.tech/
 
 <meta name="keywords" content="vpn для chatgpt, chatgpt заблокирован в россии, vpn для chatgpt в россии, обход блокировки chatgpt">
 
-<link rel="canonical" href="https://braidx.tech/chatgpt">
+<link rel="canonical" href="https://braidpro.tech/chatgpt">
 ```
 
 ---
@@ -1376,7 +1376,7 @@ braidx.tech/
 **Структура блога:**
 
 ```
-braidx.tech/blog/
+braidpro.tech/blog/
 ├── index.html (список всех статей)
 ├── kategorii/
 │   ├── instrukcii.html
@@ -1506,7 +1506,7 @@ braidx.tech/blog/
 User-agent: *
 Allow: /
 
-Sitemap: https://braidx.tech/sitemap.xml
+Sitemap: https://braidpro.tech/sitemap.xml
 
 # Закрываем технические страницы
 Disallow: /admin/
@@ -1524,19 +1524,19 @@ Disallow: /404
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://braidx.tech/</loc>
+    <loc>https://braidpro.tech/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://braidx.tech/youtube-bez-reklamy</loc>
+    <loc>https://braidpro.tech/youtube-bez-reklamy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://braidx.tech/pri-blokirovkah</loc>
+    <loc>https://braidpro.tech/pri-blokirovkah</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1545,7 +1545,7 @@ Disallow: /404
   
   <!-- Статьи блога -->
   <url>
-    <loc>https://braidx.tech/blog/youtube-bez-reklamy-2026</loc>
+    <loc>https://braidpro.tech/blog/youtube-bez-reklamy-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1626,13 +1626,13 @@ Disallow: /404
       "@type": "ListItem",
       "position": 1,
       "name": "Главная",
-      "item": "https://braidx.tech/"
+      "item": "https://braidpro.tech/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "YouTube без рекламы",
-      "item": "https://braidx.tech/youtube-bez-reklamy"
+      "item": "https://braidpro.tech/youtube-bez-reklamy"
     }
   ]
 }
@@ -1645,16 +1645,16 @@ Disallow: /404
 ```html
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://braidx.tech/youtube-bez-reklamy">
+<meta property="og:url" content="https://braidpro.tech/youtube-bez-reklamy">
 <meta property="og:title" content="YouTube без рекламы через VPN">
 <meta property="og:description" content="Смотрите YouTube без рекламы с BRAID VPN...">
-<meta property="og:image" content="https://braidx.tech/images/og-youtube.jpg">
+<meta property="og:image" content="https://braidpro.tech/images/og-youtube.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YouTube без рекламы через VPN">
 <meta name="twitter:description" content="Смотрите YouTube без рекламы...">
-<meta name="twitter:image" content="https://braidx.tech/images/twitter-youtube.jpg">
+<meta name="twitter:image" content="https://braidpro.tech/images/twitter-youtube.jpg">
 ```
 
 ### 7.6 СКОРОСТЬ ЗАГРУЗКИ
@@ -1706,12 +1706,12 @@ Disallow: /404
 Для каждой страницы указать canonical:
 
 ```html
-<link rel="canonical" href="https://braidx.tech/youtube-bez-reklamy">
+<link rel="canonical" href="https://braidpro.tech/youtube-bez-reklamy">
 ```
 
 Избегать дублей:
-- `braidx.tech/page` = `braidx.tech/page/` (один canonical)
-- `www.braidx.tech` → редирект на `braidx.tech`
+- `braidpro.tech/page` = `braidpro.tech/page/` (один canonical)
+- `www.braidpro.tech` → редирект на `braidpro.tech`
 
 ---
 
@@ -1747,7 +1747,7 @@ Disallow: /404
 - "vpn для youtube" (10%)
 - "подробнее о youtube без рекламы" (10%)
 - "узнать больше" (10%)
-- URL: "braidx.tech/youtube-bez-reklamy" (5%)
+- URL: "braidpro.tech/youtube-bez-reklamy" (5%)
 - Брендовые: "наше решение для youtube" (15%)
 
 **К странице `/pri-blokirovkah`:**

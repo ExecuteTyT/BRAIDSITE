@@ -177,6 +177,42 @@ export const Pricing: React.FC = () => {
           </div>
         </div>
 
+        {/* SEO content block — keyword: "купить впн / vpn недорого / vpn цена" */}
+        <div className="mt-16 sm:mt-20 max-w-4xl mx-auto glass-panel rounded-2xl sm:rounded-3xl p-6 sm:p-10">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white mb-5 sm:mb-7">
+            Купить VPN в России — честные тарифы без скрытых платежей
+          </h2>
+          <div className="space-y-4 text-sm sm:text-base text-gray-400 leading-relaxed">
+            <p>
+              BRAID VPN — это российский VPN-сервис с прозрачным ценообразованием. Никаких автосписаний, скрытых платежей или
+              «бесплатных пробных периодов» с привязкой карты. Минимальная подписка — 163₽/месяц при оплате за год.
+              Это в 5 раз дешевле NordVPN (~800₽/мес), в 3 раза дешевле большинства российских конкурентов и в 7 раз дешевле,
+              чем подписка YouTube Premium с минимальным набором функций.
+            </p>
+            <p>
+              Все тарифы включают одинаковый набор возможностей: 5 локаций (Россия, США, Нидерланды, Армения, Финляндия),
+              до 5 устройств одновременно, протокол VLESS Reality для обхода блокировок РКН, безлимитный трафик и круглосуточную
+              поддержку в Telegram. Разница только в сроке и итоговой цене. На годовом тарифе вы экономите 430₽ по сравнению с
+              ежемесячной оплатой.
+            </p>
+            <p>
+              Способы оплаты: банковская карта любого российского банка (Сбербанк, Тинькофф, Альфа-Банк, ВТБ, Райффайзен и др.),
+              перевод через СБП, криптовалюта USDT TRC-20 или Bitcoin. Платёж проходит через Telegram-бот — мгновенно после
+              оплаты вы получаете VPN-ключ.
+            </p>
+            <p>
+              Гарантия возврата денег действует 7 дней. Если VPN не подошёл — мы вернём всю сумму на тот же платёжный метод,
+              которым вы платили. Без бюрократии: достаточно написать в Telegram-поддержку.
+            </p>
+            <p>
+              Узнайте больше: <a href="/besplatno" className="text-brand-primary hover:underline">бесплатный пробный период</a>,{' '}
+              <a href="/kupit-vpn" className="text-brand-primary hover:underline">все способы покупки</a>,{' '}
+              <a href="/technology" className="text-brand-primary hover:underline">технология VLESS Reality</a>,{' '}
+              <a href="/locations" className="text-brand-primary hover:underline">подробно о локациях</a>.
+            </p>
+          </div>
+        </div>
+
         {/* FAQ-like section */}
         <div className="mt-20 text-center">
           <h3 className="text-xl font-display font-bold text-white mb-6">Остались вопросы?</h3>

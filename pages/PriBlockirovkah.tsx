@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Wifi, Shield, Smartphone, ChevronDown, ChevronUp } from 'lucide-react';
@@ -28,7 +28,7 @@ export const PriBlockirovkah: React.FC = () => {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', 'BRAID VPN работает даже при блокировках интернета оператором (МТС, МегаФон, Билайн, Tele2). Протокол VLESS + Reality обходит ограничения сотовой связи. 7 дней бесплатно.');
     const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidx.tech/pri-blokirovkah');
+    if (link) link.setAttribute('href', 'https://braidpro.tech/pri-blokirovkah');
   }, []);
 
   const faqItems = [

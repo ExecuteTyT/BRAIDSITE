@@ -1,4 +1,4 @@
-# Настройка SSL для braidx.tech
+﻿# Настройка SSL для braidpro.tech
 
 ## Проблема
 Yandex Webmaster видит сайт по HTTP, а не HTTPS. Нужно настроить SSL сертификат.
@@ -12,7 +12,7 @@ Yandex Webmaster видит сайт по HTTP, а не HTTPS. Нужно нас
 sudo systemctl status nginx
 
 # Посмотреть текущую конфигурацию
-cat /etc/nginx/sites-available/braidx.tech
+cat /etc/nginx/sites-available/braidpro.tech
 ```
 
 ### Шаг 2: Установить Certbot (если не установлен)
@@ -25,13 +25,13 @@ sudo apt install -y certbot python3-certbot-nginx
 ### Шаг 3: Получить SSL сертификат
 
 **ВАЖНО:** Перед получением сертификата убедитесь, что:
-- Домен `braidx.tech` указывает на IP вашего сервера
+- Домен `braidpro.tech` указывает на IP вашего сервера
 - Nginx работает и доступен на порту 80
 - Файрвол разрешает порты 80 и 443
 
 ```bash
 # Получить сертификат (Certbot автоматически настроит Nginx)
-sudo certbot --nginx -d braidx.tech -d www.braidx.tech
+sudo certbot --nginx -d braidpro.tech -d www.braidpro.tech
 
 # Следуйте инструкциям:
 # - Введите email для уведомлений
@@ -43,7 +43,7 @@ sudo certbot --nginx -d braidx.tech -d www.braidx.tech
 
 ```bash
 # Проверить наличие сертификатов
-ls -la /etc/letsencrypt/live/braidx.tech/
+ls -la /etc/letsencrypt/live/braidpro.tech/
 
 # Должны быть файлы:
 # - fullchain.pem
@@ -65,7 +65,7 @@ sudo systemctl reload nginx
 
 ```bash
 # Проверить, что сайт доступен по HTTPS
-curl -I https://braidx.tech
+curl -I https://braidpro.tech
 
 # Должен вернуть статус 200 или 301/302
 ```
@@ -85,7 +85,7 @@ sudo certbot renew --dry-run
 server {
     listen 80;
     listen [::]:80;
-    server_name braidx.tech www.braidx.tech;
+    server_name braidpro.tech www.braidpro.tech;
     return 301 https://$server_name$request_uri;
 }
 ```
@@ -93,7 +93,7 @@ server {
 ## Проверка в браузере
 
 После настройки SSL:
-1. Откройте `https://braidx.tech` в браузере
+1. Откройте `https://braidpro.tech` в браузере
 2. Должен быть зеленый замочек (HTTPS)
 3. HTTP должен автоматически редиректить на HTTPS
 
@@ -119,14 +119,14 @@ server {
 sudo nginx -t
 
 # Исправить конфигурацию
-sudo nano /etc/nginx/sites-available/braidx.tech
+sudo nano /etc/nginx/sites-available/braidpro.tech
 ```
 
 ### Проблема: "Certificate exists but site still shows HTTP"
 **Решение:**
 ```bash
 # Проверить, что редирект настроен
-grep "return 301" /etc/nginx/sites-available/braidx.tech
+grep "return 301" /etc/nginx/sites-available/braidpro.tech
 
 # Перезагрузить Nginx
 sudo systemctl reload nginx

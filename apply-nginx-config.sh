@@ -1,7 +1,7 @@
-#!/bin/bash
+﻿#!/bin/bash
 # Скрипт для применения правильной конфигурации Nginx
 
-CONFIG_FILE="/etc/nginx/sites-available/braidx.tech"
+CONFIG_FILE="/etc/nginx/sites-available/braidpro.tech"
 BACKUP_FILE="${CONFIG_FILE}.backup.$(date +%Y%m%d_%H%M%S)"
 
 echo "🔧 Применение конфигурации Nginx для правильных редиректов..."
@@ -19,44 +19,44 @@ cat > /tmp/nginx-braidvpn.conf << 'NGINX_EOF'
 server {
     listen 80;
     listen [::]:80;
-    server_name braidx.tech www.braidx.tech;
-    return 301 https://braidx.tech$request_uri;
+    server_name braidpro.tech www.braidpro.tech;
+    return 301 https://braidpro.tech$request_uri;
 }
 
 # Редирект HTTPS www → HTTPS без www
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name www.braidx.tech;
+    server_name www.braidpro.tech;
 
-    ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/braidpro.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/braidpro.tech/privkey.pem;
     
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    return 301 https://braidx.tech$request_uri;
+    return 301 https://braidpro.tech$request_uri;
 }
 
 # Основной сервер (без www)
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name braidx.tech;
+    server_name braidpro.tech;
 
-    ssl_certificate /etc/letsencrypt/live/braidx.tech/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/braidx.tech/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/braidpro.tech/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/braidpro.tech/privkey.pem;
     
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    root /var/www/braidx.tech/dist;
+    root /var/www/braidpro.tech/dist;
     index index.html;
 
-    access_log /var/log/nginx/braidx.tech.access.log;
-    error_log /var/log/nginx/braidx.tech.error.log;
+    access_log /var/log/nginx/braidpro.tech.access.log;
+    error_log /var/log/nginx/braidpro.tech.error.log;
 
     gzip on;
     gzip_vary on;
@@ -110,15 +110,15 @@ if [ $? -eq 0 ]; then
     echo "🔍 Проверка редиректов:"
     echo ""
     echo "1. HTTP → HTTPS (без www):"
-    curl -I http://braidx.tech 2>&1 | grep -i "location\|http" | head -2
+    curl -I http://braidpro.tech 2>&1 | grep -i "location\|http" | head -2
     echo ""
     echo "2. HTTP www → HTTPS (без www):"
-    curl -I http://www.braidx.tech 2>&1 | grep -i "location\|http" | head -2
+    curl -I http://www.braidpro.tech 2>&1 | grep -i "location\|http" | head -2
     echo ""
     echo "3. HTTPS www → HTTPS (без www):"
-    curl -I https://www.braidx.tech 2>&1 | grep -i "location\|http" | head -2
+    curl -I https://www.braidpro.tech 2>&1 | grep -i "location\|http" | head -2
     echo ""
-    echo "✅ Готово! Все редиректы должны вести на https://braidx.tech"
+    echo "✅ Готово! Все редиректы должны вести на https://braidpro.tech"
 else
     echo ""
     echo "❌ Ошибка в конфигурации! Восстановление из резервной копии..."
