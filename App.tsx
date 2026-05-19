@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
-import { Technology } from './pages/Technology';
-import { Pricing } from './pages/Pricing';
-import { Locations } from './pages/Locations';
-import { DownloadPage } from './pages/Download';
-import { Blog } from './pages/Blog';
-import { ArticlePage } from './pages/ArticlePage';
-import { YouTubeNoAds } from './pages/YouTubeNoAds';
-import { PriBlockirovkah } from './pages/PriBlockirovkah';
-import { ChatGPTPage } from './pages/ChatGPT';
-import { PlatformPage } from './pages/PlatformPage';
-import { ServiceLanding } from './pages/ServiceLanding';
-import { NotFound } from './pages/NotFound';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
 import { landings } from './data/landings';
+
+// Lazy-load heavy routes to keep initial bundle small.
+// Articles registry (~80 files) and landing configs split into their own chunks.
+const Technology = lazy(() => import('./pages/Technology').then(m => ({ default: m.Technology })));
+const Pricing = lazy(() => import('./pages/Pricing').then(m => ({ default: m.Pricing })));
+const Locations = lazy(() => import('./pages/Locations').then(m => ({ default: m.Locations })));
+const DownloadPage = lazy(() => import('./pages/Download').then(m => ({ default: m.DownloadPage })));
+const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })));
+const ArticlePage = lazy(() => import('./pages/ArticlePage').then(m => ({ default: m.ArticlePage })));
+const YouTubeNoAds = lazy(() => import('./pages/YouTubeNoAds').then(m => ({ default: m.YouTubeNoAds })));
+const PriBlockirovkah = lazy(() => import('./pages/PriBlockirovkah').then(m => ({ default: m.PriBlockirovkah })));
+const ChatGPTPage = lazy(() => import('./pages/ChatGPT').then(m => ({ default: m.ChatGPTPage })));
+const PlatformPage = lazy(() => import('./pages/PlatformPage').then(m => ({ default: m.PlatformPage })));
+const ServiceLanding = lazy(() => import('./pages/ServiceLanding').then(m => ({ default: m.ServiceLanding })));
+const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,14 +30,17 @@ const ScrollToTop = () => {
   return null;
 };
 
+const RouteFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-brand-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
 const App: React.FC = () => {
-  // Инициализация отслеживания Telegram ссылок
   React.useEffect(() => {
-    // Небольшая задержка для загрузки DOM
     const timer = setTimeout(() => {
       initTelegramTracking();
     }, 100);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -45,30 +51,32 @@ const App: React.FC = () => {
         <div className="min-h-screen flex flex-col font-sans text-gray-200 antialiased selection:bg-brand-primary selection:text-white">
           <Navbar />
           <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/technology" element={<Technology />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/locations" element={<Locations />} />
-              <Route path="/download" element={<DownloadPage />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:articleId" element={<ArticlePage />} />
-              {/* SEO Landing Pages */}
-              <Route path="/youtube-bez-reklamy" element={<YouTubeNoAds />} />
-              <Route path="/pri-blokirovkah" element={<PriBlockirovkah />} />
-              <Route path="/chatgpt" element={<ChatGPTPage />} />
-              {/* Platform Pages */}
-              <Route path="/android" element={<PlatformPage platform="android" />} />
-              <Route path="/ios" element={<PlatformPage platform="ios" />} />
-              <Route path="/windows" element={<PlatformPage platform="windows" />} />
-              <Route path="/mac" element={<PlatformPage platform="mac" />} />
-              {/* Data-driven Landing Pages (services, games, commercial) */}
-              {landings.map((cfg) => (
-                <Route key={cfg.path} path={cfg.path} element={<ServiceLanding config={cfg} />} />
-              ))}
-              <Route path="/legal" element={<div className="pt-32 text-center">Legal Page Placeholder</div>} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<RouteFallback />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/technology" element={<Technology />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/locations" element={<Locations />} />
+                <Route path="/download" element={<DownloadPage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:articleId" element={<ArticlePage />} />
+                {/* SEO Landing Pages */}
+                <Route path="/youtube-bez-reklamy" element={<YouTubeNoAds />} />
+                <Route path="/pri-blokirovkah" element={<PriBlockirovkah />} />
+                <Route path="/chatgpt" element={<ChatGPTPage />} />
+                {/* Platform Pages */}
+                <Route path="/android" element={<PlatformPage platform="android" />} />
+                <Route path="/ios" element={<PlatformPage platform="ios" />} />
+                <Route path="/windows" element={<PlatformPage platform="windows" />} />
+                <Route path="/mac" element={<PlatformPage platform="mac" />} />
+                {/* Data-driven Landing Pages (services, games, commercial) */}
+                {landings.map((cfg) => (
+                  <Route key={cfg.path} path={cfg.path} element={<ServiceLanding config={cfg} />} />
+                ))}
+                <Route path="/legal" element={<div className="pt-32 text-center">Legal Page Placeholder</div>} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
         </div>
