@@ -2,11 +2,21 @@ import React from 'react';
 import { ShieldCheck, EyeOff, Zap, Youtube, Wifi, Send, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
+import { updateMeta } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
 export const Technology: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    updateMeta({
+      title: 'Технология VLESS + Reality — Как работает BRAID VPN | BRAID VPN',
+      description: 'Узнайте, как работает протокол VLESS + Reality в BRAID VPN. Обход DPI-блокировок, маскировка под HTTPS, скорость до 10 Гбит/с. Невидим для Роскомнадзора.',
+      path: '/technology',
+      keywords: 'vless reality, протокол vless, vpn технология, обход dpi, vpn невидимый для роскомнадзора',
+    });
+  }, []);
 
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6">
@@ -134,19 +144,19 @@ export const Technology: React.FC = () => {
               <div className="space-y-3 font-mono text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-500">Москва → YouTube CDN</span>
-                  <span className="text-white">8ms</span>
+                  <span className="text-white">28ms</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Москва → Discord</span>
-                  <span className="text-white">15ms</span>
+                  <span className="text-white">54ms</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Амстердам → Netflix CDN</span>
-                  <span className="text-white">12ms</span>
+                  <span className="text-white">19ms</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Нью-Йорк → ChatGPT API</span>
-                  <span className="text-white">24ms</span>
+                  <span className="text-white">36ms</span>
                 </div>
               </div>
             </div>

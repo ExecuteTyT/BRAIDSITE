@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { TelegramProxyBanner } from './components/TelegramProxyBanner';
 import { Home } from './pages/Home';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
@@ -48,7 +49,8 @@ const App: React.FC = () => {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col font-sans text-gray-200 antialiased selection:bg-brand-primary selection:text-white">
+        <div className="min-h-screen flex flex-col font-sans text-gray-200 antialiased selection:bg-brand-primary selection:text-white" style={{ paddingTop: 'var(--banner-height, 0px)' }}>
+          <TelegramProxyBanner />
           <Navbar />
           <main className="flex-grow">
             <Suspense fallback={<RouteFallback />}>

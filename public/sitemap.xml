@@ -96,6 +96,9 @@
   <url><loc>https://braidpro.tech/blog/vpn-dlya-mts</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://braidpro.tech/blog/vpn-dlya-megafon</loc><lastmod>2026-04-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+  <!-- Telegram proxy article (migrated from main branch PR #3) -->
+  <url><loc>https://braidpro.tech/blog/telegram-proxy-russia-2026</loc><lastmod>2026-03-20</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+
   <!-- Wave B: problem-solving articles -->
   <url><loc>https://braidpro.tech/blog/youtube-ne-rabotaet-chto-delat</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://braidpro.tech/blog/youtube-medlenno-zagruzhaetsya</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
