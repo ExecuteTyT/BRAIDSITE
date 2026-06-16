@@ -5,8 +5,12 @@ import { Button } from '../components/Button';
 import { Shield, Globe, Zap, Smartphone, Lock, Download, Youtube, Wifi, Send, ArrowRight, Check, Star, Instagram, ChevronDown, ChevronUp, MessageSquare, Film, Gamepad2, ShoppingCart, Sparkles, BookOpen } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { articles } from '../data/blog';
+import { applySeo } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+
+const HOME_TITLE = 'BRAID VPN — Скачать ВПН для России 2026 бесплатно | YouTube, ChatGPT, обход блокировок';
+const HOME_DESC = 'Скачать BRAID VPN для России 2026: на ПК, Android, iPhone. Бесплатно 7 дней без карты. YouTube без рекламы, ChatGPT, Discord, обход блокировок РКН. Протокол VLESS Reality, от 163₽/мес.';
 
 // FAQ Accordion Item Component
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -46,6 +50,15 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
 export const Home: React.FC = () => {
   const { content } = useLanguage();
+
+  React.useEffect(() => {
+    applySeo({
+      title: HOME_TITLE,
+      description: HOME_DESC,
+      path: '/',
+      keywords: ['впн', 'vpn', 'скачать впн', 'бесплатный впн', 'vpn для россии', 'лучший впн 2026', 'впн на пк', 'впн для андроид', 'рабочий впн', 'русский впн'],
+    });
+  }, []);
 
   const brands = [
     { name: 'YouTube 4K', opacity: 0.8 },

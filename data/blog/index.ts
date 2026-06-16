@@ -12,15 +12,9 @@ for (const path in modules) {
   }
 }
 
-export const articles: Article[] = Object.values(registry).sort((a, b) => {
-  // Sort by date desc — articles use Russian date format, so parse manually.
-  return parseRuDate(b.date) - parseRuDate(a.date);
-});
-
-export const articleBySlug = (slug: string): Article | undefined => registry[slug];
-
-export type { Article, ArticleSection } from './types';
-
+// NOTE: keep RU_MONTHS + parseRuDate ABOVE `articles` — the sort below runs at
+// module-eval time, so referencing a `const` declared later throws a TDZ error
+// ("Cannot access 'RU_MONTHS' before initialization") that crashes the whole app.
 const RU_MONTHS: Record<string, number> = {
   'янв': 0, 'фев': 1, 'мар': 2, 'апр': 3, 'мая': 4, 'май': 4,
   'июн': 5, 'июл': 6, 'авг': 7, 'сен': 8, 'окт': 9, 'ноя': 10, 'дек': 11,
@@ -36,3 +30,12 @@ function parseRuDate(s: string): number {
   const year = parseInt(parts[2], 10);
   return new Date(year, month, day).getTime();
 }
+
+export const articles: Article[] = Object.values(registry).sort((a, b) => {
+  // Sort by date desc — articles use Russian date format, so parse manually.
+  return parseRuDate(b.date) - parseRuDate(a.date);
+});
+
+export const articleBySlug = (slug: string): Article | undefined => registry[slug];
+
+export type { Article, ArticleSection } from './types';

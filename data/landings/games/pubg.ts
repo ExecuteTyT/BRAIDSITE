@@ -26,6 +26,7 @@ const cfg: LandingConfig = {
   },
   solution: {
     h2: 'Что даёт BRAID VPN',
+    intro: 'BRAID VPN снижает пинг и стабилизирует UDP-трафик PUBG: вы играете на EU-серверах без потерь пакетов и rubber-banding.',
     benefits: [
       { icon: 'zap', title: 'Пинг 30–45ms до EU', text: 'Финский / нидерландский серверы — оптимально для PUBG EU Battle Royale.' },
       { icon: 'server', title: 'UDP без задержек', text: 'Игровой UDP-трафик идёт по приоритетным маршрутам. Никаких rubber-banding.' },

@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Shield, ChevronDown, ChevronUp, Globe } from 'lucide-react';
+import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -23,19 +24,22 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 export const ChatGPTPage: React.FC = () => {
-  React.useEffect(() => {
-    document.title = 'VPN для ChatGPT в России — Как получить доступ к ChatGPT из РФ в 2026';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Доступ к ChatGPT из России с BRAID VPN. Подключитесь к любому зарубежному серверу — ChatGPT заработает мгновенно. Пошаговая инструкция. 7 дней бесплатно, от 163₽/мес.');
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidpro.tech/chatgpt');
-  }, []);
-
   const faqItems = [
     { q: 'Работает ли это с ChatGPT Plus?', a: 'Да, BRAID VPN работает как с бесплатной версией ChatGPT, так и с ChatGPT Plus. Вы сможете пользоваться всеми функциями ChatGPT, включая GPT-4, DALL-E, Code Interpreter и другие.' },
     { q: 'Заблокируют ли мой аккаунт ChatGPT?', a: 'Нет, OpenAI не блокирует аккаунты за использование VPN. Миллионы людей используют VPN для доступа к ChatGPT — это нормальная практика.' },
     { q: 'Нужно ли платить за ChatGPT отдельно?', a: 'Да, BRAID VPN только даёт доступ к ChatGPT из России. Сам ChatGPT бесплатный (базовая версия) или платный (ChatGPT Plus за $20/месяц). VPN и ChatGPT — это разные подписки.' },
   ];
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    applySeo({
+      title: 'VPN для ChatGPT в России — Как получить доступ к ChatGPT из РФ в 2026',
+      description: 'Доступ к ChatGPT из России с BRAID VPN. Подключитесь к любому зарубежному серверу — ChatGPT заработает мгновенно. Пошаговая инструкция. 7 дней бесплатно, от 163₽/мес.',
+      path: '/chatgpt',
+      keywords: ['vpn для chatgpt', 'chatgpt в россии', 'как открыть chatgpt', 'доступ к chatgpt из россии', 'chatgpt заблокирован'],
+      jsonLd: [breadcrumbLd('VPN для ChatGPT', '/chatgpt'), faqLd(faqItems)],
+    });
+  }, []);
 
   return (
     <div className="relative w-full overflow-hidden">

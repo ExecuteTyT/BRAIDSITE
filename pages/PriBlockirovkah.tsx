@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Wifi, Shield, Smartphone, ChevronDown, ChevronUp } from 'lucide-react';
+import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -23,19 +24,22 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 export const PriBlockirovkah: React.FC = () => {
-  React.useEffect(() => {
-    document.title = 'VPN при блокировках связи — Работает когда оператор отключает интернет';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'BRAID VPN работает даже при блокировках интернета оператором (МТС, МегаФон, Билайн, Tele2). Протокол VLESS + Reality обходит ограничения сотовой связи. 7 дней бесплатно.');
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidpro.tech/pri-blokirovkah');
-  }, []);
-
   const faqItems = [
     { q: 'Почему обычные VPN не работают при блокировках?', a: 'Обычные VPN (OpenVPN, WireGuard) используют специфические протоколы, которые легко обнаруживаются DPI-системами операторов. Когда оператор видит VPN-трафик, он его блокирует. BRAID VPN использует VLESS + Reality, который маскируется под обычный HTTPS и не обнаруживается фильтрами.' },
     { q: 'В каких регионах это работает?', a: 'BRAID VPN работает во всех регионах России, включая Крым, Севастополь, ДНР, ЛНР, Запорожье, Херсон и другие новые регионы. Работает с любым оператором: МТС, МегаФон, Билайн, Tele2.' },
     { q: 'Насколько это безопасно?', a: 'Полностью безопасно. BRAID VPN шифрует весь ваш трафик — оператор видит только HTTPS-соединение, но не может прочитать содержимое. Мы не храним логи и не отслеживаем активность пользователей.' },
   ];
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    applySeo({
+      title: 'VPN при блокировках связи — Работает когда оператор отключает интернет',
+      description: 'BRAID VPN работает даже при блокировках интернета оператором (МТС, МегаФон, Билайн, Tele2). Протокол VLESS + Reality обходит ограничения сотовой связи. 7 дней бесплатно.',
+      path: '/pri-blokirovkah',
+      keywords: ['vpn при блокировках', 'vpn при отключении интернета', 'vpn когда не работает интернет', 'мобильный интернет заблокирован', 'vpn при шатдауне'],
+      jsonLd: [breadcrumbLd('VPN при блокировках', '/pri-blokirovkah'), faqLd(faqItems)],
+    });
+  }, []);
 
   const operators = [
     { name: 'МТС', desc: 'BRAID VPN работает при блокировках МТС в любых регионах. Обходит ограничения DPI-системы МТС.' },

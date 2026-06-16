@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Download, ChevronDown, ChevronUp } from 'lucide-react';
+import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -185,11 +186,13 @@ export const PlatformPage: React.FC<{ platform: string }> = ({ platform }) => {
 
   React.useEffect(() => {
     if (!config) return;
-    document.title = config.metaTitle;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', config.metaDesc);
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', `https://braidpro.tech/${config.slug}`);
+    window.scrollTo(0, 0);
+    applySeo({
+      title: config.metaTitle,
+      description: config.metaDesc,
+      path: `/${config.slug}`,
+      jsonLd: [breadcrumbLd(`VPN для ${config.title}`, `/${config.slug}`), faqLd(config.faq)],
+    });
   }, [config]);
 
   if (!config) return <div className="pt-32 text-center text-white">Страница не найдена</div>;

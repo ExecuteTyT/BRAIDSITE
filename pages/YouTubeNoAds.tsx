@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Star, Youtube, Monitor, Smartphone, Shield, ChevronDown, ChevronUp } from 'lucide-react';
+import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
 
@@ -23,14 +24,6 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 export const YouTubeNoAds: React.FC = () => {
-  React.useEffect(() => {
-    document.title = 'YouTube без рекламы через VPN — Как смотреть Ютуб без рекламы в России 2026';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Смотрите YouTube без рекламы с BRAID VPN. Подключитесь к серверу в Армении или Нидерландах — реклама исчезнет автоматически. 7 дней бесплатно, от 163₽/мес.');
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', 'https://braidpro.tech/youtube-bez-reklamy');
-  }, []);
-
   const faqItems = [
     { q: 'На каких серверах YouTube без рекламы?', a: 'YouTube без рекламы работает на серверах в Армении и Нидерландах. Подключитесь к любому из этих серверов — реклама исчезнет автоматически. На серверах в России, США, Финляндии реклама останется.' },
     { q: 'Работает ли это на телефоне (Android/iPhone)?', a: 'Да! BRAID VPN работает на всех платформах: Android, iOS, Windows, macOS. Скачайте приложение Happ, подключитесь к Армении или Нидерландам — реклама исчезнет и в приложении YouTube, и в браузере.' },
@@ -39,6 +32,17 @@ export const YouTubeNoAds: React.FC = () => {
     { q: 'Сколько это стоит?', a: 'Первые 7 дней — бесплатно. Потом от 163₽/месяц при годовой подписке (или 199₽/мес при помесячной оплате). Это дешевле, чем YouTube Premium (399₽/мес), и при этом вы получаете ещё и VPN для обхода блокировок.' },
     { q: 'Работает ли это в 2026 году?', a: 'Да, YouTube без рекламы через VPN работает в 2026 году. Google не блокирует серверы в Армении и Нидерландах. Мы следим за изменениями и обновляем серверы, если что-то меняется.' },
   ];
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    applySeo({
+      title: 'YouTube без рекламы через VPN — Как смотреть Ютуб без рекламы в России 2026',
+      description: 'Смотрите YouTube без рекламы с BRAID VPN. Подключитесь к серверу в Армении или Нидерландах — реклама исчезнет автоматически. 7 дней бесплатно, от 163₽/мес.',
+      path: '/youtube-bez-reklamy',
+      keywords: ['youtube без рекламы', 'ютуб без рекламы', 'vpn для youtube', 'как смотреть youtube без рекламы', 'youtube premium бесплатно'],
+      jsonLd: [breadcrumbLd('YouTube без рекламы', '/youtube-bez-reklamy'), faqLd(faqItems)],
+    });
+  }, []);
 
   return (
     <div className="relative w-full overflow-hidden">
