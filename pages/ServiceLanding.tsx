@@ -8,9 +8,10 @@ import {
 import { Button } from '../components/Button';
 import type { LandingConfig } from '../data/landings/types';
 import { articleBySlug } from '../data/blog';
+import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
+import { useScrollDepth } from '../utils/analytics';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
-const SITE_URL = 'https://braidpro.tech';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   send: Send, sparkles: Sparkles, shield: Shield, zap: Zap, wifi: Wifi, globe: Globe, lock: Lock,
@@ -27,42 +28,18 @@ const renderIcon = (name: string | undefined, className: string) => {
 };
 
 export const ServiceLanding: React.FC<{ config: LandingConfig }> = ({ config }) => {
+  // Generic scroll-depth tracking for landing pages.
+  useScrollDepth();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${config.title} | BRAID VPN`;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', config.metaDescription);
-    document.querySelector('meta[name="keywords"]')?.setAttribute('content', config.keywords.join(', '));
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', `${SITE_URL}${config.path}`);
-
-    // FAQPage JSON-LD
-    document.querySelector('script[data-landing-jsonld]')?.remove();
-    const jsonLd = document.createElement('script');
-    jsonLd.type = 'application/ld+json';
-    jsonLd.setAttribute('data-landing-jsonld', 'true');
-    jsonLd.textContent = JSON.stringify([
-      {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Главная', item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: config.breadcrumb, item: `${SITE_URL}${config.path}` },
-        ],
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: config.faq.items.map(({ q, a }) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: { '@type': 'Answer', text: a },
-        })),
-      },
-    ]);
-    document.head.appendChild(jsonLd);
-
-    return () => {
-      document.querySelector('script[data-landing-jsonld]')?.remove();
-    };
+    applySeo({
+      title: `${config.title} | BRAID VPN`,
+      description: config.metaDescription,
+      path: config.path,
+      keywords: config.keywords,
+      jsonLd: [breadcrumbLd(config.breadcrumb, config.path), faqLd(config.faq.items)],
+    });
   }, [config]);
 
   return (

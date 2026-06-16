@@ -6,6 +6,7 @@ import { TelegramProxyBanner } from './components/TelegramProxyBanner';
 import { Home } from './pages/Home';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
+import { useRouteTracking } from './utils/analytics';
 import { landings } from './data/landings';
 
 // Lazy-load heavy routes to keep initial bundle small.
@@ -31,6 +32,12 @@ const ScrollToTop = () => {
   return null;
 };
 
+/** Fires a Yandex.Metrika hit + route-specific goals on every SPA navigation. */
+const RouteTrackingProbe = () => {
+  useRouteTracking();
+  return null;
+};
+
 const RouteFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="w-8 h-8 border-2 border-brand-primary border-t-transparent rounded-full animate-spin" />
@@ -49,6 +56,7 @@ const App: React.FC = () => {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
+        <RouteTrackingProbe />
         <div className="min-h-screen flex flex-col font-sans text-gray-200 antialiased selection:bg-brand-primary selection:text-white" style={{ paddingTop: 'var(--banner-height, 0px)' }}>
           <TelegramProxyBanner />
           <Navbar />

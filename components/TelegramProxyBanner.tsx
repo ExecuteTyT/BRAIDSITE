@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Send } from 'lucide-react';
+import { trackGoal, trackExtLink, Goals } from '../utils/analytics';
 
 const PROXY_URL = 'https://t.me/proxy?server=proxy.braidpro.tech&port=443&secret=65423350e35d0b60aaff270d542f00dd';
 const STORAGE_KEY = 'tg-proxy-banner-dismissed';
@@ -39,6 +40,10 @@ export const TelegramProxyBanner: React.FC = () => {
             href={PROXY_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              trackGoal(Goals.PROXY_CLICK, { location: 'top_banner' });
+              trackExtLink(PROXY_URL, { location: 'top_banner' });
+            }}
             className="px-3 py-1 bg-white text-blue-700 text-xs font-bold rounded-md hover:bg-white/90 transition-colors whitespace-nowrap"
           >
             Подключить

@@ -4,9 +4,10 @@ import { ArrowLeft, Clock, Calendar, Tag, Send, Check, ArrowRight } from 'lucide
 import { Button } from '../components/Button';
 import { ArticleRenderer } from '../components/ArticleRenderer';
 import { articleBySlug, articles } from '../data/blog';
+import { applySeo, articleLd } from '../utils/meta';
+import { useScrollDepth, Goals } from '../utils/analytics';
 
 const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
-const SITE_URL = 'https://braidpro.tech';
 
 export const ArticlePage: React.FC = () => {
   const { articleId } = useParams<{ articleId: string }>();
@@ -14,45 +15,27 @@ export const ArticlePage: React.FC = () => {
 
   const article = articleId ? articleBySlug(articleId) : undefined;
 
+  // Fire ARTICLE_READ goal when the visitor crosses 50 % depth on the article.
+  useScrollDepth({ extraGoalAt50: Goals.ARTICLE_READ });
+
   useEffect(() => {
     window.scrollTo(0, 0);
     if (!article || !articleId) return;
 
-    document.title = `${article.title} | BRAID VPN`;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', article.metaDescription);
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) metaKeywords.setAttribute('content', article.keywords.join(', '));
-    const link = document.querySelector('link[rel="canonical"]');
-    if (link) link.setAttribute('href', `${SITE_URL}/blog/${articleId}`);
-
-    const existingJsonLd = document.querySelector('script[data-article-jsonld]');
-    if (existingJsonLd) existingJsonLd.remove();
-    const jsonLd = document.createElement('script');
-    jsonLd.type = 'application/ld+json';
-    jsonLd.setAttribute('data-article-jsonld', 'true');
-    jsonLd.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: article.title,
+    applySeo({
+      title: `${article.title} | BRAID VPN`,
       description: article.metaDescription,
-      keywords: article.keywords.join(', '),
-      datePublished: article.date,
-      author: { '@type': 'Organization', name: 'BRAID VPN' },
-      publisher: {
-        '@type': 'Organization',
-        name: 'BRAID VPN',
-        url: SITE_URL,
-        logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
-      },
-      mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${articleId}` },
+      path: `/blog/${articleId}`,
+      keywords: article.keywords,
+      ogType: 'article',
+      jsonLd: articleLd({
+        title: article.title,
+        description: article.metaDescription,
+        keywords: article.keywords,
+        datePublished: article.date,
+        path: `/blog/${articleId}`,
+      }),
     });
-    document.head.appendChild(jsonLd);
-
-    return () => {
-      const el = document.querySelector('script[data-article-jsonld]');
-      if (el) el.remove();
-    };
   }, [articleId, article]);
 
   if (!article) {
