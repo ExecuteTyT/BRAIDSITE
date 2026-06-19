@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install -D tailwindcss@3 postcss autoprefixer)",
+      "Bash(curl -L -o \"Inter-300.woff2\" \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfAZFhjQ.woff2\")",
+      "Bash(curl -L -o \"Inter-400.woff2\" \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZFhjQ.woff2\")",
+      "Bash(curl -L -o \"Inter-500.woff2\" \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fAZFhjQ.woff2\")",
+      "Bash(curl -L -o \"Inter-600.woff2\" \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZFhjQ.woff2\")",
+      "Bash(curl -L -o \"Inter-700.woff2\" \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFyYAZFhjQ.woff2\")"
+    ]
+  }
+}

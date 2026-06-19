@@ -1,10 +1,10 @@
-// Generates dist/sitemap.xml from the same route manifest the prerenderer uses,
+﻿// Generates dist/sitemap.xml from the same route manifest the prerenderer uses,
 // so the sitemap can never drift from what actually ships.
 import fs from 'fs';
 import path from 'path';
 import { getRouteManifest } from './routes';
 
-const SITE = 'https://braidpro.tech';
+const SITE = 'https://braidvpn.com';
 const DIST = path.resolve(process.cwd(), 'dist');
 
 function main() {

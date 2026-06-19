@@ -9,20 +9,20 @@
   "redirects": [
     {
       "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "www.braidpro.tech" }],
-      "destination": "https://braidpro.tech/:path",
+      "has": [{ "type": "host", "value": "www.braidvpn.com" }],
+      "destination": "https://braidvpn.com/:path",
       "permanent": true
     },
     {
       "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "braidvpn.ru" }],
-      "destination": "https://braidpro.tech/:path",
+      "destination": "https://braidvpn.com/:path",
       "permanent": true
     },
     {
       "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "www.braidvpn.ru" }],
-      "destination": "https://braidpro.tech/:path",
+      "destination": "https://braidvpn.com/:path",
       "permanent": true
     }
   ],

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { X, Send } from 'lucide-react';
 import { trackGoal, trackExtLink, Goals } from '../utils/analytics';
 
-const PROXY_URL = 'https://t.me/proxy?server=proxy.braidpro.tech&port=443&secret=65423350e35d0b60aaff270d542f00dd';
+const PROXY_URL = 'https://t.me/proxy?server=proxy.braidvpn.com&port=443&secret=65423350e35d0b60aaff270d542f00dd';
 const STORAGE_KEY = 'tg-proxy-banner-dismissed';
 
 export const TelegramProxyBanner: React.FC = () => {

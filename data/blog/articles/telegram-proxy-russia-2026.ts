@@ -1,6 +1,6 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
-const PROXY_URL = 'https://t.me/proxy?server=proxy.braidpro.tech&port=443&secret=65423350e35d0b60aaff270d542f00dd';
+const PROXY_URL = 'https://t.me/proxy?server=proxy.braidvpn.com&port=443&secret=65423350e35d0b60aaff270d542f00dd';
 
 export const article: Article = {
   slug: 'telegram-proxy-russia-2026',

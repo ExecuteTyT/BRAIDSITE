@@ -3,7 +3,7 @@
 # - HTTP → HTTPS (без www)
 # - HTTPS www → HTTPS без www
 
-CONFIG_FILE="/etc/nginx/sites-available/braidpro.tech"
+CONFIG_FILE="/etc/nginx/sites-available/braidvpn.com"
 BACKUP_FILE="${CONFIG_FILE}.backup.$(date +%Y%m%d_%H%M%S)"
 
 echo "🔧 Настройка редиректов для правильной индексации..."
@@ -20,20 +20,20 @@ fi
 
 # Проверить, есть ли SSL сертификат для www
 echo "🔍 Проверка SSL сертификата..."
-if [ -f "/etc/letsencrypt/live/braidpro.tech/fullchain.pem" ]; then
+if [ -f "/etc/letsencrypt/live/braidvpn.com/fullchain.pem" ]; then
     echo "✅ SSL сертификат найден"
     
     # Проверить, включает ли сертификат www
-    CERT_DOMAINS=$(openssl x509 -in /etc/letsencrypt/live/braidpro.tech/fullchain.pem -text -noout | grep -oP 'DNS:\K[^\s,]+' || echo "")
-    if [[ "$CERT_DOMAINS" == *"www.braidpro.tech"* ]]; then
-        echo "✅ Сертификат включает www.braidpro.tech"
+    CERT_DOMAINS=$(openssl x509 -in /etc/letsencrypt/live/braidvpn.com/fullchain.pem -text -noout | grep -oP 'DNS:\K[^\s,]+' || echo "")
+    if [[ "$CERT_DOMAINS" == *"www.braidvpn.com"* ]]; then
+        echo "✅ Сертификат включает www.braidvpn.com"
     else
-        echo "⚠️  Сертификат не включает www.braidpro.tech"
-        echo "   Рекомендуется обновить: sudo certbot certonly --nginx --expand -d braidpro.tech -d www.braidpro.tech"
+        echo "⚠️  Сертификат не включает www.braidvpn.com"
+        echo "   Рекомендуется обновить: sudo certbot certonly --nginx --expand -d braidvpn.com -d www.braidvpn.com"
     fi
 else
     echo "⚠️  SSL сертификат не найден"
-    echo "   Установите через: sudo certbot certonly --nginx -d braidpro.tech -d www.braidpro.tech"
+    echo "   Установите через: sudo certbot certonly --nginx -d braidvpn.com -d www.braidvpn.com"
 fi
 
 echo ""
@@ -46,14 +46,14 @@ if [ -f "nginx-braidvpn.conf" ]; then
 else
     echo "⚠️  Файл nginx-braidvpn.conf не найден, применяю базовые исправления..."
     
-    # Исправить HTTP редирект (убрать $server_name, использовать braidpro.tech)
-    sudo sed -i 's/return 301 https:\/\/\$server_name\$request_uri;/return 301 https:\/\/braidpro.tech$request_uri;/' "$CONFIG_FILE"
+    # Исправить HTTP редирект (убрать $server_name, использовать braidvpn.com)
+    sudo sed -i 's/return 301 https:\/\/\$server_name\$request_uri;/return 301 https:\/\/braidvpn.com$request_uri;/' "$CONFIG_FILE"
     
     # Заменить return 404 на правильный редирект
-    sudo sed -i 's/return 404; # managed by Certbot/return 301 https:\/\/braidpro.tech$request_uri;/' "$CONFIG_FILE"
+    sudo sed -i 's/return 404; # managed by Certbot/return 301 https:\/\/braidvpn.com$request_uri;/' "$CONFIG_FILE"
     
     # Добавить отдельный server блок для www (если его нет)
-    if ! grep -q "server_name www.braidpro.tech" "$CONFIG_FILE"; then
+    if ! grep -q "server_name www.braidvpn.com" "$CONFIG_FILE"; then
         echo "⚠️  Рекомендуется добавить отдельный server блок для www"
         echo "   См. файл nginx-braidvpn.conf для полной конфигурации"
     fi
@@ -75,19 +75,19 @@ if [ $? -eq 0 ]; then
     echo "🔍 Проверка редиректов:"
     echo ""
     echo "1. HTTP → HTTPS (без www):"
-    curl -I http://braidpro.tech 2>&1 | grep -i "location\|http" | head -2
+    curl -I http://braidvpn.com 2>&1 | grep -i "location\|http" | head -2
     echo ""
     echo "2. HTTP www → HTTPS (без www):"
-    curl -I http://www.braidpro.tech 2>&1 | grep -i "location\|http" | head -2
+    curl -I http://www.braidvpn.com 2>&1 | grep -i "location\|http" | head -2
     echo ""
     echo "3. HTTPS www → HTTPS (без www):"
-    curl -I https://www.braidpro.tech 2>&1 | grep -i "location\|http" | head -2 || echo "⚠️  SSL сертификат для www может отсутствовать"
+    curl -I https://www.braidvpn.com 2>&1 | grep -i "location\|http" | head -2 || echo "⚠️  SSL сертификат для www может отсутствовать"
     echo ""
     echo "✅ Настройка завершена!"
     echo ""
     echo "📋 Следующие шаги:"
-    echo "   1. Убедитесь, что SSL сертификат включает www: sudo certbot certonly --nginx --expand -d braidpro.tech -d www.braidpro.tech"
-    echo "   2. В Yandex Webmaster укажите главное зеркало: https://braidpro.tech"
+    echo "   1. Убедитесь, что SSL сертификат включает www: sudo certbot certonly --nginx --expand -d braidvpn.com -d www.braidvpn.com"
+    echo "   2. В Yandex Webmaster укажите главное зеркало: https://braidvpn.com"
     echo "   3. Проверьте редиректы через браузер"
 else
     echo ""

@@ -8,10 +8,10 @@ HTTP → HTTPS редирект настроен корректно (301 Moved P
 ### 1. Установить HTTPS как главное зеркало
 
 1. Зайдите в [Yandex Webmaster](https://webmaster.yandex.ru/)
-2. Выберите сайт `braidpro.tech`
+2. Выберите сайт `braidvpn.com`
 3. Перейдите: **Настройки индексирования** → **Главное зеркало**
-4. **ВАЖНО:** Убедитесь, что выбран `https://braidpro.tech` (не `http://`)
-5. Если там указан `http://braidpro.tech`, измените на `https://braidpro.tech` и сохраните
+4. **ВАЖНО:** Убедитесь, что выбран `https://braidvpn.com` (не `http://`)
+5. Если там указан `http://braidvpn.com`, измените на `https://braidvpn.com` и сохраните
 
 ### 2. Проверить robots.txt на сервере
 
@@ -19,17 +19,17 @@ HTTP → HTTPS редирект настроен корректно (301 Moved P
 
 ```bash
 # Проверить robots.txt
-curl -s https://braidpro.tech/robots.txt
+curl -s https://braidvpn.com/robots.txt
 
 # Должно быть:
-# Sitemap: https://braidpro.tech/sitemap.xml
+# Sitemap: https://braidvpn.com/sitemap.xml
 ```
 
 ### 3. Проверить sitemap.xml на сервере
 
 ```bash
 # Проверить первые URL в sitemap
-curl -s https://braidpro.tech/sitemap.xml | head -20
+curl -s https://braidvpn.com/sitemap.xml | head -20
 
 # Все URL должны начинаться с https://
 ```
@@ -37,7 +37,7 @@ curl -s https://braidpro.tech/sitemap.xml | head -20
 ### 4. Отправить sitemap в Yandex Webmaster
 
 1. В Yandex Webmaster: **Индексирование** → **Файлы Sitemap**
-2. Добавьте: `https://braidpro.tech/sitemap.xml`
+2. Добавьте: `https://braidvpn.com/sitemap.xml`
 3. Нажмите **Добавить**
 
 ### 5. Запустить повторную проверку
@@ -49,7 +49,7 @@ curl -s https://braidpro.tech/sitemap.xml | head -20
 ### 6. (Опционально) Запросить переиндексацию
 
 1. **Индексирование** → **Переобход страниц**
-2. Добавьте: `https://braidpro.tech/`
+2. Добавьте: `https://braidvpn.com/`
 3. Нажмите **Добавить в очередь**
 
 ## Быстрая проверка всех настроек
@@ -58,15 +58,15 @@ curl -s https://braidpro.tech/sitemap.xml | head -20
 
 ```bash
 echo "=== Проверка robots.txt ==="
-curl -s https://braidpro.tech/robots.txt | grep -i sitemap
+curl -s https://braidvpn.com/robots.txt | grep -i sitemap
 
 echo ""
 echo "=== Проверка sitemap.xml (первые URL) ==="
-curl -s https://braidpro.tech/sitemap.xml | grep -o '<loc>https://[^<]*</loc>' | head -5
+curl -s https://braidvpn.com/sitemap.xml | grep -o '<loc>https://[^<]*</loc>' | head -5
 
 echo ""
 echo "=== Проверка HTTPS ==="
-curl -I https://braidpro.tech 2>&1 | head -5
+curl -I https://braidvpn.com 2>&1 | head -5
 ```
 
 ## После изменений в Yandex Webmaster

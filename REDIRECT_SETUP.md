@@ -2,41 +2,41 @@
 
 ## Цель
 Настроить правильные редиректы для SEO-оптимизации:
-- **Канонический домен**: `braidpro.tech` (без www)
-- Все варианты должны редиректиться на `https://braidpro.tech`
+- **Канонический домен**: `braidvpn.com` (без www)
+- Все варианты должны редиректиться на `https://braidvpn.com`
 
 ## Схема редиректов
 
 ```
-http://braidpro.tech          → 301 → https://braidpro.tech
-http://www.braidpro.tech      → 301 → https://braidpro.tech
-https://www.braidpro.tech     → 301 → https://braidpro.tech
-https://braidpro.tech         → (основной сайт)
+http://braidvpn.com          → 301 → https://braidvpn.com
+http://www.braidvpn.com      → 301 → https://braidvpn.com
+https://www.braidvpn.com     → 301 → https://braidvpn.com
+https://braidvpn.com         → (основной сайт)
 ```
 
 ## Настройка Nginx
 
 ### 1. Обновить конфигурацию
 
-Файл: `/etc/nginx/sites-available/braidpro.tech`
+Файл: `/etc/nginx/sites-available/braidvpn.com`
 
 Конфигурация включает:
 - Редирект HTTP → HTTPS (без www)
 - Редирект HTTPS www → HTTPS без www
-- Основной server блок для `braidpro.tech`
+- Основной server блок для `braidvpn.com`
 
 ### 2. SSL сертификат для www
 
-Для редиректа с `www.braidpro.tech` на HTTPS нужен SSL сертификат, который включает оба домена.
+Для редиректа с `www.braidvpn.com` на HTTPS нужен SSL сертификат, который включает оба домена.
 
 **Если используете Certbot:**
 ```bash
-sudo certbot certonly --nginx -d braidpro.tech -d www.braidpro.tech
+sudo certbot certonly --nginx -d braidvpn.com -d www.braidvpn.com
 ```
 
 Или обновить существующий:
 ```bash
-sudo certbot certonly --nginx --expand -d braidpro.tech -d www.braidpro.tech
+sudo certbot certonly --nginx --expand -d braidvpn.com -d www.braidvpn.com
 ```
 
 ### 3. Применить конфигурацию
@@ -55,30 +55,30 @@ sudo systemctl reload nginx
 
 ```bash
 # HTTP → HTTPS
-curl -I http://braidpro.tech
-curl -I http://www.braidpro.tech
+curl -I http://braidvpn.com
+curl -I http://www.braidvpn.com
 
 # HTTPS www → без www
-curl -I https://www.braidpro.tech
+curl -I https://www.braidvpn.com
 
-# Должен вернуть: Location: https://braidpro.tech/...
+# Должен вернуть: Location: https://braidvpn.com/...
 ```
 
 ### Проверка через браузер
 
-1. Откройте `http://braidpro.tech` → должен редиректиться на `https://braidpro.tech`
-2. Откройте `http://www.braidpro.tech` → должен редиректиться на `https://braidpro.tech`
-3. Откройте `https://www.braidpro.tech` → должен редиректиться на `https://braidpro.tech`
+1. Откройте `http://braidvpn.com` → должен редиректиться на `https://braidvpn.com`
+2. Откройте `http://www.braidvpn.com` → должен редиректиться на `https://braidvpn.com`
+3. Откройте `https://www.braidvpn.com` → должен редиректиться на `https://braidvpn.com`
 
 ## Настройка в Yandex Webmaster
 
 1. **Добавить оба домена:**
-   - `braidpro.tech`
-   - `www.braidpro.tech`
+   - `braidvpn.com`
+   - `www.braidvpn.com`
 
 2. **Указать главное зеркало:**
    - В настройках сайта выберите "Главное зеркало"
-   - Укажите: `https://braidpro.tech` (без www)
+   - Укажите: `https://braidvpn.com` (без www)
 
 3. **Проверить редиректы:**
    - В разделе "Индексирование" → "Переобход страниц"
@@ -87,22 +87,22 @@ curl -I https://www.braidpro.tech
 ## Настройка в Google Search Console
 
 1. **Добавить оба домена:**
-   - `braidpro.tech`
-   - `www.braidpro.tech`
+   - `braidvpn.com`
+   - `www.braidvpn.com`
 
 2. **Указать предпочтительный домен:**
    - В настройках → "Предпочтительный домен"
-   - Выберите: `braidpro.tech` (без www)
+   - Выберите: `braidvpn.com` (без www)
 
 ## Проверка canonical URLs
 
 Убедитесь, что все canonical URLs указывают на домен без www:
 
-- ✅ `index.html`: `<link rel="canonical" href="https://braidpro.tech/" />`
-- ✅ `sitemap.xml`: все `<loc>` теги с `https://braidpro.tech`
-- ✅ `robots.txt`: `Sitemap: https://braidpro.tech/sitemap.xml`
-- ✅ Open Graph: `og:url` с `https://braidpro.tech`
-- ✅ Schema.org: `url` с `https://braidpro.tech`
+- ✅ `index.html`: `<link rel="canonical" href="https://braidvpn.com/" />`
+- ✅ `sitemap.xml`: все `<loc>` теги с `https://braidvpn.com`
+- ✅ `robots.txt`: `Sitemap: https://braidvpn.com/sitemap.xml`
+- ✅ Open Graph: `og:url` с `https://braidvpn.com`
+- ✅ Schema.org: `url` с `https://braidvpn.com`
 
 ## Автоматизация
 
@@ -127,7 +127,7 @@ sudo ./fix-nginx-redirect.sh
 
 **Решение:** Обновите SSL сертификат, включив www:
 ```bash
-sudo certbot certonly --nginx --expand -d braidpro.tech -d www.braidpro.tech
+sudo certbot certonly --nginx --expand -d braidvpn.com -d www.braidvpn.com
 ```
 
 ### Проблема: Редирект не работает
@@ -142,5 +142,5 @@ sudo nginx -T | grep -A 10 "server_name"
 
 **Решение:** 
 1. Проверьте редирект HTTP → HTTPS
-2. Убедитесь, что в Yandex Webmaster указано главное зеркало `https://braidpro.tech`
+2. Убедитесь, что в Yandex Webmaster указано главное зеркало `https://braidvpn.com`
 3. Подождите 24-48 часов для обновления индекса

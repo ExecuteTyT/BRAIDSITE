@@ -1,11 +1,11 @@
-// Centralized per-route SEO head management.
+﻿// Centralized per-route SEO head management.
 //
 // Pure DOM mutation (no library) — this is intentionally framework-light so the
 // puppeteer prerender step (scripts/prerender.ts) serializes the final <head>
 // for every route without any SSR/hydration wiring. All page components call
 // applySeo() from a useEffect; the prerenderer waits, then snapshots the result.
 
-export const SITE_URL = 'https://braidpro.tech';
+export const SITE_URL = 'https://braidvpn.com';
 export const SITE_NAME = 'BRAID VPN';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
