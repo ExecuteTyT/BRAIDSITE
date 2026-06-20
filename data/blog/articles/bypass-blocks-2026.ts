@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'bypass-blocks-2026',
@@ -42,7 +42,7 @@ export const article: Article = {
     { type: 'ol', items: [
       [
         'Запустите Telegram-бота ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: '@braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_bypass_blocks_2026', text: '@braidvpn_bot' },
         ' — получите бесплатный ключ на 7 дней без привязки карты',
       ],
       [

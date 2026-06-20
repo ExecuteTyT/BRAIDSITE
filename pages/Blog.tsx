@@ -1,11 +1,13 @@
-import React, { useMemo, useState } from 'react';
+﻿import React, { useMemo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BookOpen, Clock, ArrowRight, Send, Shield, Search, Gamepad2, Zap, Scale, Smartphone, Globe, Youtube, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
 import { articles } from '../data/blog';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('blog_list');
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'Гайд': Shield,

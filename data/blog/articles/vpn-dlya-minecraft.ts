@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-minecraft',
@@ -114,7 +114,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы играть на любых серверах Minecraft?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Нидерландский сервер 25ms до EU-Hypixel, защита от DDoS на анархиях, доступ к Realms. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Minecraft' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_minecraft', text: 'Запустить BRAID VPN для Minecraft' },
       '.',
     ]},
   ],

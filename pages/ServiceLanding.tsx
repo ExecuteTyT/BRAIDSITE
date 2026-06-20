@@ -10,8 +10,7 @@ import type { LandingConfig } from '../data/landings/types';
 import { articleBySlug } from '../data/blog';
 import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 import { useScrollDepth } from '../utils/analytics';
-
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   send: Send, sparkles: Sparkles, shield: Shield, zap: Zap, wifi: Wifi, globe: Globe, lock: Lock,
@@ -73,7 +72,7 @@ export const ServiceLanding: React.FC<{ config: LandingConfig }> = ({ config }) 
             </ul>
           )}
 
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+          <a href={tgBotUrl(`srv_${config.slug}_hero`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
             <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 group">
               <Send className="w-5 h-5" />
               {config.hero.primaryCta ?? 'Получить ключ за 30 секунд'}
@@ -171,7 +170,7 @@ export const ServiceLanding: React.FC<{ config: LandingConfig }> = ({ config }) 
           </div>
 
           <div className="text-center mt-10 sm:mt-14">
-            <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+            <a href={tgBotUrl(`srv_${config.slug}_steps`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
               <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 py-3.5 sm:py-4">
                 <Send className="w-5 h-5" />
                 Начать с бесплатных 7 дней
@@ -310,7 +309,7 @@ export const ServiceLanding: React.FC<{ config: LandingConfig }> = ({ config }) 
           <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-10">
             7 дней полного доступа без оплаты. До 5 устройств. Все локации. Протокол VLESS Reality — обходит блокировки РКН.
           </p>
-          <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+          <a href={tgBotUrl(`srv_${config.slug}_final`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
             <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 group">
               <Send className="w-5 h-5" />
               Получить бесплатный ключ

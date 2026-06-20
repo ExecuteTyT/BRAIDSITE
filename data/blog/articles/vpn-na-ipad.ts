@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-ipad',
@@ -27,7 +27,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ в Telegram.' },
         ' Запустите ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_ipad', text: 'Telegram-бота BRAID VPN' },
         ' и нажмите «Получить ключ». Бесплатно 7 дней без карты.',
       ],
       [
@@ -117,7 +117,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Возьмите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_ipad', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Если у вас iPhone — посмотрите ',
       { type: 'a', href: '/blog/vpn-na-iphone-instrukciya', text: 'отдельную инструкцию' },
       '. Для просмотра Netflix из России — ',

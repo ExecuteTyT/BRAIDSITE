@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-bezopasnost-i-anonimnost',
@@ -140,7 +140,7 @@ export const article: Article = {
     { type: 'p', text: 'Понимание границ VPN критично: маркетинговые обещания «100% анонимности» — это ложь. Реалистичная цель — приватность и обход блокировок. Для этого VPN отлично подходит, особенно на современном протоколе VLESS Reality, который защищает не только содержимое, но и сам факт использования VPN.' },
     { type: 'p', text: [
       'Попробовать BRAID 7 дней бесплатно — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_bezopasnost_i_anonimnost', text: 'открыть Telegram-бот' },
       '.',
     ]},
   ],

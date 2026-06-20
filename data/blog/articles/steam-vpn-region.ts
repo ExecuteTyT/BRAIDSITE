@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'steam-vpn-region',
@@ -45,7 +45,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Подключите BRAID к выбранной стране.' },
         ' Получите ключ в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_steam_vpn_region', text: 'Telegram-боте' },
         ' и установите Happ со ',
         { type: 'a', href: '/download', text: 'страницы загрузки' },
         '.',

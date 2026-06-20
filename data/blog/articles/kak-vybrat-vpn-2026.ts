@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'kak-vybrat-vpn-2026',
@@ -164,7 +164,7 @@ export const article: Article = {
     { type: 'p', text: 'Не верьте на слово — берите триал и тестируйте сами 5-7 дней. Это объективнее любых обзоров и рейтингов.' },
     { type: 'p', text: [
       'Запустить триал BRAID 7 дней бесплатно — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_kak_vybrat_vpn_2026', text: 'открыть Telegram-бот' },
       '.',
     ]},
   ],

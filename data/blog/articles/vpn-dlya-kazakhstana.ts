@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-kazakhstana',
@@ -77,7 +77,7 @@ export const article: Article = {
     { type: 'ol', items: [
       [
         'Откройте Telegram-бот ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: '@braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_kazakhstana', text: '@braidvpn_bot' },
         ' и получите ключ',
       ],
       [

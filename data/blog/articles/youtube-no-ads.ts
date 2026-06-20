@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'youtube-no-ads',
@@ -25,7 +25,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите VPN-ключ.' },
         ' Запустите ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_no_ads', text: 'Telegram-бота BRAID VPN' },
         ' и получите бесплатный ключ на 7 дней без привязки карты.',
       ],
       [

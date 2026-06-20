@@ -1,10 +1,12 @@
-import React from 'react';
+﻿import React from 'react';
 import { ShieldCheck, EyeOff, Zap, Youtube, Wifi, Send, Check } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from '../components/Button';
 import { updateMeta } from '../utils/meta';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('technology');
 
 export const Technology: React.FC = () => {
   const { content } = useLanguage();

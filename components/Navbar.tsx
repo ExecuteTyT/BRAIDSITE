@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Send, ChevronDown, Youtube, Wifi, Globe, Smartphone, Monitor, Laptop, Shield, ArrowRight, Download, Sparkles, MessageSquare, Film, Gamepad2, Instagram, Heart, Star, ShoppingCart } from 'lucide-react';
 import { Button } from './Button';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('nav');
 
 /* ───────── Dropdown item data ───────── */
 

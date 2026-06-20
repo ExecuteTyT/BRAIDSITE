@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-android-tv',
@@ -51,7 +51,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' На смартфоне в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_android_tv', text: 'Telegram-боте BRAID VPN' },
         ' нажмите «Получить ключ».',
       ],
       [
@@ -127,7 +127,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_android_tv', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Для телевизоров без Android — настройте ',
       { type: 'a', href: '/blog/vpn-na-router', text: 'VPN на роутере' },
       '. Хотите смотреть Netflix? Читайте ',

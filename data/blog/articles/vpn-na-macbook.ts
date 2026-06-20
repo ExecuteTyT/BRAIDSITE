@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-macbook',
@@ -28,7 +28,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' Перейдите в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_macbook', text: 'Telegram-бот BRAID VPN' },
         ' → «Получить ключ». 7 дней бесплатно без карты.',
       ],
       [
@@ -133,7 +133,7 @@ export const article: Article = {
       '. Полный обзор обхода блокировок — в ',
       { type: 'a', href: '/blog/bypass-blocks-2026', text: 'статье о блокировках 2026' },
       '. Возьмите ключ за минуту в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_macbook', text: 'Telegram-боте BRAID VPN' },
       '.',
     ]},
   ],

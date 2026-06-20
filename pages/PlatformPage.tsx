@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Download, ChevronDown, ChevronUp } from 'lucide-react';
 import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -212,7 +212,7 @@ export const PlatformPage: React.FC<{ platform: string }> = ({ platform }) => {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400">Или получите ключ в <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">Telegram-боте</a> и установите вручную</p>
+          <p className="text-sm text-gray-400">Или получите ключ в <a href={tgBotUrl(`plat_${platform}`)} target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">Telegram-боте</a> и установите вручную</p>
         </div>
       </section>
 

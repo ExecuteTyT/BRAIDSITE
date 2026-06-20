@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-huawei',
@@ -53,7 +53,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_huawei', text: 'Telegram-бота BRAID VPN' },
         ' и нажмите «Получить ключ». 7 дней бесплатно, без карты. Telegram на Huawei работает через AppGallery.',
       ],
       [
@@ -121,7 +121,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_huawei', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Если у вас другой смартфон, посмотрите инструкции для ',
       { type: 'a', href: '/blog/vpn-na-samsung', text: 'Samsung Galaxy' },
       ' или ',

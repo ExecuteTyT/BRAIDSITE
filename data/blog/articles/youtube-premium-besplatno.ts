@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'youtube-premium-besplatno',
@@ -112,7 +112,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ BRAID VPN.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_premium_besplatno', text: 'Telegram-бот' },
         ' — 7 дней бесплатно без карты.',
       ],
       [
@@ -151,7 +151,7 @@ export const article: Article = {
     { type: 'h2', text: 'Итог' },
     { type: 'p', text: [
       'Получить YouTube Premium буквально «бесплатно» — нельзя. Все методы дешёвого Premium через VPN-регионы перестали работать в 2024-2025 годах. Реальная альтернатива — VPN на серверы Армения или Нидерланды, где YouTube не показывает рекламу по умолчанию. Стоит 163₽/мес против 399₽ Premium, при этом даёт дополнительно скорость и доступ к десяткам других сервисов. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ бесплатно на 7 дней' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_premium_besplatno', text: 'Получите ключ бесплатно на 7 дней' },
       ' и убедитесь сами.',
     ]},
   ],

@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-genshin',
@@ -116,7 +116,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы закрыть Спираль на 9 звёзд?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Нидерландский сервер 25ms до Genshin EU, стабильный Co-Op, доступ к турецкому Shop. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Genshin Impact' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_genshin', text: 'Запустить BRAID VPN для Genshin Impact' },
       '.',
     ]},
   ],

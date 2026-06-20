@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-fortnite',
@@ -123,7 +123,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы вернуться в Fortnite?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Финский сервер 25ms до EU, обход блокировки Epic Games, покупки V-Bucks с регионального аккаунта. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Fortnite' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_fortnite', text: 'Запустить BRAID VPN для Fortnite' },
       '.',
     ]},
   ],

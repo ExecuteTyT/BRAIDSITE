@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'tiktok-ne-otkryvaetsya',
@@ -52,7 +52,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_tiktok_ne_otkryvaetsya', text: 'Telegram-бот BRAID VPN' },
         ' — 7 дней бесплатно, без карты.',
       ],
       [
@@ -116,7 +116,7 @@ export const article: Article = {
       ' при оплате за год. Первые ',
       { type: 'b', text: '7 дней бесплатно' },
       ' без привязки карты. Один ключ — до 5 устройств. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получить ключ в Telegram' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_tiktok_ne_otkryvaetsya', text: 'Получить ключ в Telegram' },
       '.',
     ]},
 

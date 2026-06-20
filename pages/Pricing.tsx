@@ -1,11 +1,13 @@
-import React from 'react';
+﻿import React from 'react';
 import { Button } from '../components/Button';
 import { Check, Send, Sparkles, Shield, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TelegramProxyHint } from '../components/TelegramProxyHint';
 import { updateMeta } from '../utils/meta';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('pricing');
 
 export const Pricing: React.FC = () => {
   const { content } = useLanguage();

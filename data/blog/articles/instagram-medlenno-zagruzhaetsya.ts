@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'instagram-medlenno-zagruzhaetsya',
@@ -65,7 +65,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ BRAID VPN.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_instagram_medlenno_zagruzhaetsya', text: 'Telegram-бот' },
         ' — 7 дней бесплатно без карты.',
       ],
       [
@@ -127,7 +127,7 @@ export const article: Article = {
     { type: 'h2', text: 'Итог' },
     { type: 'p', text: [
       'Instagram тормозит, потому что бесплатные VPN не справляются с нагрузкой Reels и Stories, а DPI операторов режет устаревшие протоколы. Решение — современный VPN с VLESS Reality и быстрыми европейскими серверами. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите бесплатный ключ' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_instagram_medlenno_zagruzhaetsya', text: 'Получите бесплатный ключ' },
       ' и работайте с Instagram как в 2021 году. Также читайте: ',
       { type: 'a', href: '/blog/bypass-blocks-2026', text: 'Обход блокировок РКН в 2026' },
       '.',

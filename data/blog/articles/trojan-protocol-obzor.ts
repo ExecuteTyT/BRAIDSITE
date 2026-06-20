@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'trojan-protocol-obzor',
@@ -128,7 +128,7 @@ export const article: Article = {
     ]},
     { type: 'p', text: [
       'Запустить VLESS Reality бесплатно на 7 дней — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот BRAID' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_trojan_protocol_obzor', text: 'открыть Telegram-бот BRAID' },
       '.',
     ]},
   ],

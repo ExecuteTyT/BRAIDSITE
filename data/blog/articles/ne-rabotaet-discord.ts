@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'ne-rabotaet-discord',
@@ -148,7 +148,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_ne_rabotaet_discord', text: 'Telegram-бот BRAID VPN' },
         ' — 7 дней бесплатно без карты.',
       ],
       [
@@ -202,7 +202,7 @@ export const article: Article = {
     { type: 'h2', text: 'Итог' },
     { type: 'p', text: [
       'Discord не работает в России из-за блокировки доменов, UDP-портов и WebRTC-трафика на уровне ТСПУ операторов. Единственное решение — VPN с маскировкой VLESS Reality, который пропускает все типы трафика и инкапсулирует их в обычный HTTPS. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ за 30 секунд' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_ne_rabotaet_discord', text: 'Получите ключ за 30 секунд' },
       ' и зайдите в голосовой канал с пингом 50 мс.',
     ]},
   ],

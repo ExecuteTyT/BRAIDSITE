@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-instagram-instrukciya',
@@ -52,7 +52,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Откройте Telegram-бота BRAID VPN.' },
         ' Перейдите по ссылке ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 't.me/braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_instagram_instrukciya', text: 't.me/braidvpn_bot' },
         ' и нажмите «Начать». Бот выдаст бесплатный ключ на 7 дней без привязки карты.',
       ],
       [{ type: 'b', text: 'Скачайте Happ из App Store.' }, ' Приложение есть в российском App Store, ничего обходить не нужно. Размер — 35 МБ.'],
@@ -110,7 +110,7 @@ export const article: Article = {
       'BRAID VPN стоит от ',
       { type: 'b', text: '163₽/мес' },
       ' при оплате на год — это в 6 раз дешевле бутылки кофе. Пробные 7 дней бесплатно, карту вводить не нужно. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ в Telegram' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_instagram_instrukciya', text: 'Получите ключ в Telegram' },
       ' и откройте Instagram прямо сейчас.',
     ]},
     { type: 'p', text: [

@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-tiktok',
@@ -51,7 +51,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ BRAID VPN.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_tiktok', text: 'Telegram-бота' },
         ' и заберите бесплатный пробный ключ на 7 дней — карта не нужна.',
       ],
       [
@@ -123,7 +123,7 @@ export const article: Article = {
     { type: 'h2', text: 'Попробуйте бесплатно 7 дней' },
     { type: 'p', text: [
       'Получите тестовый доступ на неделю — без карты, без подписки, без автосписания. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустите Telegram-бота' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_tiktok', text: 'Запустите Telegram-бота' },
       ' и проверьте загрузку видео в TikTok прямо сейчас. Если что-то не понравится — просто не продлевайте.',
     ]},
     { type: 'p', text: [

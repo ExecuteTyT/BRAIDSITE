@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-hbo',
@@ -49,7 +49,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_hbo', text: 'Telegram-бот BRAID' },
         ' и активируйте бесплатный пробный период на 7 дней.',
       ],
       [

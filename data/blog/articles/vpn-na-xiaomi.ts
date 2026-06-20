@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-xiaomi',
@@ -22,7 +22,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Возьмите ключ в Telegram-боте.' },
         ' Перейдите по ссылке на ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_xiaomi', text: 'Telegram-бота BRAID VPN' },
         ' и получите бесплатный ключ на неделю.',
       ],
       [
@@ -123,7 +123,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Готовы начать? Жмите ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_xiaomi', text: 'Telegram-бот BRAID VPN' },
       ' — 7 дней бесплатно. Если у вас Samsung — посмотрите ',
       { type: 'a', href: '/blog/vpn-na-samsung', text: 'инструкцию для Galaxy' },
       ', про обход замедлений читайте в ',

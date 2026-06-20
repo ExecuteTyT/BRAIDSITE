@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-roblox',
@@ -115,7 +115,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы защитить Roblox-аккаунт ребёнка?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Нидерландский сервер 25ms до EU, защита детского IP, доступ к региональным experiences. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Roblox' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_roblox', text: 'Запустить BRAID VPN для Roblox' },
       '.',
     ]},
   ],

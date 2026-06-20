@@ -7,7 +7,7 @@ import { articleBySlug, articles } from '../data/blog';
 import { applySeo, articleLd } from '../utils/meta';
 import { useScrollDepth, Goals } from '../utils/analytics';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
 
 export const ArticlePage: React.FC = () => {
   const { articleId } = useParams<{ articleId: string }>();
@@ -131,7 +131,7 @@ export const ArticlePage: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6 sm:mb-8">
-              <a href={TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href={tgBotUrl(`blog_${articleId ?? 'unknown'}`)} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                   <Send className="w-4 sm:w-5 h-4 sm:h-5" />
                   Получить бесплатный ключ

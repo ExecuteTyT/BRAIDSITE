@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'telegram-uskorenie-vpn',
@@ -73,7 +73,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' Зайдите в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_telegram_uskorenie_vpn', text: 'Telegram-бота BRAID VPN' },
         ' прямо из вашего Telegram — 7 дней бесплатно без карты.',
       ],
       [
@@ -131,7 +131,7 @@ export const article: Article = {
       ' на один ключ — настройте VPN на всех домашних устройствах: телефон, планшет, ноутбук, рабочий компьютер. Пробные 7 дней бесплатно без карты.',
     ]},
     { type: 'p', text: [
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустите бота в Telegram' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_telegram_uskorenie_vpn', text: 'Запустите бота в Telegram' },
       ' и проверьте скорость загрузки прямо сейчас. Связанные материалы: ',
       { type: 'a', href: '/blog/bypass-blocks-2026', text: 'Обход блокировок РКН' },
       '.',

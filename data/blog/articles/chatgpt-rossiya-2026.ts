@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'chatgpt-rossiya-2026',
@@ -51,7 +51,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ BRAID.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_chatgpt_rossiya_2026', text: 'Telegram-бот' },
         ' и заберите бесплатный ключ на 7 дней — карта не нужна.',
       ],
       [

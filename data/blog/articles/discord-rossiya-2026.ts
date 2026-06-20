@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'discord-rossiya-2026',
@@ -79,7 +79,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите бесплатный ключ.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_discord_rossiya_2026', text: 'Telegram-бота BRAID VPN' },
         ' — 7 дней пробного доступа, карта не нужна.',
       ],
       [
@@ -146,7 +146,7 @@ export const article: Article = {
       ' — настройте VPN на игровом ПК, ноутбуке, телефоне и поделитесь с другом-стримером. Пробный период — 7 дней бесплатно без карты.',
     ]},
     { type: 'p', text: [
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ в Telegram' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_discord_rossiya_2026', text: 'Получите ключ в Telegram' },
       ' и зайдите в голосовой канал Discord за 3 минуты. Полезные материалы: ',
       { type: 'a', href: '/blog/vpn-gaming', text: 'VPN для онлайн-игр' },
       ', ',

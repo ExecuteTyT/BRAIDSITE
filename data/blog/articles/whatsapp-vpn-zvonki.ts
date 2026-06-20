@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'whatsapp-vpn-zvonki',
@@ -56,7 +56,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите бесплатный ключ' },
         ' в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_whatsapp_vpn_zvonki', text: 'Telegram-боте BRAID VPN' },
         ' — 7 дней бесплатно без карты.',
       ],
       [{ type: 'b', text: 'Установите Happ' }, ' из App Store или с официального сайта для Android.'],
@@ -103,7 +103,7 @@ export const article: Article = {
     ]},
     { type: 'p', text: [
       'Попробуйте 7 дней бесплатно — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'получите ключ в Telegram' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_whatsapp_vpn_zvonki', text: 'получите ключ в Telegram' },
       ' и сравните WhatsApp до и после. Полезное по теме: ',
       { type: 'a', href: '/blog/bypass-blocks-2026', text: 'Обход блокировок РКН' },
       ' и ',

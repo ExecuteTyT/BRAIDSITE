@@ -1,11 +1,13 @@
-import React from 'react';
+﻿import React from 'react';
 import { Smartphone, Monitor, Apple, Download, Send, Check, ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TelegramProxyHint } from '../components/TelegramProxyHint';
 import { Button } from '../components/Button';
 import { updateMeta } from '../utils/meta';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('download');
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);

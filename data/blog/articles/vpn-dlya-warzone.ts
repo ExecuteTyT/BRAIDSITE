@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-warzone',
@@ -109,7 +109,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы выигрывать в Warzone?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Финский сервер 30ms до EU West, защита от DDoS, обход блокировок Battle.net. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Warzone' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_warzone', text: 'Запустить BRAID VPN для Warzone' },
       '.',
     ]},
   ],

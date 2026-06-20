@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vless-vs-openvpn',
@@ -83,7 +83,7 @@ export const article: Article = {
       'Подробнее о реализации VLESS Reality в BRAID VPN — на странице ',
       { type: 'a', href: '/technology', text: 'технологии' },
       '. Чтобы протестировать на практике — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'получите бесплатный ключ' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vless_vs_openvpn', text: 'получите бесплатный ключ' },
       ' на 7 дней.',
     ]},
   ],

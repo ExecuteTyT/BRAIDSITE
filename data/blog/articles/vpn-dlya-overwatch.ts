@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-overwatch',
@@ -114,7 +114,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы вернуться в Top 500 SR?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Нидерландский сервер 25ms до Battle.net EU, защита от DDoS, доступ к магазину OW2. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Overwatch 2' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_overwatch', text: 'Запустить BRAID VPN для Overwatch 2' },
       '.',
     ]},
   ],

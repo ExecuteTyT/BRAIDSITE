@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'outline-vpn-obzor',
@@ -130,7 +130,7 @@ export const article: Article = {
     { type: 'p', text: 'Если вы — журналист или активист с поддержкой международной организации, Outline остаётся отличным вариантом. Для повседневного пользователя из России в 2026 году готовый сервис на VLESS Reality (BRAID VPN) удобнее, дешевле и стабильнее: 163 ₽/мес, 5 локаций, оплата картой РФ, Telegram-поддержка.' },
     { type: 'p', text: [
       'Получить бесплатный ключ BRAID на 7 дней — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_outline_vpn_obzor', text: 'открыть Telegram-бот' },
       '.',
     ]},
   ],

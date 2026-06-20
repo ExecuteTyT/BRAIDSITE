@@ -4,7 +4,9 @@ import { Button } from '../components/Button';
 import { Send, ArrowRight, Check, Shield, ChevronDown, ChevronUp, Globe } from 'lucide-react';
 import { applySeo, breadcrumbLd, faqLd } from '../utils/meta';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('chatgpt');
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);

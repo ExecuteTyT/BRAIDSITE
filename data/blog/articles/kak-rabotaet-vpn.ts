@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'kak-rabotaet-vpn',
@@ -122,7 +122,7 @@ export const article: Article = {
       'BRAID VPN использует протокол VLESS Reality поверх TLS 1.3 — современный стек, разработанный специально для регионов с активной цензурой. Подробности — на странице ',
       { type: 'a', href: '/technology', text: 'технологии' },
       '. Чтобы протестировать ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'получите бесплатный ключ' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_kak_rabotaet_vpn', text: 'получите бесплатный ключ' },
       ' на 7 дней.',
     ]},
   ],

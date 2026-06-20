@@ -1,4 +1,4 @@
-// Контент сайта BRAID VPN - только русская версия
+﻿// Контент сайта BRAID VPN - только русская версия
 // SEO-оптимизированные тексты для высокочастотных и низкочастотных запросов
 
 export const content = {
@@ -361,7 +361,7 @@ export const content = {
     ]
   },
   telegram: {
-    bot_url: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==',
+    bot_url: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__translations_default',
     cta: 'Открыть Telegram-бот'
   },
   notFound: {

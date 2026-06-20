@@ -71,7 +71,7 @@ export const article: Article = {
       ],
       [
         'Запустите бота ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: '@braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_telegram_proxy_russia_2026', text: '@braidvpn_bot' },
         ' и получите бесплатный ключ на 7 дней',
       ],
       [

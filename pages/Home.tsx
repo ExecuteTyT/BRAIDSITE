@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeroCanvas } from '../components/HeroCanvas';
 import { Button } from '../components/Button';
@@ -7,7 +7,9 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { articles } from '../data/blog';
 import { applySeo } from '../utils/meta';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('home');
 
 const HOME_TITLE = 'BRAID VPN — Скачать ВПН для России 2026 бесплатно | YouTube, ChatGPT, обход блокировок';
 const HOME_DESC = 'Скачать BRAID VPN для России 2026: на ПК, Android, iPhone. Бесплатно 7 дней без карты. YouTube без рекламы, ChatGPT, Discord, обход блокировок РКН. Протокол VLESS Reality, от 163₽/мес.';

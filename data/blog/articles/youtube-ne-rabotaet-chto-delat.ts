@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'youtube-ne-rabotaet-chto-delat',
@@ -76,7 +76,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Откройте Telegram-бот.' },
         ' Перейдите в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'BRAID VPN бот' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_ne_rabotaet_chto_delat', text: 'BRAID VPN бот' },
         ' — 7 дней бесплатно без привязки карты.',
       ],
       [
@@ -146,7 +146,7 @@ export const article: Article = {
     { type: 'h2', text: 'Итог' },
     { type: 'p', text: [
       'YouTube не «сломался» — его принудительно замедлили на уровне операторов РФ. Решение — пропустить трафик через VPN с маскировкой под обычный HTTPS. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ за 30 секунд' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_ne_rabotaet_chto_delat', text: 'Получите ключ за 30 секунд' },
       ' и смотрите YouTube в 4K без рекламы. Связанные материалы: ',
       { type: 'a', href: '/blog/youtube-no-ads', text: 'YouTube без рекламы' },
       ', ',

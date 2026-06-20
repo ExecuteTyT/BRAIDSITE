@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'shadowsocks-vs-vless',
@@ -122,7 +122,7 @@ export const article: Article = {
     { type: 'p', text: 'В 2026 году для российского пользователя VLESS Reality — оптимальный выбор: стабильнее под современным DPI РКН, активно развивается, лучше работает на мобильных сетях с агрессивной фильтрацией. Shadowsocks остаётся валидным выбором в инфраструктурных сценариях и при существующих установках Outline.' },
     { type: 'p', text: [
       'Попробовать VLESS Reality бесплатно 7 дней — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот BRAID' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_shadowsocks_vs_vless', text: 'открыть Telegram-бот BRAID' },
       '.',
     ]},
   ],

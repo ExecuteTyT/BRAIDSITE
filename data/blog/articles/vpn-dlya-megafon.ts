@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-megafon',
@@ -41,7 +41,7 @@ export const article: Article = {
     { type: 'ol', items: [
       [
         'Получите ключ в Telegram-боте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: '@braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_megafon', text: '@braidvpn_bot' },
         ' — 7 дней бесплатно',
       ],
       [
@@ -116,7 +116,7 @@ export const article: Article = {
     { type: 'h3', text: 'Сколько стоит подписка для МегаФон-абонента?' },
     { type: 'p', text: [
       'Тарифы BRAID VPN — от 163 ₽ в месяц при оплате за год, никаких региональных или операторских наценок. Первые 7 дней бесплатно. Оплата российскими картами через ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_megafon', text: 'Telegram-бот' },
       '. Подробнее на странице ',
       { type: 'a', href: '/pricing', text: 'цены' },
       '.',

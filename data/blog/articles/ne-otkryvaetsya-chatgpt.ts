@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'ne-otkryvaetsya-chatgpt',
@@ -66,7 +66,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите VPN-ключ.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_ne_otkryvaetsya_chatgpt', text: 'Telegram-бот BRAID VPN' },
         ' — 7 дней бесплатно без карты.',
       ],
       [
@@ -150,7 +150,7 @@ export const article: Article = {
     { type: 'h2', text: 'Итог' },
     { type: 'p', text: [
       'ChatGPT недоступен в России по решению OpenAI и Cloudflare. Решение — VPN с приватными IP, не засвеченными в чёрных списках. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_ne_otkryvaetsya_chatgpt', text: 'Получите ключ BRAID VPN' },
       ', подключитесь к США, зарегистрируйтесь через Google — и пользуйтесь ChatGPT без капч и блокировок. Дополнительные материалы: ',
       { type: 'a', href: '/blog/bypass-blocks-2026', text: 'Обход блокировок РКН' },
       '.',

@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-spb',
@@ -61,7 +61,7 @@ export const article: Article = {
     { type: 'ol', items: [
       [
         'Получите бесплатный ключ в Telegram-боте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: '@braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_spb', text: '@braidvpn_bot' },
       ],
       [
         'Скачайте приложение Happ со ',

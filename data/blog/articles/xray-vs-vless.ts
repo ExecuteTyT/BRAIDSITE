@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'xray-vs-vless',
@@ -141,7 +141,7 @@ export const article: Article = {
     { type: 'p', text: 'Xray и VLESS — не альтернативы, а компоненты одной системы. Xray-core — программа (движок), VLESS — протокол. Современный стандарт обхода цензуры в 2026 году — VLESS + XTLS Vision + REALITY, реализованный на Xray-core. Это то, что вы получаете «под капотом» BRAID VPN и большинства других сервисов нового поколения.' },
     { type: 'p', text: [
       'Запустить VLESS Reality за 60 секунд — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'получить ключ в Telegram-боте' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_xray_vs_vless', text: 'получить ключ в Telegram-боте' },
       ' (7 дней бесплатно).',
     ]},
   ],

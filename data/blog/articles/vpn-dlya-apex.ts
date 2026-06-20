@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-apex',
@@ -115,7 +115,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы поднять ранг в Apex?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Нидерландский сервер 25ms до Frankfurt, защита от DDoS, безопасность для EAC. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для Apex Legends' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_apex', text: 'Запустить BRAID VPN для Apex Legends' },
       '.',
     ]},
   ],

@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'whatsapp-zvonki-obryvayutsya',
@@ -82,7 +82,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Откройте Telegram-бот.' },
         ' Перейдите в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'BRAID VPN бот' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_whatsapp_zvonki_obryvayutsya', text: 'BRAID VPN бот' },
         ' — 7 дней бесплатно без карты.',
       ],
       [
@@ -148,7 +148,7 @@ export const article: Article = {
       ' при оплате за год. ',
       { type: 'b', text: '7 дней бесплатно' },
       ' без карты — успеете протестировать все типы звонков. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получить ключ в Telegram' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_whatsapp_zvonki_obryvayutsya', text: 'Получить ключ в Telegram' },
       '.',
     ]},
 

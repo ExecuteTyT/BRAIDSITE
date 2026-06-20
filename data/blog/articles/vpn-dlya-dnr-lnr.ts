@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-dnr-lnr',
@@ -82,7 +82,7 @@ export const article: Article = {
     { type: 'ol', items: [
       [
         'Запустите Telegram-бот ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: '@braidvpn_bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_dnr_lnr', text: '@braidvpn_bot' },
         ' — получите бесплатный ключ на 7 дней',
       ],
       'Установите Happ для вашей платформы',
@@ -107,7 +107,7 @@ export const article: Article = {
     { type: 'h3', text: 'Сколько стоит VPN для ДНР и ЛНР?' },
     { type: 'p', text: [
       'Тарифы стандартные для всей России — от 163 ₽ в месяц при оплате за год. Никаких региональных наценок нет. 7 дней бесплатно для тестирования. Оформление через ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_dnr_lnr', text: 'Telegram-бот' },
       ', оплата российскими картами.',
     ]},
 

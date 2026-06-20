@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'chto-takoe-dpi',
@@ -113,7 +113,7 @@ export const article: Article = {
       '. О том, как BRAID реализует обход блокировок — на странице ',
       { type: 'a', href: '/technology', text: 'технологии' },
       '. Чтобы протестировать — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'получите бесплатный ключ' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_chto_takoe_dpi', text: 'получите бесплатный ключ' },
       ' на 7 дней.',
     ]},
   ],

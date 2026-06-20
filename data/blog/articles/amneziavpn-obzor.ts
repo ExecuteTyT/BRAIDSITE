@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'amneziavpn-obzor',
@@ -130,7 +130,7 @@ export const article: Article = {
     { type: 'p', text: 'Но для большинства пользователей готовый сервис на том же протоколе — это удобнее, дешевле в итоге (с учётом стоимости VPS) и надёжнее. BRAID VPN использует ту же технологическую базу (VLESS Reality), но даёт 5 локаций, мгновенную установку и поддержку 24/7 — за 163 ₽/мес.' },
     { type: 'p', text: [
       'Попробовать BRAID 7 дней бесплатно — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_amneziavpn_obzor', text: 'открыть Telegram-бот' },
       '.',
     ]},
   ],

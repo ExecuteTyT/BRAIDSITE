@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'netflix-iz-rossii',
@@ -44,7 +44,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ BRAID.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_netflix_iz_rossii', text: 'Telegram-бот BRAID' },
         ' и заберите бесплатный пробный ключ на 7 дней.',
       ],
       [

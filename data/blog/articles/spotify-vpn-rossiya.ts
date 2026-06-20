@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'spotify-vpn-rossiya',
@@ -42,7 +42,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Активируйте BRAID.' },
         ' Получите ключ в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_spotify_vpn_rossiya', text: 'Telegram-боте' },
         ' и установите Happ со ',
         { type: 'a', href: '/download', text: 'страницы загрузки' },
         '.',

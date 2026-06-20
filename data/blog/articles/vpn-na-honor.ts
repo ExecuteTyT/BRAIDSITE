@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-honor',
@@ -22,7 +22,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' В ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_honor', text: 'Telegram-боте BRAID VPN' },
         ' нажмите «Получить ключ». 7 дней бесплатно.',
       ],
       [
@@ -111,7 +111,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_honor', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно, без карты. Похожие модели — ',
       { type: 'a', href: '/blog/vpn-na-huawei', text: 'Huawei' },
       ' и ',

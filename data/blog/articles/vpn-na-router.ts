@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-router',
@@ -118,7 +118,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_router', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Если хотите узнать почему VLESS лучше OpenVPN — читайте ',
       { type: 'a', href: '/blog/vless-vs-openvpn', text: 'сравнение протоколов' },
       '. Для Windows-ПК отдельно — ',

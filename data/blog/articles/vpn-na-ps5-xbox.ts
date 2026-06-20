@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-ps5-xbox',
@@ -110,7 +110,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_ps5_xbox', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Лучший способ — ',
       { type: 'a', href: '/blog/vpn-na-router', text: 'VPN на роутере' },
       '. Подробнее про задержки и пинг — в ',

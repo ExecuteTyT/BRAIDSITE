@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-windows-11',
@@ -31,7 +31,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ в Telegram.' },
         ' Откройте ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бота BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_windows_11', text: 'Telegram-бота BRAID VPN' },
         ' и нажмите «Получить ключ» — 7 дней бесплатно, без карты.',
       ],
       [
@@ -130,7 +130,7 @@ export const article: Article = {
       '. Подробное сравнение протоколов — в ',
       { type: 'a', href: '/blog/vless-vs-openvpn', text: 'статье VLESS против OpenVPN' },
       '. Или сразу получите ключ — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_windows_11', text: 'Telegram-бот BRAID VPN' },
       '.',
     ]},
   ],

@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'chto-takoe-vless',
@@ -119,7 +119,7 @@ export const article: Article = {
       'BRAID VPN построен именно на этой связке — VLESS+Reality поверх TLS 1.3. Подробности реализации — на странице ',
       { type: 'a', href: '/technology', text: 'технологии' },
       '. Чтобы попробовать — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'получите бесплатный ключ' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_chto_takoe_vless', text: 'получите бесплатный ключ' },
       ' на 7 дней. О следующем технологическом слое читайте в статье ',
       { type: 'a', href: '/blog/chto-takoe-reality', text: 'что такое Reality' },
       '.',

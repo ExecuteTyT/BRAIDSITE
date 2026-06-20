@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-wot',
@@ -107,7 +107,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы снизить пинг в WoT?' },
     { type: 'p', text: [
       'Получите 7 дней бесплатно — без карты, без регистрации, в один клик через Telegram. Финский сервер для EU-кластера, российский для Lesta Games, защита от DDoS на ранкедах. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для World of Tanks' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_wot', text: 'Запустить BRAID VPN для World of Tanks' },
       '.',
     ]},
   ],

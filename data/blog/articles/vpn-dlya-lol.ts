@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-dlya-lol',
@@ -123,7 +123,7 @@ export const article: Article = {
     { type: 'h2', text: 'Готовы поднять дивизион в LoL?' },
     { type: 'p', text: [
       '7 дней бесплатно — без карты, в один клик через Telegram. Нидерландский сервер 25ms до EUW, совместимость с Vanguard, защита от DDoS на ранкедах. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Запустить BRAID VPN для League of Legends' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_dlya_lol', text: 'Запустить BRAID VPN для League of Legends' },
       '.',
     ]},
   ],

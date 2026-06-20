@@ -1,9 +1,11 @@
-import React from 'react';
+﻿import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const TELEGRAM_BOT_URL = 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==';
+import { tgBotUrl } from '../utils/telegram';
+
+const TELEGRAM_BOT_URL = tgBotUrl('footer');
 
 export const Footer: React.FC = () => {
   const { content } = useLanguage();

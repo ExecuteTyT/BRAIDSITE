@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-apple-tv',
@@ -53,7 +53,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Откройте Telegram-бот.' },
         ' Перейдите в ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-бот BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_apple_tv', text: 'Telegram-бот BRAID VPN' },
         '.',
       ],
       [
@@ -112,7 +112,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_apple_tv', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Рекомендуем настроить ',
       { type: 'a', href: '/blog/vpn-na-router', text: 'VPN на роутере' },
       ' — Apple TV и все остальные устройства получат туннель автоматически. Также читайте про ',

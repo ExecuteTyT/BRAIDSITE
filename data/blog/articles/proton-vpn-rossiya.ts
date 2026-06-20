@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'proton-vpn-rossiya',
@@ -121,7 +121,7 @@ export const article: Article = {
     { type: 'info', variant: 'success', title: 'Попробовать BRAID 7 дней бесплатно', text: 'Получите ключ в Telegram-боте без регистрации, ввода карты и email. 5 локаций, 5 устройств, VLESS Reality.' },
     { type: 'p', text: [
       'Запустить триал — ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'открыть Telegram-бот BRAID' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_proton_vpn_rossiya', text: 'открыть Telegram-бот BRAID' },
       '.',
     ]},
   ],

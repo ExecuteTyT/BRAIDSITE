@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'vpn-na-realme',
@@ -21,7 +21,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Получите ключ.' },
         ' В ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_realme', text: 'Telegram-боте BRAID VPN' },
         ' нажмите «Получить ключ».',
       ],
       [
@@ -103,7 +103,7 @@ export const article: Article = {
 
     { type: 'p', text: [
       'Получите ключ в ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Telegram-боте BRAID VPN' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_vpn_na_realme', text: 'Telegram-боте BRAID VPN' },
       ' — 7 дней бесплатно. Похожие модели — ',
       { type: 'a', href: '/blog/vpn-na-oneplus', text: 'OnePlus' },
       ' и ',

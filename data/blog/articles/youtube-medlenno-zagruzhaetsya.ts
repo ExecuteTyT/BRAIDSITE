@@ -1,4 +1,4 @@
-import type { Article } from '../types';
+﻿import type { Article } from '../types';
 
 export const article: Article = {
   slug: 'youtube-medlenno-zagruzhaetsya',
@@ -81,7 +81,7 @@ export const article: Article = {
       [
         { type: 'b', text: 'Откройте Telegram-бот' },
         ' — ',
-        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'BRAID VPN bot' },
+        { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_medlenno_zagruzhaetsya', text: 'BRAID VPN bot' },
         ' (7 дней бесплатно без карты).',
       ],
       [{ type: 'b', text: 'Скопируйте ключ' }, ' — формат vless://...'],
@@ -141,7 +141,7 @@ export const article: Article = {
     { type: 'h2', text: 'Итог' },
     { type: 'p', text: [
       'YouTube не сломан и не заблокирован — операторы по требованию РКН искусственно ограничили скорость загрузки видео. VPN с протоколом VLESS Reality маскирует трафик и возвращает скорость к нормальной. ',
-      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA==', text: 'Получите ключ на 7 дней бесплатно' },
+      { type: 'a', href: 'https://t.me/braidvpn_bot?start=Nzg5NjAxMDY0MA__blog_youtube_medlenno_zagruzhaetsya', text: 'Получите ключ на 7 дней бесплатно' },
       ' и смотрите YouTube в 4K. Другие материалы: ',
       { type: 'a', href: '/blog/youtube-ne-rabotaet-chto-delat', text: 'YouTube не открывается — что делать' },
       ', страница ',
