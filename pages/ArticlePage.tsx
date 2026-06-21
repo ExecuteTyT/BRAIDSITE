@@ -134,10 +134,16 @@ export const ArticlePage: React.FC = () => {
               <a href={tgBotUrl(`blog_${articleId ?? 'unknown'}`)} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                   <Send className="w-4 sm:w-5 h-4 sm:h-5" />
-                  Получить бесплатный ключ
+                  Получить ключ в Telegram
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </a>
+              <NavLink to="/besplatno" className="w-full sm:w-auto">
+                <Button variant="secondary" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                  Бесплатно 7 дней
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </NavLink>
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">

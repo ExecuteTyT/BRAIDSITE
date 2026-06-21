@@ -72,13 +72,20 @@ export const ServiceLanding: React.FC<{ config: LandingConfig }> = ({ config }) 
             </ul>
           )}
 
-          <a href={tgBotUrl(`srv_${config.slug}_hero`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-            <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 group">
-              <Send className="w-5 h-5" />
-              {config.hero.primaryCta ?? 'Получить ключ за 30 секунд'}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <a href={tgBotUrl(`srv_${config.slug}_hero`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+              <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 group">
+                <Send className="w-5 h-5" />
+                {config.hero.primaryCta ?? 'Получить ключ за 30 секунд'}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <NavLink to="/pricing" className="inline-block w-full sm:w-auto">
+              <Button variant="secondary" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4">
+                Посмотреть тарифы
+              </Button>
+            </NavLink>
+          </div>
           <p className="text-xs sm:text-sm text-gray-500 mt-4">7 дней бесплатно • Без карты • До 5 устройств</p>
         </div>
 
@@ -309,13 +316,20 @@ export const ServiceLanding: React.FC<{ config: LandingConfig }> = ({ config }) 
           <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-10">
             7 дней полного доступа без оплаты. До 5 устройств. Все локации. Протокол VLESS Reality — обходит блокировки РКН.
           </p>
-          <a href={tgBotUrl(`srv_${config.slug}_final`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-            <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 group">
-              <Send className="w-5 h-5" />
-              Получить бесплатный ключ
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <a href={tgBotUrl(`srv_${config.slug}_final`)} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+              <Button variant="primary" className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 group">
+                <Send className="w-5 h-5" />
+                Получить бесплатный ключ
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <NavLink to="/pricing" className="inline-block w-full sm:w-auto">
+              <Button variant="secondary" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4">
+                Посмотреть тарифы
+              </Button>
+            </NavLink>
+          </div>
         </div>
       </section>
     </div>

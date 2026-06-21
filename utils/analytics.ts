@@ -124,7 +124,9 @@ export function useScrollDepth(opts?: { extraGoalAt50?: GoalName }): void {
   const location = useLocation();
 
   useEffect(() => {
-    const fired = { 50: false, 75: false, 100: false };
+    let fired50 = false;
+    let fired75 = false;
+    let fired100 = false;
 
     const handler = () => {
       const doc = document.documentElement;
@@ -132,21 +134,24 @@ export function useScrollDepth(opts?: { extraGoalAt50?: GoalName }): void {
       if (scrollable <= 0) return;
       const pct = (window.scrollY / scrollable) * 100;
 
-      if (!fired[50] && pct >= 50) {
-        fired[50] = true;
+      if (!fired50 && pct >= 50) {
+        fired50 = true;
         trackGoal(Goals.SCROLL_50, { path: location.pathname });
         if (opts?.extraGoalAt50) trackGoal(opts.extraGoalAt50, { path: location.pathname });
       }
-      if (!fired[75] && pct >= 75) {
-        fired[75] = true;
+      if (!fired75 && pct >= 75) {
+        fired75 = true;
         trackGoal(Goals.SCROLL_75, { path: location.pathname });
       }
-      if (!fired[100] && pct >= 95) {
+      if (!fired100 && pct >= 95) {
         // 95% counts as "all the way" — last 5% is usually footer/whitespace.
-        fired[100] = true;
+        fired100 = true;
         trackGoal(Goals.SCROLL_100, { path: location.pathname });
       }
     };
+
+    // Fire once on mount in case the page loads already scrolled (e.g. anchor link).
+    handler();
 
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
