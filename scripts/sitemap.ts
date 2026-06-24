@@ -27,8 +27,9 @@ function main() {
 
   fs.mkdirSync(DIST, { recursive: true });
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), xml, 'utf8');
-  // Keep public/ copy in sync for local dev / non-build serving.
-  fs.writeFileSync(path.resolve(process.cwd(), 'public/sitemap.xml'), xml, 'utf8');
+  // NOTE: intentionally do NOT overwrite the tracked public/sitemap.xml here —
+  // doing so dirties a committed file on every build and breaks `git pull` on
+  // the server. dist/sitemap.xml is the authoritative deployed artifact.
   console.log(`[sitemap] wrote ${manifest.length} urls to dist/sitemap.xml`);
 }
 
