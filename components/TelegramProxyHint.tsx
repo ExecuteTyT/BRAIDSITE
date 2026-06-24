@@ -2,7 +2,7 @@
 import { Send } from 'lucide-react';
 import { trackGoal, trackExtLink, Goals } from '../utils/analytics';
 
-const PROXY_URL = 'https://t.me/proxy?server=proxy.braidvpn.com&port=443&secret=65423350e35d0b60aaff270d542f00dd';
+const PROXY_URL = 'https://t.me/proxy?server=braid-proxy.pro&port=8443&secret=eed6be9227f18285119a37e72d03211b7262726169642d70726f78792e70726f';
 
 export const TelegramProxyHint: React.FC<{ className?: string; location?: string }> = ({ className = '', location = 'hint' }) => (
   <p className={`text-xs text-gray-500 ${className}`}>

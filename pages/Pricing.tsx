@@ -4,6 +4,7 @@ import { Check, Send, Sparkles, Shield, Zap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TelegramProxyHint } from '../components/TelegramProxyHint';
 import { updateMeta } from '../utils/meta';
+import { reachGoal } from '../utils/telegramTracking';
 
 import { tgBotUrl } from '../utils/telegram';
 
@@ -19,6 +20,7 @@ export const Pricing: React.FC = () => {
       path: '/pricing',
       keywords: 'vpn цена, vpn тарифы, дешевый vpn, vpn стоимость, braid vpn цена',
     });
+    reachGoal('pricing_view');
   }, []);
 
   const plans = [

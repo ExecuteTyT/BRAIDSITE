@@ -55,6 +55,10 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error('[prerender] failed:', err);
-  process.exit(1);
+  // Non-fatal: if Chromium can't launch on this host (e.g. a CI/serverless
+  // builder without browser deps), don't break the deploy. The client SPA still
+  // ships and renders + sets meta at runtime; sitemap generation runs next.
+  console.warn('[prerender] SKIPPED — prerender failed, shipping client-only build.');
+  console.warn('[prerender] reason:', err?.message || err);
+  process.exit(0);
 });
