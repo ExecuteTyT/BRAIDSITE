@@ -25,9 +25,12 @@ async function main() {
     // SPA fallback: serve index.html for any path without a file on disk.
     indexPath: path.join(DIST, 'index.html'),
     renderer: new PuppeteerRenderer({
-      renderAfterTime: 1400, // let useEffect set <title>/meta/JSON-LD
-      maxConcurrentRoutes: 4,
-      timeout: 60000,
+      // Wait long enough for lazy-loaded route chunks (React.lazy) to fetch,
+      // execute and run applySeo() — otherwise the serialized HTML keeps the
+      // default home <title>/meta. Slower hosts need more; tune via env.
+      renderAfterTime: Number(process.env.PRERENDER_WAIT_MS) || 4000,
+      maxConcurrentRoutes: Number(process.env.PRERENDER_CONCURRENCY) || 4,
+      timeout: 90000,
       headless: true,
       launchOptions: {
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
