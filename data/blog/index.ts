@@ -1,41 +1,39 @@
-import type { Article } from './types';
+import type { Article, ArticleMeta } from './types';
+// Article METADATA comes from a generated manifest (no bodies) → small + eager.
+// Article BODIES (sections) load lazily, one chunk per article, only when an
+// article page is actually opened. This keeps the main bundle lean.
+import manifest from './manifest.generated.json';
 
-// Auto-discover all articles via Vite's import.meta.glob.
-// Each article file must default-export an Article object.
-const modules = import.meta.glob<{ default: Article }>('./articles/*.ts', { eager: true });
-
-const registry: Record<string, Article> = {};
-for (const path in modules) {
-  const article = modules[path].default;
-  if (article && article.slug) {
-    registry[article.slug] = article;
-  }
+interface ArticleMetaWithFile extends ArticleMeta {
+  file: string;
 }
 
-// NOTE: keep RU_MONTHS + parseRuDate ABOVE `articles` — the sort below runs at
-// module-eval time, so referencing a `const` declared later throws a TDZ error
-// ("Cannot access 'RU_MONTHS' before initialization") that crashes the whole app.
-const RU_MONTHS: Record<string, number> = {
-  'янв': 0, 'фев': 1, 'мар': 2, 'апр': 3, 'мая': 4, 'май': 4,
-  'июн': 5, 'июл': 6, 'авг': 7, 'сен': 8, 'окт': 9, 'ноя': 10, 'дек': 11,
+const metas = manifest as ArticleMetaWithFile[];
+
+const registry: Record<string, ArticleMeta> = {};
+const fileBySlug: Record<string, string> = {};
+for (const m of metas) {
+  const { file, ...meta } = m;
+  registry[meta.slug] = meta;
+  fileBySlug[meta.slug] = file;
+}
+
+// Manifest is pre-sorted (date desc) at generation time.
+export const articles: ArticleMeta[] = metas.map(({ file, ...meta }) => meta);
+
+export const articleBySlug = (slug: string): ArticleMeta | undefined => registry[slug];
+
+// Lazy per-article body loaders (each article file → its own dynamic chunk).
+const bodyLoaders = import.meta.glob<{ default: Article }>('./articles/*.ts');
+
+/** Load the full article (incl. sections) on demand. */
+export const loadArticle = async (slug: string): Promise<Article | undefined> => {
+  const file = fileBySlug[slug];
+  if (!file) return undefined;
+  const loader = bodyLoaders[`./articles/${file}`];
+  if (!loader) return undefined;
+  const mod = await loader();
+  return mod.default;
 };
 
-function parseRuDate(s: string): number {
-  // Format: "15 Янв 2026" or "10 Мая 2026"
-  const parts = s.trim().split(/\s+/);
-  if (parts.length !== 3) return 0;
-  const day = parseInt(parts[0], 10);
-  const monthKey = parts[1].toLowerCase().slice(0, 3);
-  const month = RU_MONTHS[monthKey] ?? 0;
-  const year = parseInt(parts[2], 10);
-  return new Date(year, month, day).getTime();
-}
-
-export const articles: Article[] = Object.values(registry).sort((a, b) => {
-  // Sort by date desc — articles use Russian date format, so parse manually.
-  return parseRuDate(b.date) - parseRuDate(a.date);
-});
-
-export const articleBySlug = (slug: string): Article | undefined => registry[slug];
-
-export type { Article, ArticleSection } from './types';
+export type { Article, ArticleMeta, ArticleSection } from './types';

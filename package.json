@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "npm run blog:manifest",
     "build": "vite build && npm run prerender && npm run sitemap",
-    "build:client": "vite build",
+    "prebuild": "npm run blog:manifest",
+    "build:client": "npm run blog:manifest && vite build",
     "prerender": "vite-node scripts/prerender.ts",
     "sitemap": "vite-node scripts/sitemap.ts",
+    "blog:manifest": "vite-node scripts/build-blog-manifest.ts",
     "semantics": "node scripts/build-semantics.mjs",
     "preview": "vite preview"
   },

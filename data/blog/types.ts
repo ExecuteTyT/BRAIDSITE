@@ -28,3 +28,10 @@ export interface Article {
   sections: ArticleSection[];
   relatedSlugs?: string[];
 }
+
+/**
+ * Lightweight article metadata (everything except the heavy `sections` body).
+ * Powers list pages + SEO without pulling article bodies into the main bundle.
+ * Generated into manifest.generated.json by scripts/build-blog-manifest.ts.
+ */
+export type ArticleMeta = Omit<Article, 'sections'>;

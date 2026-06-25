@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, NavLink, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, Tag, Send, Check, ArrowRight } from 'lucide-react';
 import { Button } from '../components/Button';
 import { ArticleRenderer } from '../components/ArticleRenderer';
-import { articleBySlug, articles } from '../data/blog';
+import { articleBySlug, articles, loadArticle } from '../data/blog';
+import type { ArticleSection } from '../data/blog';
 import { applySeo, articleLd } from '../utils/meta';
 import { useScrollDepth, Goals } from '../utils/analytics';
 
@@ -13,7 +14,20 @@ export const ArticlePage: React.FC = () => {
   const { articleId } = useParams<{ articleId: string }>();
   const navigate = useNavigate();
 
+  // Metadata is available synchronously (header + SEO render immediately);
+  // the heavy body (sections) loads lazily as its own chunk.
   const article = articleId ? articleBySlug(articleId) : undefined;
+  const [sections, setSections] = useState<ArticleSection[] | null>(null);
+
+  useEffect(() => {
+    if (!articleId) return;
+    let active = true;
+    setSections(null);
+    loadArticle(articleId).then((full) => {
+      if (active) setSections(full?.sections ?? []);
+    });
+    return () => { active = false; };
+  }, [articleId]);
 
   // Fire ARTICLE_READ goal when the visitor crosses 50 % depth on the article.
   useScrollDepth({ extraGoalAt50: Goals.ARTICLE_READ });
@@ -115,7 +129,16 @@ export const ArticlePage: React.FC = () => {
           [&_.info-box_h4]:text-base [&_.info-box_h4]:sm:text-lg [&_.info-box_h4]:font-bold [&_.info-box_h4]:text-white [&_.info-box_h4]:mb-2 [&_.info-box_h4]:mt-0
           [&_.info-box_p]:text-sm [&_.info-box_p]:sm:text-base [&_.info-box_p]:text-gray-400 [&_.info-box_p]:mb-0
         ">
-          <ArticleRenderer sections={article.sections} />
+          {sections === null ? (
+            <div className="space-y-4 animate-pulse" aria-hidden="true">
+              <div className="h-4 bg-white/5 rounded w-3/4" />
+              <div className="h-4 bg-white/5 rounded w-full" />
+              <div className="h-4 bg-white/5 rounded w-5/6" />
+              <div className="h-4 bg-white/5 rounded w-2/3" />
+            </div>
+          ) : (
+            <ArticleRenderer sections={sections} />
+          )}
         </div>
       </article>
 

@@ -13,6 +13,9 @@ dist
 dist-ssr
 *.local
 
+# Generated at build time (prebuild/predev) — never commit
+data/blog/manifest.generated.json
+
 # Environment variables
 .env
 .env.local
