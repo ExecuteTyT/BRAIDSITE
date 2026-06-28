@@ -34,3 +34,6 @@ data/blog/manifest.generated.json
 
 # Vercel
 .vercel
+
+# Yandex Direct local config (contains OAuth token — never commit)
+.claude/yandex-direct.json
