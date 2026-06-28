@@ -11,6 +11,21 @@ import { getAllRoutes } from './routes';
 
 const DIST = path.resolve(process.cwd(), 'dist');
 
+// Paid-ad landings must be fully free of "обход блокировок"/РКН/blocked-service
+// wording to pass Yandex Direct moderation. The shared index.html template carries
+// a static <noscript> SEO fallback + static JSON-LD that mention those — strip them
+// from these routes' prerendered HTML (the page's own compliant JSON-LD is kept).
+const BARE_ROUTES = ['/bezopasnost'];
+
+function sanitizeForAds(html: string): string {
+  return html
+    // drop every <noscript> block (SEO fallback + metrika pixel)
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, '')
+    // drop static JSON-LD, keep the route's own (data-seo-jsonld)
+    .replace(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, (m) =>
+      m.includes('data-seo-jsonld') ? m : '');
+}
+
 async function main() {
   if (!fs.existsSync(path.join(DIST, 'index.html'))) {
     console.error('[prerender] dist/index.html not found — run `vite build` first.');
@@ -48,7 +63,9 @@ async function main() {
       const outDir = route === '/' ? DIST : path.join(DIST, route);
       fs.mkdirSync(outDir, { recursive: true });
       const outFile = path.join(outDir, 'index.html');
-      fs.writeFileSync(outFile, r.html.trim() + '\n', 'utf8');
+      const isBare = BARE_ROUTES.some((p) => route === p || route.startsWith(p + '/'));
+      const html = isBare ? sanitizeForAds(r.html) : r.html;
+      fs.writeFileSync(outFile, html.trim() + '\n', 'utf8');
       written++;
     }
     console.log(`[prerender] wrote ${written} HTML files`);

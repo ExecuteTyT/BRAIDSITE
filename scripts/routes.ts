@@ -47,6 +47,7 @@ const STATIC: Array<Omit<RouteMeta, 'lastmod'> & { lastmod?: string }> = [
   { path: '/youtube-bez-reklamy', type: 'static', priority: 0.95, changefreq: 'weekly' },
   { path: '/pri-blokirovkah', type: 'static', priority: 0.95, changefreq: 'weekly' },
   { path: '/chatgpt', type: 'static', priority: 0.9, changefreq: 'weekly' },
+  { path: '/bezopasnost', type: 'static', priority: 0.5, changefreq: 'monthly' },
   { path: '/android', type: 'static', priority: 0.85, changefreq: 'monthly' },
   { path: '/ios', type: 'static', priority: 0.85, changefreq: 'monthly' },
   { path: '/windows', type: 'static', priority: 0.85, changefreq: 'monthly' },
