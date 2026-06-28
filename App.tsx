@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { TelegramProxyBanner } from './components/TelegramProxyBanner';
+import { StickyCTA } from './components/StickyCTA';
 import { Home } from './pages/Home';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { initTelegramTracking } from './utils/telegramTracking';
@@ -95,6 +96,7 @@ const AppShell = () => {
         <AppRoutes />
       </main>
       <Footer />
+      <StickyCTA />
     </div>
   );
 };

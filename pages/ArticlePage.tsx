@@ -110,6 +110,23 @@ export const ArticlePage: React.FC = () => {
         </p>
       </header>
 
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8 sm:mb-10">
+        <a
+          href={tgBotUrl(`blog_top_${articleId ?? 'unknown'}`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 sm:gap-4 glass-panel rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-brand-primary/30 bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 hover:border-brand-primary/50 transition-colors"
+        >
+          <div className="flex-1 min-w-0">
+            <div className="text-sm sm:text-base font-semibold text-white">Нужен рабочий VPN? 7 дней бесплатно</div>
+            <div className="text-xs sm:text-sm text-gray-400">Ключ в Telegram за 30 секунд — без карты, до 5 устройств</div>
+          </div>
+          <Button variant="primary" className="flex-shrink-0 text-sm px-4 sm:px-6 py-2.5 whitespace-nowrap">
+            <Send className="w-4 h-4" />Получить ключ
+          </Button>
+        </a>
+      </div>
+
       <article className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="prose prose-invert prose-sm sm:prose-base lg:prose-lg max-w-none
           prose-headings:font-display prose-headings:font-bold prose-headings:text-white
